@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:/Users/ritin/Downloads/Projects/wedocx\" -name \"*.jpg\" 2>/dev/null | head -20)",
+      "Read(//c/Users/ritin/Downloads/Projects/wedocx/**)",
+      "Bash(ls \"c:/Users/ritin/Downloads/Projects/wedocx\")",
+      "Bash(find \"c:/Users/ritin/Downloads/Projects\" -name \"*.jpg\" 2>/dev/null | head -20)",
+      "Read(//c/Users/ritin/Downloads/Projects/**)",
+      "Bash(npm run *)",
+      "Bash(npm install *)"
+    ]
+  }
+}
