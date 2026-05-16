@@ -69,7 +69,7 @@ export const DEPARTMENTS = {
     name: 'Dermatology Room',
     tagline: 'Advanced Skin Care, Expert Environment',
     description:
-      'The Wedocx Dermatology Room supports a full spectrum of dermatological consultations and procedures — from medical dermatology to aesthetic treatments. Premium procedure lighting, clean clinical workflow, and a procedure-optimized layout create an ideal environment for expert skin care practice without the overhead of building your own setup.',
+      'The Wedocx Dermatology Room supports a full spectrum of dermatological consultations and procedures, from medical dermatology to aesthetic treatments. Premium procedure lighting, clean clinical workflow, and a procedure-optimized layout create an ideal environment for expert skin care practice without the overhead of building your own setup.',
     heroImage: dermImgs[0],
     gallery: dermImgs,
     features: [
@@ -126,7 +126,7 @@ export const DEPARTMENTS = {
     name: 'Treatment Room',
     tagline: 'Versatile Care, Clinical Excellence',
     description:
-      'The Wedocx Treatment Room is a multi-specialty clinical space built for general practitioners, surgeons, and procedural specialists. Its flexible configuration accommodates minor procedures, consultations, wound care, and outpatient treatments — with a fully equipped clinical setup and professional support infrastructure included from the first session.',
+      'The Wedocx Treatment Room is a multi-specialty clinical space built for general practitioners, surgeons, and procedural specialists. Its flexible configuration accommodates minor procedures, consultations, wound care, and outpatient treatments, with a fully equipped clinical setup and professional support infrastructure included from the first session.',
     heroImage: treatmentImgs[0],
     gallery: treatmentImgs,
     features: [

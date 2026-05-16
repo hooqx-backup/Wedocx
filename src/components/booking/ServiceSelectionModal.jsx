@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { ease } from '../../lib/animations'
+import { ease } from '../../animations/variants'
 import {
   DURATION_OPTIONS,
   SHIFT_OPTIONS,
