@@ -1,0 +1,91 @@
+/* ── Specialty Rooms ── */
+.svc-spec-scroller {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0 -40px;
+  padding: 8px 40px;
+}
+.svc-spec-scroller::-webkit-scrollbar { display: none; }
+
+.svc-spec-track {
+  display: flex; gap: 18px; width: max-content;
+}
+
+/* Individual specialty card */
+.svc-sc {
+  position: relative; width: 380px; flex: 0 0 auto;
+  border-radius: 22px; overflow: hidden;
+  aspect-ratio: 4/5; background: #222;
+  scroll-snap-align: start; cursor: pointer;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+}
+.svc-sc:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 60px -28px rgba(15,25,41,.4);
+}
+
+/* Gradient background per specialty */
+.svc-sc-bg {
+  position: absolute; inset: 0;
+}
+.svc-sc-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(15,25,41,.85) 100%);
+}
+.svc-sc-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 60% at 30% 25%, rgba(255,240,210,.45), transparent 65%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 22px);
+}
+.svc-sc-1 .svc-sc-bg { background: linear-gradient(135deg, #2a1f15 0%, #6c4e2c 45%, #caa56a 100%); }
+.svc-sc-2 .svc-sc-bg { background: linear-gradient(135deg, #1c2536 0%, #445770 45%, #9fb2c8 100%); }
+.svc-sc-3 .svc-sc-bg { background: linear-gradient(135deg, #36231d 0%, #7c5340 45%, #d4a589 100%); }
+.svc-sc-4 .svc-sc-bg { background: linear-gradient(135deg, #1d2e25 0%, #456a55 45%, #9fc4ad 100%); }
+.svc-sc-5 .svc-sc-bg { background: linear-gradient(135deg, #2a1f30 0%, #5d4970 45%, #bca0d4 100%); }
+.svc-sc-6 .svc-sc-bg { background: linear-gradient(135deg, #2f1d20 0%, #7a4a52 45%, #d9a8a8 100%); }
+
+/* Meta label */
+.svc-sc-meta {
+  position: absolute; top: 18px; left: 18px;
+  font-family: var(--font-mono); font-size: 10px;
+  color: rgba(255,255,255,.7); letter-spacing: .16em; z-index: 2;
+}
+
+/* Corner arrow */
+.svc-sc-corner {
+  position: absolute; top: 18px; right: 18px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,.12); backdrop-filter: blur(8px);
+  display: grid; place-items: center;
+  transition: background .3s, transform .3s;
+}
+.svc-sc:hover .svc-sc-corner { background: var(--color-gold); transform: rotate(45deg); }
+.svc-sc-corner svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2; }
+
+/* Bottom text block */
+.svc-sc-text {
+  position: absolute; left: 22px; right: 22px; bottom: 22px; z-index: 2; color: #fff;
+}
+.svc-sc-text h4 {
+  font-family: var(--font-serif); font-size: 30px; font-weight: 500;
+  line-height: 1.05; margin-bottom: 8px;
+}
+.svc-sc-text h4 em { color: var(--color-brand); }
+.svc-sc-text p {
+  font-size: 13px; color: rgba(255,255,255,.7);
+  line-height: 1.55; max-width: 280px; margin-bottom: 14px;
+}
+.svc-sc-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.svc-sc-chip {
+  font-family: var(--font-mono); font-size: 9px;
+  color: rgba(255,255,255,.85); letter-spacing: .12em;
+  padding: 4px 8px; border: 1px solid rgba(255,255,255,.2);
+  border-radius: 99px; text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .svc-sc { width: 300px; }
+  .svc-spec-scroller { margin: 0 -20px; padding: 8px 20px; }
+}

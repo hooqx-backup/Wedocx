@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ease } from '../../lib/animations'
+import { ease } from '../../animations/variants'
 import { sendBookingEmail } from '../../services/emailService'
 import { openWhatsApp } from '../../services/whatsappService'
 
@@ -131,10 +131,10 @@ export default function BookingFormModal({ open, onClose, bookingMeta }) {
 
             {/* Booking meta chips */}
             <div className="px-10 pt-5 pb-4 grid grid-cols-2 gap-2.5 border-b border-ink/8">
-              <MetaChip label="Department" value={bookingMeta?.department ?? '—'} />
-              <MetaChip label="Duration"   value={bookingMeta?.duration   ?? '—'} />
-              <MetaChip label="Shift"      value={bookingMeta?.shift      ?? '—'} />
-              <MetaChip label="Price"      value={bookingMeta?.price      ?? '—'} />
+              <MetaChip label="Department" value={bookingMeta?.department ?? '-'} />
+              <MetaChip label="Duration"   value={bookingMeta?.duration   ?? '-'} />
+              <MetaChip label="Shift"      value={bookingMeta?.shift      ?? '-'} />
+              <MetaChip label="Price"      value={bookingMeta?.price      ?? '-'} />
             </div>
 
             {/* Success state */}
