@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout/MainLayout'
 import Home from '../pages/Home/Home'
+import About from '../pages/About/About'
 import Services from '../pages/Services/Services'
 import DepartmentPage from '../pages/Department/DepartmentPage'
 import ComingSoonPage from '../pages/ComingSoon/ComingSoonPage'
@@ -11,6 +12,7 @@ export default function AppRouter() {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/department/:deptId" element={<DepartmentPage />} />
       </Route>
