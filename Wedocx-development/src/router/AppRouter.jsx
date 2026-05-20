@@ -1,14 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout/MainLayout'
 import Home from '../pages/Home/Home'
-<<<<<<< HEAD
 import Services from '../pages/Services/Services'
-=======
-import About from '../pages/About/About'
-import Services from '../pages/Services/Services'
-import Contact from '../pages/Contact/Contact'
-import ClinicSpaces from '../pages/ClinicSpaces/ClinicSpaces'
->>>>>>> pritam
 import DepartmentPage from '../pages/Department/DepartmentPage'
 import ComingSoonPage from '../pages/ComingSoon/ComingSoonPage'
 import NotFound from '../pages/NotFound/NotFound'
@@ -18,14 +11,7 @@ export default function AppRouter() {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
-<<<<<<< HEAD
         <Route path="/services" element={<Services />} />
-=======
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/clinic-spaces" element={<ClinicSpaces />} />
->>>>>>> pritam
         <Route path="/department/:deptId" element={<DepartmentPage />} />
       </Route>
       <Route path="/coming-soon" element={<ComingSoonPage />} />

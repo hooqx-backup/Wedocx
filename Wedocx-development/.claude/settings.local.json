@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:/Users/ritin/Downloads/Projects/wedocx\" -name \"*.jpg\" 2>/dev/null | head -20)",
+      "Read(//c/Users/ritin/Downloads/Projects/wedocx/**)",
+      "Bash(ls \"c:/Users/ritin/Downloads/Projects/wedocx\")",
+      "Bash(find \"c:/Users/ritin/Downloads/Projects\" -name \"*.jpg\" 2>/dev/null | head -20)",
+      "Read(//c/Users/ritin/Downloads/Projects/**)",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\ritin\\\\Downloads\\\\Projects\\\\wedocx\\\\wedocx\" -Recurse -File)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)",
+      "Bash(cd \"c:\\\\Users\\\\ritin\\\\Downloads\\\\Projects\\\\wedocx\\\\wedocx\\\\src\" && mkdir -p animations layouts/MainLayout components/common/Navbar components/common/Footer components/common/Loader components/common/ScrollToTop components/ui/Marquee components/ui/ContactModal components/ui/VideoModal pages/Home/sections/Hero pages/Home/sections/Concept pages/Home/sections/Spaces pages/Home/sections/Benefits pages/Home/sections/Amenities pages/Home/sections/Process pages/Home/sections/Testimonials pages/Home/sections/Faq pages/Home/sections/Cta pages/ComingSoon pages/Department pages/NotFound)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\ritin\\Downloads\\Projects\\wedocx\\wedocx\\src"
+    ]
+  }
+}

@@ -6,15 +6,9 @@ import ServiceSelectionModal from '../../booking/ServiceSelectionModal'
 
 const links = [
   { label: 'Home', href: '/' },
-<<<<<<< HEAD
   { label: 'About', href: '/coming-soon' },
   { label: 'Services', href: '/services' },
   { label: 'Contact Us', href: '/coming-soon' },
-=======
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Contact Us', href: '/contact' },
->>>>>>> pritam
 ]
 
 const menuVariants = {
