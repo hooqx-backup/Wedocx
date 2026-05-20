@@ -1,11 +1,32 @@
 import { motion } from 'framer-motion'
 import { logoWhite } from '../../../assets/images'
 import { fadeUp, stagger, t, viewport } from '../../../animations/variants'
+import { Link } from 'react-router-dom'
 
 const cols = [
-  { heading: 'Platform', links: ['Clinic Spaces','Shift Plans'] },
-  { heading: 'Company', links: ['About', 'Careers', 'Media & Press'] },
-  { heading: 'Legal', links: ['Terms & Conditions', 'Privacy Policy', 'Compliance'] },
+  {
+    heading: 'Platform',
+    links: [
+      { label: 'Clinic Spaces', to: '/clinic-spaces' },
+      { label: 'Shift Plans',   to: '/coming-soon'   },
+    ],
+  },
+  {
+    heading: 'Company',
+    links: [
+      { label: 'About',         to: '/about'        },
+      { label: 'Careers',       to: '/coming-soon'  },
+      { label: 'Media & Press', to: '/coming-soon'  },
+    ],
+  },
+  {
+    heading: 'Legal',
+    links: [
+      { label: 'Terms & Conditions', to: '/coming-soon' },
+      { label: 'Privacy Policy',     to: '/coming-soon' },
+      { label: 'Compliance',         to: '/coming-soon' },
+    ],
+  },
 ]
 
 export default function Footer() {
@@ -18,7 +39,7 @@ export default function Footer() {
 
       <div className="relative z-10 px-6 pt-8 pb-0 max-sm:px-4 max-sm:pt-6">
         <div className="max-w-360 mx-auto">
-          <div className="footer-glass-card rounded-[2rem] border border-white/25 mb-0">
+          <div className="footer-glass-card rounded-4xl border border-white/25 mb-0">
             <motion.div
               variants={stagger(0.08)}
               initial="hidden"
@@ -58,15 +79,18 @@ export default function Footer() {
                     <h4 className="font-mono text-[10px] tracking-[.2em] uppercase text-brand">{col.heading}</h4>
                   </div>
                   {col.links.map(link => (
-                    <motion.a
-                      key={link}
-                      href="/coming-soon"
-                      whileHover={{ x: 5, color: 'var(--color-bone)' }}
+                    <motion.div
+                      key={link.label}
+                      whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
-                      className="footer-link block text-[13px] text-bone/70 py-1.5 hover:text-bone transition-colors"
                     >
-                      {link}
-                    </motion.a>
+                      <Link
+                        to={link.to}
+                        className="footer-link block text-[13px] text-bone/70 py-1.5 hover:text-bone transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
                   ))}
                 </motion.div>
               ))}

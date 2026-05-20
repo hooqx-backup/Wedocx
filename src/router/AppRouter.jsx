@@ -4,6 +4,7 @@ import Home from '../pages/Home/Home'
 import About from '../pages/About/About'
 import Services from '../pages/Services/Services'
 import Contact from '../pages/Contact/Contact'
+import ClinicSpaces from '../pages/ClinicSpaces/ClinicSpaces'
 import DepartmentPage from '../pages/Department/DepartmentPage'
 import ComingSoonPage from '../pages/ComingSoon/ComingSoonPage'
 import NotFound from '../pages/NotFound/NotFound'
@@ -16,6 +17,7 @@ export default function AppRouter() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/clinic-spaces" element={<ClinicSpaces />} />
         <Route path="/department/:deptId" element={<DepartmentPage />} />
       </Route>
       <Route path="/coming-soon" element={<ComingSoonPage />} />
