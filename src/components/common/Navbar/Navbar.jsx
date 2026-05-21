@@ -13,6 +13,7 @@ const links = [
 =======
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
+  { label: 'Shift Plans', href: '/shift-plans' },
   { label: 'Contact Us', href: '/contact' },
 >>>>>>> pritam
 ]
@@ -273,3 +274,4 @@ export default function Navbar() {
     </>
   )
 }
+
