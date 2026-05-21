@@ -8,6 +8,7 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
+  { label: 'Shift Plans', href: '/shift-plans' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
@@ -267,3 +268,4 @@ export default function Navbar() {
     </>
   )
 }
+

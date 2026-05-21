@@ -8,15 +8,15 @@ const cols = [
     heading: 'Platform',
     links: [
       { label: 'Clinic Spaces', to: '/clinic-spaces' },
-      { label: 'Shift Plans',   to: '/coming-soon'   },
+      { label: 'Shift Plans',   to: '/shift-plans'   },
     ],
   },
   {
     heading: 'Company',
     links: [
       { label: 'About',         to: '/about'        },
-      { label: 'Careers',       to: '/coming-soon'  },
-      { label: 'Media & Press', to: '/coming-soon'  },
+      { label: 'Careers',       to: '/careers'      },
+      { label: 'Media & Press', to: '/press'        },
     ],
   },
   {
@@ -129,3 +129,4 @@ export default function Footer() {
     </footer>
   )
 }
+
