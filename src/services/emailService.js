@@ -3,7 +3,7 @@ const EMAIL_API_ENDPOINT = '/api/bookings/email'
 
 export const buildBookingEmailPayload = (formData, bookingMeta) => ({
   to: formData.email,
-  bcc: 'bookings@wedocx.com',
+  bcc: 'info@wedocx.com',
   subject: `Booking Request — ${bookingMeta.department} · ${bookingMeta.shift}`,
   template: 'booking-confirmation',
   data: {

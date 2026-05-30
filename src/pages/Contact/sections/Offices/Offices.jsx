@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import { imgDubai, imgAbuDhabi, imgSharjah } from '../../../../assets/images'
 
 const offices = [
   {
     city: 'Dubai',
-    gradient: 'linear-gradient(135deg,#3b2a16 0%,#67492a 35%,#a98a5c 70%,#dec79a 100%)',
+    img: imgDubai,
     status: 'Live',
     address: 'Level 14, Boulevard Plaza Tower 1, Downtown Dubai',
     phone: '+971 4 400 0001',
@@ -13,7 +14,7 @@ const offices = [
   },
   {
     city: 'Abu Dhabi',
-    gradient: 'linear-gradient(135deg,#2b2f1f 0%,#4a4631 35%,#86714c 70%,#c4b48a 100%)',
+    img: imgAbuDhabi,
     status: 'Live',
     address: 'Tower B, Floor 8, Sun & Sky Towers, Reem Island',
     phone: '+971 2 400 0002',
@@ -22,7 +23,7 @@ const offices = [
   },
   {
     city: 'Sharjah',
-    gradient: 'linear-gradient(135deg,#3a3424 0%,#5e5236 35%,#94835a 70%,#d4c399 100%)',
+    img: imgSharjah,
     status: 'Live',
     address: 'Al Majaz 3, Buhairah Corniche, opp. Al Noor Mosque',
     phone: '+971 6 400 0003',
@@ -91,11 +92,11 @@ export default function Offices() {
               whileHover={{ y: -4, boxShadow: '0 30px 60px -30px rgba(15,25,41,.25)' }}
               className="bg-parchment border border-ink/8 rounded-[22px] overflow-hidden transition-all duration-400 cursor-default"
             >
-              {/* Photo placeholder */}
-              <div className="relative aspect-[5/3] overflow-hidden" style={{ background: o.gradient }}>
-                {/* Grid overlay */}
+              {/* City photo */}
+              <div className="relative aspect-[5/3] overflow-hidden" style={{ backgroundImage: `url(${o.img})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#1a1a1a' }}>
+                {/* Dark scrim for text legibility */}
                 <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'radial-gradient(120% 90% at 40% 30%, rgba(255,236,196,.45), transparent 65%), repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 14px)' }} />
+                  style={{ background: 'linear-gradient(180deg, rgba(15,25,41,.15) 0%, rgba(15,25,41,.65) 100%)' }} />
 
                 <div className="absolute top-[18px] right-[18px] inline-flex items-center gap-2 bg-ink/55 backdrop-blur-sm px-3 py-1.5 rounded-full font-mono text-[10px] tracking-[.16em] uppercase text-white">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 live-dot block" />

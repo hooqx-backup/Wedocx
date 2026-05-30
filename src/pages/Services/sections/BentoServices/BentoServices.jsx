@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import { imgHero } from '../../../../assets/images'
 import './BentoServices.css'
 
 const BAR_HEIGHTS = [32, 52, 38, 68, 42, 78, 55, 88, 62, 72, 48, 82]
@@ -67,7 +68,7 @@ export default function BentoServices() {
           >
             <span className="svc-card-rn">i.</span>
             <div>
-              <div className="svc-b1-vis">
+              <div className="svc-b1-vis" style={{ backgroundImage: `url(${imgHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="svc-b1-grid-pat" />
                 <span className="svc-b1-vis-lbl"><span className="pip" />SUITE · BUSINESS BAY</span>
                 <span className="svc-b1-vis-corner">premium rooms</span>

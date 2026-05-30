@@ -13,8 +13,8 @@ export default function Services() {
     <>
       <Hero />
       <BentoServices />
-      <HowItWorks />
       <SpecialtyRooms />
+      <HowItWorks />
       <WhyUs />
       <Pricing />
       <Testimonial />

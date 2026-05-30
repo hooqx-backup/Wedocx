@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t } from '../../../../animations/variants'
+import { aboutUs } from '../../../../assets/images'
 
 const marqItems = [
   'General Practice', 'Psychology', 'Dentistry', 'Dermatology',
@@ -21,7 +22,11 @@ function MarqTrack() {
 
 export default function Hero() {
   return (
-    <section className="relative pt-40 pb-0 px-10 max-sm:pt-32 max-sm:px-5 overflow-hidden">
+    <section
+      className="relative pt-40 pb-0 px-10 max-sm:pt-32 max-sm:px-5 overflow-hidden"
+      style={{ backgroundImage: `url(${aboutUs})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      <div className="absolute inset-0 bg-bone/85 pointer-events-none" />
       <div className="section-ring section-ring-600 section-ring-light absolute -right-52 top-12 pointer-events-none opacity-60" />
       <div className="section-ring section-ring-480 section-ring-light absolute -left-60 bottom-0 pointer-events-none opacity-35" />
 
@@ -30,7 +35,7 @@ export default function Hero() {
         variants={stagger(0.1)}
         initial="hidden"
         animate="visible"
-        className="max-w-360 mx-auto"
+        className="max-w-360 mx-auto relative z-10"
       >
         <div className="grid lg:grid-cols-[1.05fr_.95fr] grid-cols-1 gap-16 items-end">
 
@@ -99,7 +104,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="mt-24 max-sm:mt-14 border-t border-b border-ink/10 py-[22px] overflow-hidden relative"
+        className="mt-24 max-sm:mt-14 border-t border-b border-ink/10 py-[22px] overflow-hidden relative z-10"
       >
         {/* Edge fades */}
         <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-bone to-transparent pointer-events-none z-10" />

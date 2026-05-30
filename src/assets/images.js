@@ -52,6 +52,53 @@ export const dermImgs      = [dermatology, dermatology2, dermatology3]
 export const treatmentImgs = [treatmentroom, treatment2, treatmentroom3, treatment4]
 export const pediatricImgs = [pediatricianroom, pediatricianroom2]
 
+// ── Location images ───────────────────────────────────────────────────────────
+import imgDubai     from './images/dubai.jpg'
+import imgAbuDhabi  from './images/abudhabi.jpg'
+import imgSharjah   from './images/sarjah.jpg'
+export { imgDubai, imgAbuDhabi, imgSharjah }
+
+// ── Compliance ───────────────────────────────────────────────────────────────
+import regulatoryCompliance from './images/regulatory compilance.jpg'
+export { regulatoryCompliance }
+
+// ── Terms ─────────────────────────────────────────────────────────────────────
+import termsAndConditions from './images/termsandconditions.jpg'
+export { termsAndConditions }
+
+// ── Privacy ───────────────────────────────────────────────────────────────────
+import privacyPolicy from './images/privacypolicy.jpg'
+export { privacyPolicy }
+
+// ── About ─────────────────────────────────────────────────────────────────────
+import aboutUs from './images/aboutus.jpg'
+export { aboutUs }
+
+// ── Services ──────────────────────────────────────────────────────────────────
+import servicesHero from './images/services.jpg'
+export { servicesHero }
+
+// ── ShiftPlans ────────────────────────────────────────────────────────────────
+import shiftPlans from './images/shiftplans.jpg'
+export { shiftPlans }
+
+// ── Contact ───────────────────────────────────────────────────────────────────
+import contactBanner from './images/contactbanner.jpg'
+export { contactBanner }
+
+// ── Media & Press ─────────────────────────────────────────────────────────────
+import mediaAndPress from './images/mediaandpress.jpg'
+export { mediaAndPress }
+
+// ── Services-card hero images ─────────────────────────────────────────────────
+import generalServ      from './images/generalserv.jpg'
+import doctorServ       from './images/doctorserv.jpg'
+import dentalServ       from './images/dentalserv.jpg'
+import dermatologyServ  from './images/dermatologyserv.jpg'
+import pediatricianServ from './images/pediatricianserv.jpg'
+import treatmentServ    from './images/treatmentserv.jpg'
+export { generalServ, dentalServ, dermatologyServ, pediatricianServ, treatmentServ, doctorServ }
+
 // ── Video ─────────────────────────────────────────────────────────────────────
 import tourVideo from './videos/Blue Modern Thank You For Watching Health Video.mp4'
 export const videoTour = tourVideo

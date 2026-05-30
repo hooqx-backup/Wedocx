@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import {
   dentalImgs1,
   dentalImgs2,
@@ -7,87 +13,84 @@ import {
   treatmentImgs,
   pediatricImgs,
 } from "../../../../assets/images";
-import { fadeUp, stagger, t, viewport } from "../../../../animations/variants";
+import { stagger, t, viewport } from "../../../../animations/variants";
 import ServiceSelectionModal from "../../../../components/booking/ServiceSelectionModal";
+import ContactModal from "../../../../components/ui/ContactModal/ContactModal";
 
-const filters = [
-  "All suites",
-  "Dental",
-  "Dermatology",
-  "Pediatric",
-  "Treatment",
-];
+const filters = ["All suites", "Dental", "Dermatology", "Pediatric", "Treatment"];
 
 const spaces = [
   {
-    badge: "Live now",
-    live: true,
-    category: "Dental",
-    type: "DENTAL · 220 SQFT",
-    rating: "4.9",
-    name: "Dental Suite 01",
-    loc: "Business Bay, Dubai · Floor 04",
-    imgs: dentalImgs1,
+    badge: "Live now", live: true,  category: "Dental",
+    type: "DENTAL · 220 SQFT", rating: "4.9",
+    name: "Dental Suite 01", loc: "Business Bay, Dubai · Floor 04", imgs: dentalImgs1,
   },
   {
-    badge: "2 left",
-    live: false,
-    category: "Dental",
-    type: "DENTAL · 240 SQFT",
-    rating: "4.8",
-    name: "Dental Suite 02",
-    loc: "Business Bay, Dubai · Floor 04",
-    imgs: dentalImgs2,
+    badge: "2 left",  live: false, category: "Dental",
+    type: "DENTAL · 240 SQFT", rating: "4.8",
+    name: "Dental Suite 02", loc: "Business Bay, Dubai · Floor 04", imgs: dentalImgs2,
   },
   {
-    badge: "Live now",
-    live: true,
-    category: "Dermatology",
-    type: "DERM · 180 SQFT",
-    rating: "5.0",
-    name: "Dermatology Room",
-    loc: "DIFC, Dubai · Floor 03",
-    imgs: dermImgs,
+    badge: "Live now", live: true,  category: "Dermatology",
+    type: "DERM · 180 SQFT", rating: "5.0",
+    name: "Dermatology Room", loc: "DIFC, Dubai · Floor 03", imgs: dermImgs,
   },
   {
-    badge: "New",
-    live: false,
-    category: "Dermatology",
-    type: "DERM · 160 SQFT",
-    rating: "4.9",
-    name: "Dermatology Suite 02",
-    loc: "DIFC, Dubai · Floor 03",
-    imgs: dermImgs,
+    badge: "New",     live: false, category: "Dermatology",
+    type: "DERM · 160 SQFT", rating: "4.9",
+    name: "Dermatology Suite 02", loc: "DIFC, Dubai · Floor 03", imgs: dermImgs,
   },
   {
-    badge: "Live now",
-    live: true,
-    category: "Treatment",
-    type: "TREATMENT · 200 SQFT",
-    rating: "4.9",
-    name: "Treatment Room",
-    loc: "Al Reem Island, Abu Dhabi",
-    imgs: treatmentImgs,
+    badge: "Live now", live: true,  category: "Treatment",
+    type: "TREATMENT · 200 SQFT", rating: "4.9",
+    name: "Treatment Room", loc: "Al Reem Island, Abu Dhabi", imgs: treatmentImgs,
   },
   {
-    badge: "Premium",
-    live: false,
-    category: "Pediatric",
-    type: "PEDIATRIC · 220 SQFT",
-    rating: "5.0",
-    name: "Pediatrician Suite",
-    loc: "Jumeirah, Dubai · Floor 02",
-    imgs: pediatricImgs,
+    badge: "Premium", live: false, category: "Pediatric",
+    type: "PEDIATRIC · 220 SQFT", rating: "5.0",
+    name: "Pediatrician Suite", loc: "Jumeirah, Dubai · Floor 02", imgs: pediatricImgs,
   },
 ];
 
+/* ── Word-reveal heading with blur ─────────────────────────────────────────── */
+const wordVariant = {
+  hidden: { y: "110%", opacity: 0, filter: "blur(8px)" },
+  visible: (i) => ({
+    y: "0%", opacity: 1, filter: "blur(0px)",
+    transition: { duration: 0.78, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+function RevealWord({ children, i, className = "" }) {
+  return (
+    <span className="inline-block overflow-hidden leading-[1.15]">
+      <motion.span custom={i} variants={wordVariant} className={`inline-block ${className}`}>
+        {children}
+      </motion.span>
+    </span>
+  );
+}
+
+/* ── Floating ambient orb ──────────────────────────────────────────────────── */
+function Orb({ style, dur, delay }) {
+  return (
+    <motion.div
+      className="absolute rounded-full pointer-events-none"
+      style={style}
+      animate={{ y: [0, -28, 0], scale: [1, 1.06, 1] }}
+      transition={{ duration: dur, delay, repeat: Infinity, ease: "easeInOut" }}
+    />
+  );
+}
+
+/* ── Auto-cycling image carousel ───────────────────────────────────────────── */
 function CardCarousel({ imgs, name }) {
   const [idx, setIdx] = useState(0);
 
   useEffect(() => {
     if (imgs.length <= 1) return;
-    const timer = setInterval(() => setIdx((i) => (i + 1) % imgs.length), 2800);
-    return () => clearInterval(timer);
+    const id = setInterval(() => setIdx((i) => (i + 1) % imgs.length), 2800);
+    return () => clearInterval(id);
   }, [imgs.length]);
 
   return (
@@ -98,19 +101,20 @@ function CardCarousel({ imgs, name }) {
           src={imgs[idx]}
           alt={name}
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
+          transition={{ duration: 0.95, ease: "easeInOut" }}
         />
       </AnimatePresence>
-
       {imgs.length > 1 && (
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
           {imgs.map((_, j) => (
             <div
               key={j}
-              className={`h-1 rounded-full bg-white transition-all duration-300 ${j === idx ? "w-4 opacity-90" : "w-1 opacity-40"}`}
+              className={`h-1 rounded-full bg-white transition-all duration-300 ${
+                j === idx ? "w-4 opacity-90" : "w-1 opacity-40"
+              }`}
             />
           ))}
         </div>
@@ -119,150 +123,321 @@ function CardCarousel({ imgs, name }) {
   );
 }
 
+/* ── 3-D tilt card — propagates rest/hover variants to all children ─────────── */
+function TiltCard({ children, className, onClick }) {
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [5, -5]), { stiffness: 400, damping: 40 });
+  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-5, 5]), { stiffness: 400, damping: 40 });
+
+  const onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    mx.set((e.clientX - r.left) / r.width - 0.5);
+    my.set((e.clientY - r.top) / r.height - 0.5);
+  };
+  const onLeave = () => { mx.set(0); my.set(0); };
+
+  return (
+    <motion.div
+      onClick={onClick}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      initial="rest"
+      whileHover="hover"
+      style={{ rotateX, rotateY, transformPerspective: 1100 }}
+      variants={{
+        rest: {
+          y: 0,
+          boxShadow: "0 4px 24px -8px rgba(15,25,41,0.10), 0 0 0 1px rgba(15,25,41,0.05)",
+        },
+        hover: {
+          y: -8,
+          boxShadow: "0 32px 72px -20px rgba(15,25,41,0.28), 0 0 0 1.5px rgba(200,154,79,0.50)",
+          transition: { y: { duration: 0.38, ease: [0.22, 1, 0.36, 1] }, boxShadow: { duration: 0.38 } },
+        },
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ── Shimmer sweep (responds to parent rest/hover variant) ──────────────────── */
+function Shimmer() {
+  return (
+    <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden rounded-2xl">
+      <motion.div
+        variants={{
+          rest: { x: "-120%", skewX: "-20deg" },
+          hover: {
+            x: "220%", skewX: "-20deg",
+            transition: { duration: 0.78, ease: [0.4, 0, 0.2, 1] },
+          },
+        }}
+        className="absolute inset-y-0 w-[45%]"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent)" }}
+      />
+    </div>
+  );
+}
+
+/* ── Book strip — slides up from bottom on hover ───────────────────────────── */
+function BookStrip() {
+  return (
+    <motion.div
+      className="absolute bottom-0 left-0 right-0 bg-ink text-bone px-6 py-3.75 flex items-center justify-between z-30"
+      variants={{
+        rest: { y: "101%" },
+        hover: { y: 0, transition: { duration: 0.40, ease: [0.22, 1, 0.36, 1] } },
+      }}
+    >
+      <span className="font-mono text-[10px] tracking-[.22em] uppercase">Book this suite</span>
+      <motion.span
+        animate={{ x: [0, 5, 0] }}
+        transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+        className="text-brand"
+      >
+        →
+      </motion.span>
+    </motion.div>
+  );
+}
+
+/* ── Magnetic filter button ────────────────────────────────────────────────── */
+function FilterBtn({ label, active, onClick }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const sx = useSpring(x, { stiffness: 260, damping: 22 });
+  const sy = useSpring(y, { stiffness: 260, damping: 22 });
+
+  const onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    x.set((e.clientX - (r.left + r.width / 2)) * 0.28);
+    y.set((e.clientY - (r.top + r.height / 2)) * 0.28);
+  };
+  const onLeave = () => { x.set(0); y.set(0); };
+
+  return (
+    <motion.button
+      onClick={onClick}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      style={{ x: sx, y: sy }}
+      className="relative px-4 py-2 rounded-full text-[13px] border border-ink/10 overflow-hidden transition-colors duration-200"
+    >
+      {active && (
+        <motion.span
+          layoutId="filter-active"
+          className="absolute inset-0 rounded-full bg-ink"
+          transition={{ type: "spring", bounce: 0.18, duration: 0.42 }}
+        />
+      )}
+      <span className={`relative z-10 transition-colors duration-200 ${active ? "text-bone" : "text-ink"}`}>
+        {label}
+      </span>
+    </motion.button>
+  );
+}
+
+/* ── Main section ──────────────────────────────────────────────────────────── */
 export default function Spaces() {
   const [active, setActive] = useState("All suites");
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
-  const filtered =
-    active === "All suites"
-      ? spaces
-      : spaces.filter((s) => s.category === active);
+  const filtered = active === "All suites" ? spaces : spaces.filter((s) => s.category === active);
 
   return (
     <>
-    <section
-      id="spaces"
-      className="py-30 px-10 max-lg:py-20 max-sm:py-16 max-sm:px-5"
-      style={{
-        background:
-          "linear-gradient(180deg, var(--color-bone) 0%, var(--color-cream) 100%)",
-      }}
-    >
-      <div className="max-w-360 mx-auto">
-        <motion.div
-          variants={stagger()}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="grid lg:grid-cols-[200px_1fr] grid-cols-1 gap-15 max-lg:gap-6 mb-15 items-start"
-        >
+      <section
+        id="spaces"
+        className="py-30 px-10 max-lg:py-20 max-sm:py-16 max-sm:px-5 relative overflow-hidden"
+        style={{ background: "linear-gradient(180deg, var(--color-bone) 0%, var(--color-cream) 100%)" }}
+      >
+        {/* Ambient floating orbs */}
+        <Orb
+          style={{
+            width: 500, height: 500, top: -140, right: -120,
+            background: "radial-gradient(circle, rgba(200,154,79,0.09), transparent 68%)",
+            filter: "blur(64px)",
+          }}
+          dur={9} delay={0}
+        />
+        <Orb
+          style={{
+            width: 380, height: 380, bottom: 40, left: -100,
+            background: "radial-gradient(circle, rgba(200,154,79,0.07), transparent 68%)",
+            filter: "blur(54px)",
+          }}
+          dur={11} delay={2.5}
+        />
+
+        <div className="max-w-360 mx-auto relative z-10">
+
+          {/* ── Header ── */}
           <motion.div
-            variants={fadeUp}
-            transition={t(0.6)}
-            className="font-mono text-[11px] tracking-[.2em] uppercase text-brand pt-3 border-t border-ink w-15"
+            variants={stagger()}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="grid lg:grid-cols-[200px_1fr] grid-cols-1 gap-15 max-lg:gap-6 mb-15 items-start"
           >
-            Spaces
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: -16 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+              }}
+              className="font-mono text-[11px] tracking-[.2em] uppercase text-brand pt-3 border-t border-ink w-15"
+            >
+              Spaces
+            </motion.div>
+
+            <h2 className="font-serif text-[clamp(36px,5vw,64px)] font-light leading-none tracking-[-0.03em] flex flex-wrap gap-x-[0.28em]">
+              <RevealWord i={0}>Suites</RevealWord>
+              <RevealWord i={1}>built</RevealWord>
+              <RevealWord i={2}>for</RevealWord>
+              {" "}
+              <RevealWord i={3} className="italic text-gold">specialists.</RevealWord>
+            </h2>
           </motion.div>
-          <motion.h2
-            variants={fadeUp}
-            transition={t()}
-            className="font-serif text-[clamp(36px,5vw,64px)] font-light leading-none tracking-[-0.03em]"
+
+          {/* ── Filters ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={t(0.6)}
+            className="flex flex-wrap justify-between items-end gap-6 mb-15"
           >
-            Suites built for{" "}
-            <span className="italic text-gold">specialists.</span>
-          </motion.h2>
-        </motion.div>
+            <p className="max-w-120 text-[#3a4558] leading-relaxed">
+              Every room is photographed, equipped, and reviewed by practitioners
+              in that specialty. Filter by what you need.
+            </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          transition={t(0.6)}
-          className="flex flex-wrap justify-between items-end gap-6 mb-15"
-        >
-          <p className="max-w-120 text-[#3a4558] leading-relaxed">
-            Every room is photographed, equipped, and reviewed by practitioners
-            in that specialty. Filter by what you need.
-          </p>
-          <div className="flex gap-2 flex-wrap">
-            {filters.map((f) => (
-              <motion.button
-                key={f}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => setActive(f)}
-                className={`px-4 py-2 rounded-full text-[13px] border transition-all duration-200 ${
-                  active === f
-                    ? "bg-ink text-bone border-ink"
-                    : "bg-white/50 border-ink/10 hover:bg-white hover:border-ink"
-                }`}
-              >
-                {f}
-              </motion.button>
-            ))}
-          </div>
-        </motion.div>
+            <div className="flex gap-2 flex-wrap">
+              {filters.map((f) => (
+                <FilterBtn key={f} label={f} active={active === f} onClick={() => setActive(f)} />
+              ))}
+            </div>
+          </motion.div>
 
-        <motion.div
-          layout
-          className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filtered.map((s) => (
+          {/* ── Cards grid ── */}
+          <motion.div layout className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+            <AnimatePresence mode="popLayout">
+              {filtered.map((s, i) => (
+                <motion.div
+                  key={s.name}
+                  layout
+                  initial={{ opacity: 0, y: 60, scale: 0.93, filter: "blur(10px)" }}
+                  animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: 24, scale: 0.93, filter: "blur(4px)" }}
+                  transition={{ duration: 0.52, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <TiltCard className="relative bg-bone rounded-2xl overflow-hidden cursor-pointer group h-full" onClick={() => setContactOpen(true)}>
+
+                    <Shimmer />
+
+                    {/* Image area */}
+                    <div className="relative aspect-4/3 overflow-hidden">
+                      <span
+                        className={`absolute top-3.5 left-3.5 z-10 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${
+                          s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"
+                        }`}
+                      >
+                        {s.live && (
+                          <motion.span
+                            className="inline-block w-1.5 h-1.5 rounded-full bg-white mr-1.5 mb-px"
+                            animate={{ opacity: [1, 0.3, 1] }}
+                            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                          />
+                        )}
+                        {s.badge}
+                      </span>
+                      <button className="absolute top-3.5 right-3.5 z-10 w-8 h-8 rounded-full bg-bone/90 backdrop-blur-[10px] flex items-center justify-center text-sm transition-all hover:bg-white hover:scale-105">
+                        ♡
+                      </button>
+
+                      {/* Zoom via variant propagation */}
+                      <motion.div
+                        className="absolute inset-0"
+                        variants={{
+                          rest: { scale: 1 },
+                          hover: { scale: 1.07, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+                        }}
+                      >
+                        <CardCarousel imgs={s.imgs} name={s.name} />
+                      </motion.div>
+                    </div>
+
+                    {/* Card body */}
+                    <div className="p-6">
+                      <div className="flex justify-between items-center font-mono text-[10px] tracking-[.12em] uppercase text-[#5a6478] mb-2.5">
+                        <span>{s.type}</span>
+                        <motion.span
+                          className="text-ink"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={viewport}
+                          transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
+                        >
+                          ★ {s.rating}
+                        </motion.span>
+                      </div>
+                      <h3 className="font-serif text-[22px] font-normal tracking-tight mb-1.5">
+                        {s.name}
+                      </h3>
+                      <p className="text-[13px] text-[#5a6478] mb-4">{s.loc}</p>
+                      <div className="pt-4 border-t border-ink/5" />
+                    </div>
+
+                    {/* Book strip — slides up on hover */}
+                    <BookStrip />
+
+                  </TiltCard>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* ── CTA ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={t(0.5)}
+            className="flex justify-center mt-15"
+          >
+            <div className="relative">
+              {/* Pulse ring */}
               <motion.div
-                key={s.name}
-                layout
-                initial={{ opacity: 0, scale: 0.94 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.94 }}
-                transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-                whileHover={{
-                  y: -8,
-                  boxShadow:
-                    "0 20px 60px -12px rgba(15,25,41,0.18), 0 0 0 1px rgba(200,154,79,0.35)",
-                }}
-                className="bg-bone rounded-2xl overflow-hidden border border-ink/5 cursor-pointer group"
+                className="absolute inset-0 rounded-full bg-ink/15"
+                animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.button
+                onClick={() => setServicesOpen(true)}
+                whileHover={{ y: -2, boxShadow: "0 18px 44px -10px rgba(15,25,41,0.34)" }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="relative inline-flex items-center gap-2 px-20 py-4 rounded-full text-sm font-medium bg-ink text-bone border border-ink"
               >
-                <div className="relative aspect-4/3 overflow-hidden">
-                  <span
-                    className={`absolute top-3.5 left-3.5 z-10 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${
-                      s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"
-                    }`}
-                  >
-                    {s.badge}
-                  </span>
-                  <button className="absolute top-3.5 right-3.5 z-10 w-8 h-8 rounded-full bg-bone/90 backdrop-blur-[10px] flex items-center justify-center text-sm transition-all hover:bg-white hover:scale-105">
-                    ♡
-                  </button>
-                  <CardCarousel imgs={s.imgs} name={s.name} />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center font-mono text-[10px] tracking-[.12em] uppercase text-[#5a6478] mb-2.5">
-                    <span>{s.type}</span>
-                    <span className="text-ink">★ {s.rating}</span>
-                  </div>
-                  <h3 className="font-serif text-[22px] font-normal tracking-tight mb-1.5">
-                    {s.name}
-                  </h3>
-                  <p className="text-[13px] text-[#5a6478] mb-4">{s.loc}</p>
-                  <div className="pt-4 border-t border-ink/5">
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+                Book Now{" "}
+                <motion.span
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  →
+                </motion.span>
+              </motion.button>
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          transition={t(0.5)}
-          className="flex justify-center mt-15"
-        >
-          <button
-            onClick={() => setServicesOpen(true)}
-            className="inline-flex items-center gap-2 px-20 py-4 rounded-full text-sm font-medium bg-ink text-bone border border-ink transition-all duration-300 hover:-translate-y-px hover:shadow-card"
-          >
-            Book Now <span>→</span>
-          </button>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <ServiceSelectionModal
-      open={servicesOpen}
-      onClose={() => setServicesOpen(false)}
-    />
+      <ServiceSelectionModal open={servicesOpen} onClose={() => setServicesOpen(false)} />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }

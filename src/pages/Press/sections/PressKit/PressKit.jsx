@@ -87,7 +87,7 @@ export default function PressKit() {
             </motion.h2>
             <motion.p variants={fadeUp} transition={t(0.7)} className="text-bone/50 text-[15px] leading-[1.75] max-w-[400px]">
               All assets are cleared for editorial use. For commercial licensing or
-              custom requests, contact <span className="text-brand">press@wedocx.com</span>
+              custom requests, contact <span className="text-brand">info@wedocx.com</span>
             </motion.p>
           </div>
         </motion.div>
@@ -97,7 +97,7 @@ export default function PressKit() {
           {ASSETS.map((a, i) => (
             <motion.div key={i} variants={fadeUp} transition={t(0.6)}
               className="group relative border border-bone/[0.07] rounded-2xl px-6 py-6 bg-white/[0.025] hover:border-brand/30 hover:bg-white/[0.05] transition-all duration-400 cursor-pointer overflow-hidden"
-              onClick={() => window.location.href = 'mailto:press@wedocx.com?subject=Press Kit Request'}>
+              onClick={() => window.location.href = 'mailto:info@wedocx.com?subject=Press Kit Request'}>
               <div className="absolute top-0 left-[20%] right-[20%] h-px bg-brand/0 group-hover:bg-brand/55 transition-all duration-500 pointer-events-none" />
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 rounded-xl border border-bone/8 bg-white/[0.04] flex items-center justify-center text-brand transition-all duration-350 group-hover:bg-brand/15 group-hover:border-brand/25">

@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t } from '../../../../animations/variants'
+import { mediaAndPress } from '../../../../assets/images'
 
 export default function PressHero() {
   return (
-    <section className="relative pt-44 pb-28 px-10 max-sm:pt-32 max-sm:px-5 bg-parchment overflow-hidden">
+    <section
+      className="relative pt-44 pb-28 px-10 max-sm:pt-32 max-sm:px-5 overflow-hidden"
+      style={{ backgroundImage: `url(${mediaAndPress})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      <div className="absolute inset-0 bg-parchment/85 pointer-events-none" />
       <div className="section-ring section-ring-600 section-ring-light absolute -right-52 top-12 pointer-events-none opacity-40" />
       <div className="section-ring section-ring-480 section-ring-light absolute -left-60 bottom-0 pointer-events-none opacity-20" />
       <motion.div
@@ -34,7 +39,7 @@ export default function PressHero() {
 
         <motion.div variants={fadeUp} transition={t()} className="flex gap-3 flex-wrap mb-16">
           <motion.a
-            href="mailto:press@wedocx.com"
+            href="mailto:info@wedocx.com"
             whileHover={{ y: -1, boxShadow: '0 12px 30px -12px rgba(15,25,41,.55)' }} whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-ink text-bone transition-all">
             Press enquiry <span>→</span>

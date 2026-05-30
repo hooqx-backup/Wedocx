@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import { generalServ, dentalServ, dermatologyServ, pediatricianServ, treatmentServ } from '../../../../assets/images'
 import './SpecialtyRooms.css'
 
 const SPECIALTIES = [
@@ -9,36 +10,35 @@ const SPECIALTIES = [
     title: <>General <em>Practice.</em></>,
     desc: '28 m² suite with adjustable exam table, full diagnostic kit and in-room hand-wash.',
     chips: ['28 m²', 'DHA-Spec', 'ECG'],
+    img: generalServ,
   },
   {
     cls: 'svc-sc-2', num: '02 / DENTISTRY',
     title: <><em>Dental</em> Suite.</>,
     desc: 'A-Dec 500 chair, intraoral imaging, three-handpiece line, Class-B autoclave on every floor.',
     chips: ['A-Dec 500', 'Class B', 'RVG'],
+    img: dentalServ,
   },
   {
     cls: 'svc-sc-3', num: '03 / DERMATOLOGY',
     title: <><em>Dermatology</em>.</>,
     desc: '5500K full-spectrum lighting, dermatoscope, Wood\'s lamp and reclining procedure chair.',
     chips: ['5500K', 'CRI 95', 'Dermlite'],
+    img: dermatologyServ,
   },
   {
-    cls: 'svc-sc-4', num: '04 / PHYSIOTHERAPY',
-    title: <><em>Physiotherapy</em>.</>,
-    desc: 'Open treatment plinth, wall resistance system, US & TENS, 9m² padded floor zone.',
-    chips: ['42 m²', 'Hi-Lo', 'US/TENS'],
+    cls: 'svc-sc-4', num: '04 / PEDIATRICIAN',
+    title: <><em>Pediatrician</em> Suite.</>,
+    desc: 'Child-safe exam table, growth-chart station, separate waiting nook, and paediatric diagnostic kit.',
+    chips: ['Child-Safe', 'Growth Kit', 'Private'],
+    img: pediatricianServ,
   },
   {
-    cls: 'svc-sc-5', num: '05 / PSYCHOLOGY',
-    title: <><em>Psychology</em>.</>,
-    desc: '45 dB sound-isolating door, warm 2700K lighting, angled armchairs, private back exit.',
-    chips: ['45 dB', '2700K', 'Private'],
-  },
-  {
-    cls: 'svc-sc-6', num: '06 / AESTHETICS',
-    title: <><em>Aesthetics</em>.</>,
-    desc: 'Reclining treatment bed, mag-x10 lamp, refrigerated stock cabinet, private vanity nook.',
-    chips: ['Mag x10', 'Cold-Lock', 'Vanity'],
+    cls: 'svc-sc-5', num: '05 / TREATMENT ROOM',
+    title: <><em>Treatment</em> Room.</>,
+    desc: 'Fully equipped procedure room with surgical lighting, infusion recliner, and sterile prep zone.',
+    chips: ['Surgical Light', 'Infusion', 'Sterile'],
+    img: treatmentServ,
   },
 ]
 
@@ -104,7 +104,10 @@ export default function SpecialtyRooms() {
           <div className="svc-spec-track">
             {SPECIALTIES.map((s, i) => (
               <article key={i} className={`svc-sc ${s.cls}`}>
-                <div className="svc-sc-bg" />
+                <div
+                  className="svc-sc-bg"
+                  style={s.img ? { backgroundImage: `url(${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+                />
                 <span className="svc-sc-meta">{s.num}</span>
                 <div className="svc-sc-corner"><ArrowSvg /></div>
                 <div className="svc-sc-text">

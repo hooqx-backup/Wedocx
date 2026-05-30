@@ -1,12 +1,13 @@
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { fadeUp, stagger, t } from '../../../../animations/variants'
 import { useRef } from 'react'
+import { contactBanner } from '../../../../assets/images'
 
 const quickCards = [
   {
     label: 'Email — Fastest',
-    value: 'hello@wedocx.co',
-    href: 'mailto:hello@wedocx.co',
+    value: 'info@wedocx.com',
+    href: 'mailto:info@wedocx.com',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
         <path d="M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l2-2h14l2 2" />
@@ -84,7 +85,11 @@ function QuickCard({ card, delay }) {
 
 export default function Hero() {
   return (
-    <section className="relative pt-44 pb-0 px-10 max-sm:pt-32 max-sm:px-5 overflow-hidden">
+    <section
+      className="relative pt-44 pb-0 px-10 max-sm:pt-32 max-sm:px-5 overflow-hidden"
+      style={{ backgroundImage: `url(${contactBanner})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      <div className="absolute inset-0 bg-bone/85 pointer-events-none" />
       {/* Decorative rings */}
       <div className="section-ring section-ring-600 section-ring-light absolute -right-52 top-16 pointer-events-none opacity-55" />
       <div className="section-ring section-ring-480 section-ring-light absolute -left-60 bottom-0 pointer-events-none opacity-30" />
@@ -102,7 +107,7 @@ export default function Hero() {
         variants={stagger(0.1)}
         initial="hidden"
         animate="visible"
-        className="max-w-360 mx-auto"
+        className="max-w-360 mx-auto relative z-10"
       >
         <div className="grid lg:grid-cols-[1.15fr_.85fr] grid-cols-1 gap-16 items-end">
 
