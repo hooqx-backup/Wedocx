@@ -3,6 +3,7 @@ import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 import ServiceSelectionModal from '../../../../components/booking/ServiceSelectionModal'
 import { useState } from 'react'
 import './Hero.css'
+import { servicesHero } from '../../../../assets/images'
 
 const SIDEBAR_ITEMS = [
   { label: 'Today',    active: true },
@@ -45,7 +46,11 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative pt-[140px] pb-20 px-10 max-sm:pt-28 max-sm:px-5 overflow-hidden">
+      <section
+        className="relative pt-35 pb-20 px-10 max-sm:pt-28 max-sm:px-5 overflow-hidden"
+        style={{ backgroundImage: `url(${servicesHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-bone/85 pointer-events-none" />
         {/* Background rings */}
         <span className="svc-hero-ring absolute rounded-full border border-gold/[0.22] pointer-events-none" style={{ right: -200, top: -100, width: 700, height: 700 }} />
         <span className="svc-hero-ring absolute rounded-full border border-gold/[0.18] pointer-events-none" style={{ right: -100, top: 0, width: 520, height: 520 }} />

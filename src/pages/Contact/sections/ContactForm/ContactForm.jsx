@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import { servicesHero } from '../../../../assets/images'
 
 const chips = [
   { label: 'Booking a tour', value: 'tour' },
@@ -84,18 +85,31 @@ export default function ContactForm() {
       if (!result.ok) throw new Error(result.error || 'Server error')
       setSuccess(true)
     } catch {
-      alert('Could not send right now. Please email hello@wedocx.co directly.')
+      alert('Could not send right now. Please email info@wedocx.com directly.')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <section id="contact-form" className="py-30 px-10 max-sm:px-5 max-sm:py-20 bg-parchment border-t border-b border-ink/6 relative overflow-hidden">
+    <section id="contact-form" className="py-30 px-10 max-sm:px-5 max-sm:py-20 border-t border-b border-ink/6 relative overflow-hidden">
+      {/* Background image with blur */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url(${servicesHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(2px)',
+          transform: 'scale(1.01)',
+        }}
+      />
+      {/* Light overlay to preserve readability */}
+      <div className="absolute inset-0 bg-parchment/80 pointer-events-none" />
       {/* Decorative ring */}
       <div className="section-ring section-ring-600 section-ring-light absolute -left-60 top-1/2 -translate-y-1/2 pointer-events-none opacity-35" />
 
-      <div className="max-w-360 mx-auto">
+      <div className="max-w-360 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-14">
           <span className="w-9 h-px bg-ink block" />
           <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 — Write to us</span>

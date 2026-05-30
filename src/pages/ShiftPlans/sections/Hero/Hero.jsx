@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { fadeUp, stagger, t } from '../../../../animations/variants'
 import ServiceSelectionModal from '../../../../components/booking/ServiceSelectionModal'
 import './Hero.css'
+import { shiftPlans } from '../../../../assets/images'
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
 // rows = times, cols = days  —  mine | other | avail | empty
@@ -106,7 +107,11 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative pt-44 pb-0 px-10 max-sm:pt-32 max-sm:px-5 overflow-visible">
+      <section
+        className="relative pt-44 pb-0 px-10 max-sm:pt-32 max-sm:px-5 overflow-visible"
+        style={{ backgroundImage: `url(${shiftPlans})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-bone/85 pointer-events-none" />
         <div className="section-ring section-ring-600 section-ring-light absolute -right-52 top-12 pointer-events-none opacity-50" />
         <div className="section-ring section-ring-480 section-ring-light absolute -left-60 bottom-0 pointer-events-none opacity-25" />
 

@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { logoWhite } from '../../../assets/images'
+import { logoWhite, servicesHero } from '../../../assets/images'
 import { fadeUp, stagger, t, viewport } from '../../../animations/variants'
 import { Link } from 'react-router-dom'
+
+const WHATSAPP_NUMBER = '917003634890'
 
 const cols = [
   {
@@ -22,16 +25,42 @@ const cols = [
   {
     heading: 'Legal',
     links: [
-      { label: 'Terms & Conditions', to: '/coming-soon' },
-      { label: 'Privacy Policy',     to: '/coming-soon' },
-      { label: 'Compliance',         to: '/coming-soon' },
+      { label: 'Terms & Conditions', to: '/terms' },
+      { label: 'Privacy Policy',     to: '/privacy' },
+      { label: 'Compliance',         to: '/compliance' },
     ],
   },
 ]
 
 export default function Footer() {
+  const [brochureEmail, setBrochureEmail] = useState('')
+
+  const handleBrochureSubmit = (e) => {
+    e.preventDefault()
+    if (!brochureEmail.trim()) return
+    const msg = encodeURIComponent(
+      `Hi Wedocx Team, I'd like to receive the practitioner brochure. Please send it to: ${brochureEmail}`
+    )
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank', 'noopener,noreferrer')
+    setBrochureEmail('')
+  }
+
   return (
     <footer className="footer-glass-shell relative overflow-hidden text-bone">
+      {/* Blurred background image */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url(${servicesHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(6px)',
+          transform: 'scale(1.03)',
+        }}
+      />
+      {/* Dark overlay to keep content readable */}
+      <div className="absolute inset-0 bg-ink/80 pointer-events-none" />
+
       <div className="footer-blob footer-blob-a" />
       <div className="footer-blob footer-blob-b" />
       <div className="footer-blob footer-blob-c" />
@@ -56,9 +85,11 @@ export default function Footer() {
                 </p>
 
                 <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Practitioner brief</p>
-                <form className="footer-form flex gap-2" onSubmit={e => e.preventDefault()}>
+                <form className="footer-form flex gap-2" onSubmit={handleBrochureSubmit}>
                   <input
                     type="email"
+                    value={brochureEmail}
+                    onChange={e => setBrochureEmail(e.target.value)}
                     placeholder="Get the practitioner brochure ->"
                     className="footer-input flex-1 min-w-0 px-4 py-2.5 rounded-full text-[13px] text-bone placeholder:text-bone/45 outline-none transition-all border border-white/20 focus:border-brand/80"
                   />

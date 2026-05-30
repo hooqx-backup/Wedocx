@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import { doctorServ } from '../../../../assets/images'
 import './HowItWorks.css'
 
 const STEPS = [
@@ -89,7 +90,10 @@ export default function HowItWorks() {
 
           {/* Left – sticky stage */}
           <div className="svc-stage">
-            <div className="svc-stage-inner">
+            <div
+              className="svc-stage-inner"
+              style={{ backgroundImage: `url(${doctorServ})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+            >
               {STEPS.map((s, i) => (
                 <div key={i} className={`svc-scene svc-scene-${i + 1}${active === i ? ' act' : ''}`} />
               ))}

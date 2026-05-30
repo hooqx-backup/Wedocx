@@ -64,7 +64,7 @@ export default function OpenRoles() {
           {ROLES.map((role, i) => (
             <motion.div key={i} variants={fadeUp} transition={t(0.7)}
               className="group border border-ink/8 rounded-2xl bg-white/60 hover:bg-white hover:shadow-card transition-all duration-350 overflow-hidden cursor-pointer"
-              onClick={() => window.location.href = 'mailto:careers@wedocx.com?subject=' + encodeURIComponent(role.title)}>
+              onClick={() => window.location.href = 'mailto:info@wedocx.com?subject=' + encodeURIComponent(role.title)}>
               <div className="p-7 grid lg:grid-cols-[1fr_auto] grid-cols-1 gap-6 items-center">
                 <div>
                   <div className="flex flex-wrap items-center gap-3 mb-3">

@@ -29,22 +29,18 @@
 .svc-sc-bg {
   position: absolute; inset: 0;
 }
+/* Bottom-to-top dark scrim — keeps text legible over any photo */
 .svc-sc-bg::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(15,25,41,.85) 100%);
+  background: linear-gradient(180deg, rgba(15,25,41,.18) 0%, rgba(15,25,41,.92) 100%);
 }
+/* Subtle scanline texture only — radial glow removed for photo cards */
 .svc-sc-bg::before {
   content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(80% 60% at 30% 25%, rgba(255,240,210,.45), transparent 65%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 22px);
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 22px);
 }
-.svc-sc-1 .svc-sc-bg { background: linear-gradient(135deg, #2a1f15 0%, #6c4e2c 45%, #caa56a 100%); }
-.svc-sc-2 .svc-sc-bg { background: linear-gradient(135deg, #1c2536 0%, #445770 45%, #9fb2c8 100%); }
-.svc-sc-3 .svc-sc-bg { background: linear-gradient(135deg, #36231d 0%, #7c5340 45%, #d4a589 100%); }
-.svc-sc-4 .svc-sc-bg { background: linear-gradient(135deg, #1d2e25 0%, #456a55 45%, #9fc4ad 100%); }
-.svc-sc-5 .svc-sc-bg { background: linear-gradient(135deg, #2a1f30 0%, #5d4970 45%, #bca0d4 100%); }
-.svc-sc-6 .svc-sc-bg { background: linear-gradient(135deg, #2f1d20 0%, #7a4a52 45%, #d9a8a8 100%); }
+/* Dark fallback for all cards (photo loaded via inline style) */
+.svc-sc .svc-sc-bg { background: #1a1a1a; }
 
 /* Meta label */
 .svc-sc-meta {

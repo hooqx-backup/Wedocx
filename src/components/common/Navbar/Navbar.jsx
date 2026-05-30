@@ -30,73 +30,23 @@ const overlayVariants = {
   open:   { opacity: 1, transition: { duration: 0.3 } },
 }
 
-/* ── Premium glass nav-link variants ── */
-const glassVariants = {
-  idle:    { opacity: 0, scale: 0.86 },
-  active:  { opacity: 0.52, scale: 1  },
-  hovered: { opacity: 1,   scale: 1   },
-}
-const glowVariants = {
-  idle:    { opacity: 0   },
-  active:  { opacity: 0.4 },
-  hovered: { opacity: 1   },
-}
-const floatVariants = {
-  idle:    { y: 0  },
-  active:  { y: 0  },
-  hovered: { y: -4 },
-}
-const springEase   = [0.22, 1, 0.36, 1]
-const smoothEase   = [0.2, 0.8, 0.2, 1]
-
 function NavItem({ to, label, onClick }) {
   const { pathname } = useLocation()
   const isActive = to === '/' ? pathname === '/' : pathname.startsWith(to)
 
   return (
-    <motion.div
-      className="relative nav-link"
-      style={{ isolation: 'isolate' }}
-      initial="idle"
-      whileHover="hovered"
-      animate={isActive ? 'active' : 'idle'}
-    >
-      {/* Layer 1 – radial glow spread (renders behind glass) */}
-      <motion.span
-        aria-hidden
-        className="nav-link-glow absolute pointer-events-none"
-        style={{ inset: '-20px', borderRadius: '28px', zIndex: 0 }}
-        variants={glowVariants}
-        transition={{ duration: 0.4, ease: smoothEase }}
-      />
-
-      {/* Layer 2 – frosted glass pill */}
-      <motion.span
-        aria-hidden
-        className="nav-link-glass absolute inset-0 pointer-events-none"
-        style={{ borderRadius: '11px', zIndex: 1 }}
-        variants={glassVariants}
-        transition={{ duration: 0.26, ease: smoothEase }}
-      />
-
-      {/* Layer 3 – link text (floats upward on hover) */}
-      <motion.div
-        style={{ position: 'relative', zIndex: 2 }}
-        variants={floatVariants}
-        transition={{ duration: 0.3, ease: springEase }}
+    <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+      <Link
+        to={to}
+        onClick={onClick}
+        className={`footer-link block px-4 py-2.25 text-[13.5px] tracking-[0.01em] select-none transition-colors duration-200 ${
+          isActive
+            ? 'text-ink font-medium'
+            : 'font-normal text-ink/75 hover:text-ink'
+        }`}
       >
-        <Link
-          to={to}
-          onClick={onClick}
-          className={`block px-4 py-2.25 text-[13.5px] tracking-[0.01em] select-none transition-colors duration-200 ${
-            isActive
-              ? 'text-ink font-medium'
-              : 'font-normal text-ink/75 hover:text-ink'
-          }`}
-        >
-          {label}
-        </Link>
-      </motion.div>
+        {label}
+      </Link>
     </motion.div>
   )
 }
@@ -149,7 +99,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <nav className="hidden lg:flex items-center gap-3">
+          <nav className="hidden lg:flex items-center gap-7">
             {links.map(l => (
               <NavItem key={l.label} to={l.href} label={l.label} />
             ))}

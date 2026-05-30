@@ -61,7 +61,7 @@ export default function ContactCta() {
               Book a tour <span>→</span>
             </motion.button>
             <motion.a
-              href="mailto:founders@wedocx.co"
+              href="mailto:info@wedocx.com"
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium text-bone border border-bone/25 transition-all hover:border-bone/60"

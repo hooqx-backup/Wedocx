@@ -47,7 +47,7 @@ export default function CareersHero() {
             className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-brand text-ink transition-all cursor-pointer">
             See open roles <span>→</span>
           </motion.a>
-          <motion.a href="mailto:careers@wedocx.com" whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}
+          <motion.a href="mailto:info@wedocx.com" whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium text-bone border border-bone/25 transition-all hover:border-bone/60">
             Send your CV
           </motion.a>
