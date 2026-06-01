@@ -1,56 +1,51 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import { generalServ, dentalServ, dermatologyServ, pediatricianServ, psychologyServ, aestheticsServ } from '../../../../assets/images'
 import './SuiteTypes.css'
 
 const SUITES = [
   {
     num: '01 / GENERAL PRACTICE',
-    gradient: 'linear-gradient(160deg,#1a2535 0%,#2a3a52 40%,#1f3048 70%,#142038 100%)',
+    img: generalServ,
     title: <>General <em>Practice.</em></>,
     desc: '28 m² suite with adjustable hi-lo exam table, full diagnostic kit, hand-wash and dedicated waiting nook.',
     chips: ['28 m²', 'DHA-Spec', 'ECG', 'Hi-Lo'],
-    accent: 'rgba(58,138,200,.6)',
   },
   {
     num: '02 / DENTISTRY',
-    gradient: 'linear-gradient(160deg,#251a10 0%,#3d2c18 40%,#52391f 70%,#3a2710 100%)',
+    img: dentalServ,
     title: <><em>Dental</em> Suite.</>,
     desc: 'A-Dec 500 chair, intraoral sensor RVG, three-handpiece line and a Class-B autoclave on every floor.',
     chips: ['A-Dec 500', 'Class B', 'RVG', 'X-Ray'],
-    accent: 'rgba(200,154,79,.6)',
   },
   {
     num: '03 / DERMATOLOGY',
-    gradient: 'linear-gradient(160deg,#1a1025 0%,#2c1a3d 40%,#3a2252 70%,#241538 100%)',
+    img: dermatologyServ,
     title: <><em>Dermatology.</em></>,
     desc: '5500 K full-spectrum lighting, dermatoscope, Wood\'s lamp, reclining procedure chair and blackout blinds.',
     chips: ['5500K', 'CRI 95', 'Dermlite', 'Procedure'],
-    accent: 'rgba(160,100,200,.6)',
   },
   {
-    num: '04 / PHYSIOTHERAPY',
-    gradient: 'linear-gradient(160deg,#0f2018 0%,#1a3826 40%,#224830 70%,#123020 100%)',
-    title: <><em>Physiotherapy.</em></>,
-    desc: 'Open treatment plinth, wall resistance system, ultrasound & TENS, 9 m² padded floor zone.',
-    chips: ['42 m²', 'Hi-Lo', 'US/TENS', 'Padded'],
-    accent: 'rgba(58,180,100,.6)',
+    num: '04 / PEDIATRICIAN',
+    img: pediatricianServ,
+    title: <><em>Pediatrician</em> Suite.</>,
+    desc: 'Child-safe exam table, growth-chart station, separate waiting nook, and paediatric diagnostic kit.',
+    chips: ['Child-Safe', 'Growth Kit', 'Private'],
   },
   {
     num: '05 / PSYCHOLOGY',
-    gradient: 'linear-gradient(160deg,#181018 0%,#26182a 40%,#30203a 70%,#1e1222 100%)',
+    img: psychologyServ,
     title: <><em>Psychology.</em></>,
     desc: '45 dB sound-isolating door, warm 2700 K lighting, angled armchairs, white-noise panel and private back exit.',
     chips: ['45 dB', '2700K', 'Private', 'White-noise'],
-    accent: 'rgba(180,130,200,.6)',
   },
   {
     num: '06 / AESTHETICS',
-    gradient: 'linear-gradient(160deg,#251818 0%,#3d2020 40%,#4a2828 70%,#321818 100%)',
+    img: aestheticsServ,
     title: <><em>Aesthetics.</em></>,
     desc: 'Reclining treatment bed, mag-x10 procedure lamp, refrigerated stock cabinet, private vanity nook and UV sterilizer.',
     chips: ['Mag x10', 'Cold-Lock', 'Vanity', 'UV-Steril'],
-    accent: 'rgba(200,100,100,.6)',
   },
 ]
 
@@ -114,11 +109,10 @@ export default function SuiteTypes() {
             <div className="cs-st-track">
               {SUITES.map((s, i) => (
                 <article key={i} className="cs-st-card">
-                  <div className="cs-st-bg" style={{ background: s.gradient }}>
-                    {/* Accent glow at top */}
-                    <div className="absolute inset-0 pointer-events-none"
-                      style={{ background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${s.accent}, transparent 60%)`, opacity: 0.5 }} />
-                  </div>
+                  <div
+                    className="cs-st-bg"
+                    style={{ backgroundImage: `url(${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  />
                   <div className="cs-st-blueprint" />
                   <div className="cs-st-overlay" />
                   <span className="cs-st-num">{s.num}</span>

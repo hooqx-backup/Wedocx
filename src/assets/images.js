@@ -97,7 +97,10 @@ import dentalServ       from './images/dentalserv.jpg'
 import dermatologyServ  from './images/dermatologyserv.jpg'
 import pediatricianServ from './images/pediatricianserv.jpg'
 import treatmentServ    from './images/treatmentserv.jpg'
-export { generalServ, dentalServ, dermatologyServ, pediatricianServ, treatmentServ, doctorServ }
+import physioServ       from './images/treatment4.jpg'
+import psychologyServ   from './images/treatmentroom3.jpg'
+import aestheticsServ   from './images/treatmentroom.jpg'
+export { generalServ, dentalServ, dermatologyServ, pediatricianServ, treatmentServ, doctorServ, physioServ, psychologyServ, aestheticsServ }
 
 // ── Video ─────────────────────────────────────────────────────────────────────
 import tourVideo from './videos/Blue Modern Thank You For Watching Health Video.mp4'

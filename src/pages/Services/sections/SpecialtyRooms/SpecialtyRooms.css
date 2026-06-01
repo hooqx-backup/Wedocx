@@ -29,17 +29,18 @@
 .svc-sc-bg {
   position: absolute; inset: 0;
 }
-/* Bottom-to-top dark scrim — keeps text legible over any photo */
+/* Gradient scrim — transparent at top so image shows, dark at bottom for text */
 .svc-sc-bg::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(15,25,41,.18) 0%, rgba(15,25,41,.92) 100%);
+  background: linear-gradient(180deg,
+    rgba(15,25,41,.08) 0%,
+    rgba(15,25,41,.18) 35%,
+    rgba(15,25,41,.72) 65%,
+    rgba(15,25,41,.93) 100%
+  );
 }
-/* Subtle scanline texture only — radial glow removed for photo cards */
-.svc-sc-bg::before {
-  content: ''; position: absolute; inset: 0;
-  background: repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 22px);
-}
-/* Dark fallback for all cards (photo loaded via inline style) */
+.svc-sc-bg::before { content: none; }
+/* Dark fallback when photo hasn't loaded yet */
 .svc-sc .svc-sc-bg { background: #1a1a1a; }
 
 /* Meta label */

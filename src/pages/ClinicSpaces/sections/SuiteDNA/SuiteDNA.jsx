@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
+import suiteBg from '../../../../assets/images/pathway1.jpg'
 
 const features = [
   {
@@ -54,7 +55,13 @@ const features = [
 
 export default function SuiteDNA() {
   return (
-    <section className="py-30 px-10 max-sm:px-5 max-sm:py-20 bg-ink text-bone relative overflow-hidden">
+    <section className="py-30 px-10 max-sm:px-5 max-sm:py-20 text-bone relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img src={suiteBg} alt="" className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-ink/82" />
+      </div>
+
       {/* Gold blob glow */}
       <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(200,154,79,.18), transparent 65%)', filter: 'blur(40px)' }} />

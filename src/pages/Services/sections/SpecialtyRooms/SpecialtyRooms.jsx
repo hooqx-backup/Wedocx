@@ -8,22 +8,22 @@ const SPECIALTIES = [
   {
     cls: 'svc-sc-1', num: '01 / GENERAL PRACTICE',
     title: <>General <em>Practice.</em></>,
-    desc: '28 m² suite with adjustable exam table, full diagnostic kit and in-room hand-wash.',
-    chips: ['28 m²', 'DHA-Spec', 'ECG'],
+    desc: '28 m² suite with adjustable hi-lo exam table, full diagnostic kit, hand-wash and dedicated waiting nook.',
+    chips: ['28 m²', 'DHA-Spec', 'ECG', 'Hi-Lo'],
     img: generalServ,
   },
   {
     cls: 'svc-sc-2', num: '02 / DENTISTRY',
     title: <><em>Dental</em> Suite.</>,
-    desc: 'A-Dec 500 chair, intraoral imaging, three-handpiece line, Class-B autoclave on every floor.',
-    chips: ['A-Dec 500', 'Class B', 'RVG'],
+    desc: 'A-Dec 500 chair, intraoral sensor RVG, three-handpiece line and a Class-B autoclave on every floor.',
+    chips: ['A-Dec 500', 'Class B', 'RVG', 'X-Ray'],
     img: dentalServ,
   },
   {
     cls: 'svc-sc-3', num: '03 / DERMATOLOGY',
     title: <><em>Dermatology</em>.</>,
-    desc: '5500K full-spectrum lighting, dermatoscope, Wood\'s lamp and reclining procedure chair.',
-    chips: ['5500K', 'CRI 95', 'Dermlite'],
+    desc: '5500K full-spectrum lighting, dermatoscope, Wood\'s lamp, reclining procedure chair and blackout blinds.',
+    chips: ['5500K', 'CRI 95', 'Dermlite', 'Procedure'],
     img: dermatologyServ,
   },
   {

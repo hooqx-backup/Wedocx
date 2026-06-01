@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 import ServiceSelectionModal from '../../../../components/booking/ServiceSelectionModal'
-import { useState } from 'react'
+import bringYourBg from '../../../../assets/images/bringyoursection.jpg'
 
 export default function AboutCta() {
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -14,8 +15,14 @@ export default function AboutCta() {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="max-w-360 mx-auto bg-ink text-bone rounded-4xl px-15 py-20 max-lg:px-7 max-lg:py-12 relative overflow-hidden grid lg:grid-cols-[1.3fr_1fr] grid-cols-1 gap-15 items-center"
+          className="max-w-360 mx-auto text-bone rounded-4xl px-15 py-20 max-lg:px-7 max-lg:py-12 relative overflow-hidden grid lg:grid-cols-[1.3fr_1fr] grid-cols-1 gap-15 items-center"
         >
+          {/* Background image with dark overlay */}
+          <div className="absolute inset-0 pointer-events-none">
+            <img src={bringYourBg} alt="" className="w-full h-full object-cover object-center" />
+            <div className="absolute inset-0 bg-ink/80" />
+          </div>
+
           <div className="absolute -top-75 -left-25 w-150 h-150 rounded-full pointer-events-none"
             style={{ background: 'radial-gradient(circle, rgba(200,154,79,.2), transparent 65%)' }} />
           <div className="section-ring section-ring-480 section-ring-dark absolute -bottom-37.5 -right-37.5" />
