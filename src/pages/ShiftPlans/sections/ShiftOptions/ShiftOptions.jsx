@@ -6,48 +6,14 @@ import ServiceSelectionModal from '../../../../components/booking/ServiceSelecti
 const OPTIONS = [
   {
     rn: 'i.',
-    name: 'Flex Hour',
-    sub: 'Drop-in · 1h minimum',
-    price: '180', unit: 'AED/hr',
-    tag: 'Pay as you go',
+    name: '2h · Morning',
+    sub: '6 AM – 2 PM · 2 hours',
+    price: '6,000', unit: 'AED',
+    tag: 'Morning shift',
     tagColor: 'text-emerald-600 border-emerald-600/30 bg-emerald-50',
     gradient: 'from-[#f5ecdc] to-[#ebe0c9]',
-    desc: 'One consultation, one afternoon clinic, one second-opinion session. No commitment beyond the hour.',
-    details: ['Any suite, any city', 'Cancel up to 24h before', 'Reception & intake included', 'Sterilization between patients'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" className="w-6 h-6">
-        <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
-      </svg>
-    ),
-  },
-  {
-    rn: 'ii.',
-    name: 'Half-Day Block',
-    sub: 'Morning or afternoon · 4h',
-    price: '620', unit: 'AED / block',
-    tag: 'Best for specialists',
-    tagColor: 'text-blue-700 border-blue-600/30 bg-blue-50',
-    gradient: 'from-[#f0e8da] to-[#e5d8c6]',
-    desc: 'A dedicated 4-hour window — 08:00–12:00 or 13:00–17:00. Same room, same reception briefing, every time.',
-    details: ['Fixed 4h window AM or PM', 'Pre-loaded EMR access', 'Patient reminders sent', 'Consumables restocked'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/>
-      </svg>
-    ),
-  },
-  {
-    rn: 'iii.',
-    name: 'Full Day',
-    sub: '08:00 – 18:00 · 10h',
-    price: '980', unit: 'AED / day',
-    tag: 'Most booked',
-    tagColor: 'text-brand border-brand/30 bg-brand/8',
-    featured: true,
-    gradient: 'from-[#0f1929] to-[#1a2538]',
-    dark: true,
-    desc: 'Your suite all day. Maximum patient throughput, your name at reception, lunch break on us.',
-    details: ['10-hour dedicated room', 'Full front-desk team', 'Insurance claims live', 'Complimentary lunch break'],
+    desc: 'A focused 2-hour morning window. Ideal for quick consultations, follow-ups, and second-opinion sessions.',
+    details: ['6 AM – 2 PM window', 'Any suite, any city', 'Reception & intake included', 'Sterilization between patients'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
@@ -55,31 +21,65 @@ const OPTIONS = [
     ),
   },
   {
-    rn: 'iv.',
-    name: 'Weekend Session',
-    sub: 'Saturday · flexible slots',
-    price: '640', unit: 'AED / day',
-    tag: 'Private practice',
-    tagColor: 'text-purple-700 border-purple-500/30 bg-purple-50',
-    gradient: 'from-[#f5ecdc] to-[#ebe0c9]',
-    desc: 'Saturdays are our quietest, most focused days. Bring your private patients without the weekday pace.',
-    details: ['Saturday 08:00–18:00', 'Reduced network traffic', 'Same full operations team', 'Ideal for aesthetics & psych'],
+    rn: 'ii.',
+    name: '2h · Afternoon',
+    sub: '2 PM – 10 PM · 2 hours',
+    price: '5,000', unit: 'AED',
+    tag: 'Afternoon shift',
+    tagColor: 'text-blue-700 border-blue-600/30 bg-blue-50',
+    gradient: 'from-[#f0e8da] to-[#e5d8c6]',
+    desc: 'A clean 2-hour afternoon slot. Perfect for practitioners who run morning rounds elsewhere.',
+    details: ['2 PM – 10 PM window', 'Pre-loaded EMR access', 'Patient reminders sent', 'Consumables restocked'],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" className="w-6 h-6">
+        <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+      </svg>
+    ),
+  },
+  {
+    rn: 'iii.',
+    name: '8h · Morning',
+    sub: '6 AM – 2 PM · 8 hours',
+    price: '18,000', unit: 'AED',
+    tag: 'Most booked',
+    tagColor: 'text-brand border-brand/30 bg-brand/8',
+    featured: true,
+    gradient: 'from-[#0f1929] to-[#1a2538]',
+    dark: true,
+    desc: 'Full morning shift — maximum patient throughput, your name at reception, fully staffed suite all morning.',
+    details: ['6 AM – 2 PM · 8-hour dedicated room', 'Full front-desk team', 'Insurance claims live', 'Complimentary break'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/>
+      </svg>
+    ),
+  },
+  {
+    rn: 'iv.',
+    name: '2h · Night',
+    sub: '10 PM – 6 AM · 2 hours',
+    price: '4,000', unit: 'AED',
+    tag: 'Night shift',
+    tagColor: 'text-purple-700 border-purple-500/30 bg-purple-50',
+    gradient: 'from-[#f5ecdc] to-[#ebe0c9]',
+    desc: 'A quiet 2-hour night window for private patients and specialist consultations away from peak hours.',
+    details: ['10 PM – 6 AM window', 'Reduced network traffic', 'Same full operations team', 'Ideal for private practice'],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
       </svg>
     ),
   },
   {
     rn: 'v.',
-    name: 'Weekly Resident',
-    sub: '2 days/wk · monthly plan',
-    price: '4,800', unit: 'AED / mo',
-    tag: 'Fixed schedule',
+    name: '8h · Afternoon',
+    sub: '2 PM – 10 PM · 8 hours',
+    price: '15,000', unit: 'AED',
+    tag: 'Afternoon shift',
     tagColor: 'text-gold border-gold/30 bg-gold/8',
     gradient: 'from-[#f0e8da] to-[#e5d8c6]',
-    desc: 'Two reserved practice days per week. Same room, same team, same patients — every week.',
-    details: ['Reserved suite & slot', 'Insurance enrollment', 'Wedocx directory listing', 'License compliance support'],
+    desc: 'A full 8-hour afternoon shift. Same dedicated suite, same team — ideal for high-volume afternoon clinics.',
+    details: ['2 PM – 10 PM · 8-hour room', 'Full front-desk support', 'Insurance enrollment', 'Wedocx directory listing'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
@@ -89,14 +89,14 @@ const OPTIONS = [
   },
   {
     rn: 'vi.',
-    name: 'Anchor Floor',
-    sub: '2–6 suites · custom fit-out',
-    price: '24k+', unit: 'AED / mo',
-    tag: 'Enterprise',
+    name: '8h · Night',
+    sub: '10 PM – 6 AM · 8 hours',
+    price: '12,000', unit: 'AED',
+    tag: 'Night shift',
     tagColor: 'text-ink border-ink/30 bg-ink/6',
     gradient: 'from-[#f5ecdc] to-[#ebe0c9]',
-    desc: 'A dedicated floor under your brand. Custom equipment, your team, multi-city portability.',
-    details: ['2–6 dedicated suites', 'Custom branding', 'Dedicated front-desk', 'Multi-city portability'],
+    desc: 'Eight focused hours through the night. Best for specialists requiring privacy, calm, and uninterrupted time.',
+    details: ['10 PM – 6 AM · 8-hour room', 'Quietest network hours', 'Dedicated front-desk', 'Full ops support'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <path d="M3 9l9-6 9 6v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/>
@@ -105,8 +105,34 @@ const OPTIONS = [
   },
 ]
 
+const CORNERS = [
+  { pos: 'top-4 left-4',     sides: 'border-t border-l', origin: 'top left',     delay: '0ms'   },
+  { pos: 'top-4 right-4',    sides: 'border-t border-r', origin: 'top right',    delay: '55ms'  },
+  { pos: 'bottom-4 left-4',  sides: 'border-b border-l', origin: 'bottom left',  delay: '110ms' },
+  { pos: 'bottom-4 right-4', sides: 'border-b border-r', origin: 'bottom right', delay: '165ms' },
+]
+
+function CornerBrackets({ on, dark }) {
+  const color = dark ? 'border-brand/70' : 'border-gold/55'
+  return <>
+    {CORNERS.map((c, k) => (
+      <span
+        key={k}
+        className={`absolute w-4.5 h-4.5 pointer-events-none ${color} ${c.pos} ${c.sides}`}
+        style={{
+          opacity: on ? 1 : 0,
+          transform: on ? 'scale(1)' : 'scale(0.25)',
+          transformOrigin: c.origin,
+          transition: `opacity 0.35s ${c.delay} ease, transform 0.35s ${c.delay} ease`,
+        }}
+      />
+    ))}
+  </>
+}
+
 function OptionCard({ opt, i, onBook }) {
   const [expanded, setExpanded] = useState(false)
+  const [hovered, setHovered] = useState(false)
 
   return (
     <motion.div
@@ -118,11 +144,15 @@ function OptionCard({ opt, i, onBook }) {
       }`}
       style={{ background: !opt.dark ? `linear-gradient(160deg, ${opt.gradient.replace('from-', '').replace('to-', '')})` : undefined }}
       onClick={() => setExpanded(e => !e)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {opt.dark && (
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(circle at 30% 0%, rgba(200,154,79,.12), transparent 55%)' }} />
       )}
+
+      <CornerBrackets on={hovered} dark={opt.dark} />
 
       <div className="relative z-10 p-7">
         <div className="flex items-start justify-between mb-5">
@@ -150,18 +180,16 @@ function OptionCard({ opt, i, onBook }) {
           {opt.desc}
         </p>
 
-        {/* Price row */}
         <div className="flex items-baseline gap-1.5 mb-5">
           <span className={`font-serif italic text-[16px] ${opt.dark ? 'text-brand' : 'text-gold'}`}>AED</span>
           <span className={`font-serif text-[36px] font-light leading-none tracking-[-0.02em] ${opt.dark ? 'text-bone' : 'text-ink'}`}>
             {opt.price}
           </span>
-          <span className={`font-mono text-[10px] tracking-[.1em] uppercase ${opt.dark ? 'text-bone/40' : 'text-[#5a6478]'}`}>
+          <span className={`font-mono text-[10px] tracking-widest uppercase ${opt.dark ? 'text-bone/40' : 'text-[#5a6478]'}`}>
             {opt.unit}
           </span>
         </div>
 
-        {/* Expandable features */}
         <AnimatePresence>
           {expanded && (
             <motion.ul
@@ -220,7 +248,7 @@ export default function ShiftOptions() {
               className="font-serif text-[clamp(38px,5vw,68px)] font-light leading-[1.02] tracking-[-0.015em]">
               Six ways to<br /><span className="italic text-gold">hold the room.</span>
             </motion.h2>
-            <motion.p variants={fadeUp} transition={t(0.7)} className="text-[#5a6478] text-[15px] leading-[1.7] max-w-[420px]">
+            <motion.p variants={fadeUp} transition={t(0.7)} className="text-[#5a6478] text-[15px] leading-[1.7] max-w-105">
               From a single hour to a dedicated clinic floor — every plan shares the same infrastructure,
               the same operations team and the same standard of room.
               <span className="block mt-3 font-mono text-[10.5px] tracking-[.12em] uppercase text-ink/50">Click any card to expand features.</span>

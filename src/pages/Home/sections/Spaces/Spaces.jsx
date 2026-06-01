@@ -3,6 +3,7 @@ import {
   motion,
   AnimatePresence,
   useMotionValue,
+  useMotionTemplate,
   useSpring,
   useTransform,
 } from "framer-motion";
@@ -123,42 +124,129 @@ function CardCarousel({ imgs, name }) {
   );
 }
 
-/* ── 3-D tilt card — propagates rest/hover variants to all children ─────────── */
-function TiltCard({ children, className, onClick }) {
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [5, -5]), { stiffness: 400, damping: 40 });
-  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-5, 5]), { stiffness: 400, damping: 40 });
+/* ── Space card — horizontal image parallax + spotlight, no tilt ───────────── */
+function SpaceCard({ s, i, onContact }) {
+  const snap = [0.22, 1, 0.36, 1];
+
+  /* Cursor X → image shifts left/right (window-peek effect) */
+  const curX = useMotionValue(0.5);
+  const imgX  = useSpring(useTransform(curX, [0, 1], [-16, 16]), { stiffness: 140, damping: 22 });
+
+  /* Cursor spotlight */
+  const mx  = useMotionValue(-9999);
+  const my  = useMotionValue(-9999);
+  const spot = useMotionTemplate`radial-gradient(260px circle at ${mx}px ${my}px, rgba(200,154,79,0.11), transparent 65%)`;
 
   const onMove = (e) => {
     const r = e.currentTarget.getBoundingClientRect();
-    mx.set((e.clientX - r.left) / r.width - 0.5);
-    my.set((e.clientY - r.top) / r.height - 0.5);
+    curX.set((e.clientX - r.left) / r.width);
+    mx.set(e.clientX - r.left);
+    my.set(e.clientY - r.top);
   };
-  const onLeave = () => { mx.set(0); my.set(0); };
+  const onLeave = () => {
+    curX.set(0.5);
+    mx.set(-9999); my.set(-9999);
+  };
 
   return (
     <motion.div
-      onClick={onClick}
+      onClick={onContact}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       initial="rest"
       whileHover="hover"
-      style={{ rotateX, rotateY, transformPerspective: 1100 }}
       variants={{
-        rest: {
-          y: 0,
-          boxShadow: "0 4px 24px -8px rgba(15,25,41,0.10), 0 0 0 1px rgba(15,25,41,0.05)",
-        },
-        hover: {
-          y: -8,
-          boxShadow: "0 32px 72px -20px rgba(15,25,41,0.28), 0 0 0 1.5px rgba(200,154,79,0.50)",
-          transition: { y: { duration: 0.38, ease: [0.22, 1, 0.36, 1] }, boxShadow: { duration: 0.38 } },
-        },
+        rest:  { y: 0,  scale: 1,     boxShadow: "0 4px 24px -8px rgba(15,25,41,0.10), 0 0 0 1px rgba(15,25,41,0.06)" },
+        hover: { y: -8, scale: 1.018, boxShadow: "0 28px 64px -18px rgba(15,25,41,0.24), 0 0 0 1.5px rgba(200,154,79,0.50)",
+          transition: { duration: 0.42, ease: snap } },
       }}
-      className={className}
+      className="relative bg-bone rounded-2xl overflow-hidden cursor-pointer h-full"
     >
-      {children}
+      {/* Cursor spotlight */}
+      <motion.div className="absolute inset-0 pointer-events-none z-10" style={{ background: spot }} />
+
+      {/* Image area */}
+      <div className="relative aspect-4/3 overflow-hidden">
+        <span className={`absolute top-3.5 left-3.5 z-20 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"}`}>
+          {s.live && (
+            <motion.span className="inline-block w-1.5 h-1.5 rounded-full bg-white mr-1.5 mb-px"
+              animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }} />
+          )}
+          {s.badge}
+        </span>
+        <button className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-bone/90 backdrop-blur-[10px] flex items-center justify-center text-sm transition-all hover:bg-white hover:scale-105">♡</button>
+
+        {/* Image — zoomed slightly + shifts horizontally with cursor */}
+        <motion.div
+          className="absolute pointer-events-none"
+          style={{ inset: "-18px", x: imgX }}
+          variants={{ rest: { scale: 1 }, hover: { scale: 1.06, transition: { duration: 0.55, ease: snap } } }}
+        >
+          <CardCarousel imgs={s.imgs} name={s.name} />
+        </motion.div>
+
+        {/* Gradient overlay that deepens on hover */}
+        <motion.div
+          className="absolute inset-0 pointer-events-none z-10"
+          variants={{
+            rest:  { opacity: 0 },
+            hover: { opacity: 1, transition: { duration: 0.4 } },
+          }}
+          style={{ background: "linear-gradient(to top, rgba(15,25,41,0.35) 0%, transparent 55%)" }}
+        />
+      </div>
+
+      {/* Card body */}
+      <div className="p-6 relative z-10">
+        <div className="flex justify-between items-center font-mono text-[10px] tracking-[.12em] uppercase text-[#5a6478] mb-2.5">
+          <span>{s.type}</span>
+          {/* Rating star pulses gold on hover */}
+          <motion.span
+            variants={{
+              rest:  { color: "rgb(26,34,50)" },
+              hover: { color: "rgb(200,154,79)", transition: { duration: 0.28 } },
+            }}
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
+          >
+            ★ {s.rating}
+          </motion.span>
+        </div>
+
+        {/* Title — letter-spacing expands on hover */}
+        <motion.h3
+          className="font-serif text-[22px] font-normal mb-1.5"
+          variants={{
+            rest:  { letterSpacing: "-0.01em", x: 0 },
+            hover: { letterSpacing: "0.015em",  x: 3, transition: { duration: 0.4, ease: snap } },
+          }}
+        >
+          {s.name}
+        </motion.h3>
+
+        <motion.p
+          className="text-[13px] mb-4"
+          variants={{
+            rest:  { color: "rgb(90,100,120)" },
+            hover: { color: "rgb(58,69,88)", transition: { duration: 0.28 } },
+          }}
+        >
+          {s.loc}
+        </motion.p>
+
+        {/* Bottom divider — turns gold on hover */}
+        <motion.div
+          className="h-px origin-left"
+          variants={{
+            rest:  { backgroundColor: "rgba(15,25,41,0.05)", scaleX: 1 },
+            hover: { backgroundColor: "rgba(200,154,79,0.50)", scaleX: 1, transition: { duration: 0.55, ease: snap } },
+          }}
+        />
+      </div>
+
+      {/* Book strip */}
+      <BookStrip />
     </motion.div>
   );
 }
@@ -334,67 +422,7 @@ export default function Spaces() {
                   exit={{ opacity: 0, y: 24, scale: 0.93, filter: "blur(4px)" }}
                   transition={{ duration: 0.52, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <TiltCard className="relative bg-bone rounded-2xl overflow-hidden cursor-pointer group h-full" onClick={() => setContactOpen(true)}>
-
-                    <Shimmer />
-
-                    {/* Image area */}
-                    <div className="relative aspect-4/3 overflow-hidden">
-                      <span
-                        className={`absolute top-3.5 left-3.5 z-10 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${
-                          s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"
-                        }`}
-                      >
-                        {s.live && (
-                          <motion.span
-                            className="inline-block w-1.5 h-1.5 rounded-full bg-white mr-1.5 mb-px"
-                            animate={{ opacity: [1, 0.3, 1] }}
-                            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                          />
-                        )}
-                        {s.badge}
-                      </span>
-                      <button className="absolute top-3.5 right-3.5 z-10 w-8 h-8 rounded-full bg-bone/90 backdrop-blur-[10px] flex items-center justify-center text-sm transition-all hover:bg-white hover:scale-105">
-                        ♡
-                      </button>
-
-                      {/* Zoom via variant propagation */}
-                      <motion.div
-                        className="absolute inset-0"
-                        variants={{
-                          rest: { scale: 1 },
-                          hover: { scale: 1.07, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-                        }}
-                      >
-                        <CardCarousel imgs={s.imgs} name={s.name} />
-                      </motion.div>
-                    </div>
-
-                    {/* Card body */}
-                    <div className="p-6">
-                      <div className="flex justify-between items-center font-mono text-[10px] tracking-[.12em] uppercase text-[#5a6478] mb-2.5">
-                        <span>{s.type}</span>
-                        <motion.span
-                          className="text-ink"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={viewport}
-                          transition={{ duration: 0.5, delay: 0.2 + i * 0.06 }}
-                        >
-                          ★ {s.rating}
-                        </motion.span>
-                      </div>
-                      <h3 className="font-serif text-[22px] font-normal tracking-tight mb-1.5">
-                        {s.name}
-                      </h3>
-                      <p className="text-[13px] text-[#5a6478] mb-4">{s.loc}</p>
-                      <div className="pt-4 border-t border-ink/5" />
-                    </div>
-
-                    {/* Book strip — slides up on hover */}
-                    <BookStrip />
-
-                  </TiltCard>
+                  <SpaceCard s={s} i={i} onContact={() => setServicesOpen(true)} />
                 </motion.div>
               ))}
             </AnimatePresence>

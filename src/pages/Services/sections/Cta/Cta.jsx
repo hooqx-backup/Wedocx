@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 import ServiceSelectionModal from '../../../../components/booking/ServiceSelectionModal'
-import { useState } from 'react'
+import bringYourBg from '../../../../assets/images/bringyoursection.jpg'
 
 export default function Cta() {
   const [bookOpen, setBookOpen] = useState(false)
@@ -12,8 +13,14 @@ export default function Cta() {
         <div className="max-w-[1320px] mx-auto">
           <motion.div
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} transition={t()}
-            className="relative bg-ink text-bone rounded-[32px] px-16 py-24 overflow-hidden max-sm:px-8 max-sm:py-16"
+            className="relative text-bone rounded-4xl px-16 py-24 overflow-hidden max-sm:px-8 max-sm:py-16"
           >
+            {/* Background image with dark overlay */}
+            <div className="absolute inset-0 pointer-events-none">
+              <img src={bringYourBg} alt="" className="w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 bg-ink/80" />
+            </div>
+
             {/* Decorative rings */}
             <span className="absolute rounded-full border border-brand/18 pointer-events-none" style={{ right: -180, top: -180, width: 560, height: 560 }} />
             <span className="absolute rounded-full border border-brand/25 pointer-events-none" style={{ right: -80, top: -80, width: 360, height: 360 }} />
