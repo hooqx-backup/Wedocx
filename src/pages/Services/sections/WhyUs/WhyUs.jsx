@@ -8,21 +8,21 @@ const CHECK_SVG = (
 )
 
 const US_ITEMS = [
-  'Walk in same-day, see patients within the hour',
-  'Bilingual front-desk under your practice name',
-  'One platform — booking, EMR, payments, insurance',
-  'Weekly payouts, no rejection chasing',
-  'Patients remain yours, records remain yours',
-  'Hourly, daily, monthly — switch anytime',
+  'Day-one revenue, no idle time between onboarding and billing',
+  'Shared concierge infrastructure that scales without adding headcount',
+  'Proprietary platform, single data layer across the entire network',
+  'Automated insurance reconciliation, collections handled, not outsourced',
+  'Practitioner-owned data, drives loyalty and prevents churn',
+  'Flexible utilization model, converts variable demand into recurring revenue',
 ]
 
 const THEM_ITEMS = [
-  '10-year lease, 6-month fit-out, six-figure deposit',
-  'Hire and manage your own reception team',
-  'Five vendors for software, billing, IT, cleaning',
-  'Chase insurance rejections yourself, monthly',
-  'Patient list is shared with the facility group',
-  'Fixed footprint — empty rooms still cost',
+  '10-year lease, 6-month fit-out, six-figure upfront deposit',
+  'Reception team to hire, train, manage, and eventually replace',
+  'Five separate vendors, each a contract, a failure point, a cost centre',
+  'Manual insurance reconciliation, months of delayed, uncertain revenue',
+  'Patient data shared with or owned by the facility group',
+  'Fixed overhead, empty rooms are pure loss on the P&L',
 ]
 
 export default function WhyUs() {
@@ -44,18 +44,18 @@ export default function WhyUs() {
               className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-brand px-3.5 py-2 border border-brand/30 rounded-full bg-white/4"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-              04 — Why Wedocx
+              04 · Competitive Moat
             </motion.div>
             <motion.h2 variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(40px,5vw,68px)] font-light leading-[1.02] tracking-[-0.015em] text-bone mt-5"
             >
-              The same operation,<br />told <em className="italic text-brand">two ways.</em>
+              The same problem,<br /><em className="italic text-brand">two very different</em> answers.
             </motion.h2>
           </div>
           <motion.p variants={fadeUp} transition={t()}
             className="text-[15px] text-bone/60 leading-[1.75] max-w-[420px]"
           >
-            Most clinic facilities are real-estate plays with a clinical label. Wedocx is a medical operation that happens to own its real estate. You can feel the difference within an hour of walking in.
+            Traditional clinic infrastructure forces doctors to choose between clinical freedom and operational burden. Wedocx eliminates the trade-off, and that is why 92% of practitioners never leave.
           </motion.p>
         </motion.div>
 

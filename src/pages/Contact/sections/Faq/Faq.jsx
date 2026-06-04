@@ -5,27 +5,27 @@ import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 const faqs = [
   {
     q: 'How quickly will I hear back?',
-    a: 'Within four hours on weekdays, eight hours on weekends. Urgent matters — a tour booked for the same day, a press deadline — can be flagged in your message. We move them to the front of the queue.',
+    a: 'Within four hours on weekdays, eight hours on weekends. Urgent matters such as a tour booked for the same day or a press deadline can be flagged in your message. We move them to the front of the queue.',
   },
   {
     q: <>Can I just <em className="italic text-gold">drop by</em> a suite?</>,
-    a: "You can, but a five-minute call ahead means we'll have a clinical lead ready for you instead of catching whoever's at reception. We strongly recommend booking a 30-minute tour — pick a time on the contact form.",
+    a: "You can, but a five-minute call ahead means we'll have a clinical lead ready for you instead of catching whoever's at reception. We strongly recommend booking a 30-minute tour. Pick a time on the contact form.",
   },
   {
     q: 'Do you take patient enquiries?',
-    a: "We're a workspace network for doctors, not a clinic ourselves — patients book directly with their physician. If you're trying to reach a specific doctor practicing on Wedocx, write to us with their name and we'll connect you.",
+    a: "We're a workspace network for doctors, not a clinic ourselves. Patients book directly with their physician. If you're trying to reach a specific doctor practicing on Wedocx, write to us with their name and we'll connect you.",
   },
   {
     q: 'Is the first conversation really free?',
-    a: 'Yes. The first tour is free. The first consultation with a founder is free. We charge only when a doctor books their first suite hour — never for the conversation that leads there.',
+    a: 'Yes. The first tour is free. The first consultation with a founder is free. We charge only when a doctor books their first suite hour, never for the conversation that leads there.',
   },
   {
     q: 'Who reads these messages?',
-    a: 'The contact inbox is shared between Lina (Co-founder & COO), our practice success lead, and the duty manager on shift. Press goes directly to Adel. Career enquiries route to our people team. Nothing is read by a bot.',
+    a: 'The contact inbox is shared between Dr. Irfan (Founder & Medical Director), our practice success lead, and the duty manager on shift. Press goes directly to Sajjad. Career enquiries route to our people team. Nothing is read by a bot.',
   },
   {
     q: 'What languages does the team speak?',
-    a: 'English, Arabic, French and Urdu — fluent across the team. Write in whichever you prefer; we\'ll reply in the same.',
+    a: 'English, Arabic, French and Urdu, fluent across the team. Write in whichever you prefer; we\'ll reply in the same.',
   },
 ]
 
@@ -84,7 +84,7 @@ export default function Faq() {
       <div className="max-w-360 mx-auto">
         <div className="flex items-center gap-4 mb-14">
           <span className="w-9 h-px bg-ink block" />
-          <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">04 — Quick answers</span>
+          <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">03 · Quick answers</span>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_1.4fr] grid-cols-1 gap-20 items-start">
@@ -108,7 +108,7 @@ export default function Faq() {
               variants={fadeUp} transition={t(0.7)}
               className="text-[#5a6478] text-[15px] leading-[1.7] mt-5 mb-7 max-w-[360px]"
             >
-              A handful of questions we hear daily. Don't see yours? Send a note — we usually
+              A handful of questions we hear daily. Don't see yours? Send a note, we usually
               reply faster than this page loads.
             </motion.p>
             <motion.a

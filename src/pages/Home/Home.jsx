@@ -1,5 +1,6 @@
 import Hero from './sections/Hero/Hero'
 import Marquee from '../../components/ui/Marquee/Marquee'
+import FeaturedClinics from './sections/FeaturedClinics/FeaturedClinics'
 import Concept from './sections/Concept/Concept'
 import Spaces from './sections/Spaces/Spaces'
 import Benefits from './sections/Benefits/Benefits'
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
+      <FeaturedClinics />
       <Concept />
       <Spaces />
       <Benefits />

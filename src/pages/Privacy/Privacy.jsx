@@ -148,7 +148,7 @@ export default function Privacy() {
             className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold mb-8 px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/60"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-            Legal · Wedocx
+            Data Governance · Investor Grade
           </motion.div>
 
           <motion.h1
@@ -163,8 +163,9 @@ export default function Privacy() {
             variants={fadeUp} transition={t()}
             className="text-[#3a4558] text-[17px] leading-[1.7] max-w-[560px] mb-12"
           >
-            We take your privacy seriously. This policy explains exactly what personal data
-            Wedocx collects, why we collect it, how we protect it, and the rights you hold over it.
+            UAE PDPL-compliant data governance, architected for institutional trust. Practitioner
+            data, patient data, and platform data, each handled with a distinct policy layer,
+            auditable at any stage of our due diligence process.
           </motion.p>
 
           <motion.div
@@ -201,10 +202,10 @@ export default function Privacy() {
             <div className="mt-8 pt-6 border-t border-ink/8">
               <p className="font-mono text-[9px] tracking-[.12em] uppercase text-[#8a94a8] mb-3">Privacy concerns?</p>
               <a
-                href="mailto:info@wedocx.com"
+                href="mailto:info@wedocx.co"
                 className="inline-flex items-center gap-1.5 font-mono text-[10.5px] tracking-[.1em] uppercase text-ink hover:text-brand transition-colors"
               >
-                info@wedocx.com <span className="text-brand">→</span>
+                info@wedocx.co <span className="text-brand">→</span>
               </a>
             </div>
           </aside>
@@ -254,7 +255,7 @@ export default function Privacy() {
 
               <Clause title="Booking & billing data">
                 Booking history, shift dates and times, space preferences, payment method (card type and
-                last four digits only — full card data is handled by our PCI-DSS compliant payment processor),
+                last four digits only; full card data is handled by our PCI-DSS compliant payment processor),
                 billing address, invoice records, and transaction history.
               </Clause>
 
@@ -300,10 +301,10 @@ export default function Privacy() {
                 Under the UAE PDPL, we process your personal data on the following legal bases:
               </Clause>
               <List items={[
-                'Contractual necessity — processing required to enter into and perform the agreement with you (booking, billing, account management)',
-                'Legal obligation — processing required to comply with UAE tax, accounting, health regulation, and DHA requirements',
-                'Legitimate interests — fraud prevention, platform security, product improvement, and direct marketing to existing practitioners (where it does not override your rights)',
-                'Consent — where we ask for your explicit agreement before processing (e.g., optional marketing emails); you may withdraw consent at any time without affecting prior processing',
+                'Contractual necessity: processing required to enter into and perform the agreement with you (booking, billing, account management)',
+                'Legal obligation: processing required to comply with UAE tax, accounting, health regulation, and DHA requirements',
+                'Legitimate interests: fraud prevention, platform security, product improvement, and direct marketing to existing practitioners (where it does not override your rights)',
+                'Consent: where we ask for your explicit agreement before processing (e.g., optional marketing emails); you may withdraw consent at any time without affecting prior processing',
               ]} />
             </Section>
 
@@ -369,8 +370,8 @@ export default function Privacy() {
                 No method of transmission over the internet or electronic storage is 100% secure. While we
                 use best-practice measures, we cannot guarantee absolute security. If you suspect your account
                 has been compromised, contact us immediately at{' '}
-                <a href="mailto:info@wedocx.com" className="text-brand underline decoration-brand/30 underline-offset-[3px]">
-                  info@wedocx.com
+                <a href="mailto:info@wedocx.co" className="text-brand underline decoration-brand/30 underline-offset-[3px]">
+                  info@wedocx.co
                 </a>.
               </Clause>
             </Section>
@@ -378,7 +379,7 @@ export default function Privacy() {
             <Section id="rights" index={8} title="Your Rights">
               <Clause>
                 Under UAE data protection law, you have the following rights in respect of your personal data.
-                To exercise any right, contact us at info@wedocx.com — we will respond within 30 days.
+                To exercise any right, contact us at info@wedocx.co and we will respond within 30 days.
               </Clause>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-3 mt-2">
                 {[
@@ -399,7 +400,7 @@ export default function Privacy() {
               </div>
               <Clause>
                 We may need to verify your identity before fulfilling a request. Some rights are subject to
-                legal limitations — for example, we cannot erase data we are legally required to retain.
+                legal limitations, for example, we cannot erase data we are legally required to retain.
                 We will explain any such limitations when we respond.
               </Clause>
             </Section>
@@ -411,9 +412,9 @@ export default function Privacy() {
               </Clause>
               <Table rows={[
                 ['Category', 'Purpose', 'Can you opt out?'],
-                ['Strictly necessary', 'Session management, authentication, security — the site cannot function without these', 'No'],
+                ['Strictly necessary', 'Session management, authentication, security; the site cannot function without these', 'No'],
                 ['Functional', 'Remembering your preferences (language, timezone, display settings)', 'Yes'],
-                ['Analytics', 'Understanding how visitors use the site (page views, click paths) — data is aggregated and anonymised', 'Yes'],
+                ['Analytics', 'Understanding how visitors use the site (page views, click paths); data is aggregated and anonymised', 'Yes'],
                 ['Marketing', 'Personalising content and ads on third-party platforms based on your visit', 'Yes'],
               ]} />
               <Clause>
@@ -436,7 +437,7 @@ export default function Privacy() {
               </Clause>
               <Clause>
                 If we become aware that we have inadvertently collected data from a person under 18 without
-                parental consent, we will delete it promptly. Contact us at info@wedocx.com if you
+                parental consent, we will delete it promptly. Contact us at info@wedocx.co if you
                 believe this has occurred.
               </Clause>
             </Section>
@@ -448,9 +449,9 @@ export default function Privacy() {
                 jurisdictions, including the European Economic Area, the United States, and Singapore.
               </Clause>
               <Clause>
-                When data is transferred outside the UAE, we ensure appropriate safeguards are in place —
+                When data is transferred outside the UAE, we ensure appropriate safeguards are in place,
                 including standard contractual clauses approved by the UAE Data Office, adequacy decisions,
-                or certification frameworks — so that your data receives a level of protection consistent
+                or certification frameworks, so that your data receives a level of protection consistent
                 with UAE PDPL requirements.
               </Clause>
             </Section>
@@ -481,8 +482,8 @@ export default function Privacy() {
                 {[
                   {
                     label: 'General privacy enquiries',
-                    val: 'info@wedocx.com',
-                    href: 'mailto:info@wedocx.com',
+                    val: 'info@wedocx.co',
+                    href: 'mailto:info@wedocx.co',
                     note: 'Response within 5 business days',
                   },
                   {
@@ -541,10 +542,10 @@ export default function Privacy() {
           <div className="section-ring section-ring-480 section-ring-dark absolute -bottom-32 -left-32 pointer-events-none" />
 
           <motion.div variants={fadeUp} transition={t()} className="relative z-10">
-            <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Your data, your rights</p>
+            <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Data Infrastructure</p>
             <h3 className="font-serif text-[clamp(24px,3vw,40px)] font-light leading-none tracking-[-0.02em]">
-              Questions about how<br />
-              <span className="italic text-brand">we use your data?</span>
+              Data handled to<br />
+              <span className="italic text-brand">institutional standard.</span>
             </h3>
           </motion.div>
 
@@ -553,7 +554,7 @@ export default function Privacy() {
             className="flex gap-3 flex-wrap relative z-10"
           >
             <a
-              href="mailto:info@wedocx.com"
+              href="mailto:info@wedocx.co"
               className="inline-flex items-center gap-2 px-6 py-[14px] rounded-full text-[13.5px] font-medium bg-bone text-ink hover:bg-white transition-all"
             >
               Email our team <span>→</span>

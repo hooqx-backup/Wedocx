@@ -5,11 +5,11 @@ import { Link, useLocation } from 'react-router-dom'
 import ServiceSelectionModal from '../../booking/ServiceSelectionModal'
 
 const links = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Shift Plans', href: '/shift-plans' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Home',       href: '/'        },
+  { label: 'Clinics',    href: '/clinics'  },
+  { label: 'Services',   href: '/services' },
+  { label: 'About',      href: '/about'    },
+  { label: 'Contact Us', href: '/contact'  },
 ]
 
 const menuVariants = {
@@ -70,6 +70,7 @@ export default function Navbar() {
 
   const close = () => setMenuOpen(false)
   const isPill = scrolled && !menuOpen
+  const isClinicDetail = /^\/clinics\/.+/.test(pathname)
 
   return (
     <>
@@ -79,12 +80,14 @@ export default function Navbar() {
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1] }}
-          className={`pointer-events-auto flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          className={`pointer-events-auto flex items-center justify-between transition-all duration-500 ease-in-out ${
             isPill
               ? 'mt-3 mx-4 lg:mx-8 rounded-2xl nav-pill-glass px-5 lg:px-8 py-2.5'
               : menuOpen
-                ? 'px-10 max-sm:px-5 py-4 bg-bone/96 backdrop-blur-[20px] border-b border-ink/[0.06]'
-                : 'px-10 max-sm:px-5 py-5'
+                ? 'px-10 max-sm:px-5 py-4 bg-bone/96 backdrop-blur-[20px] border-b border-ink/6'
+                : isClinicDetail
+                  ? 'px-10 max-sm:px-5 py-5 bg-bone/96 backdrop-blur-[20px] border-b border-ink/6'
+                  : 'px-10 max-sm:px-5 py-5'
           }`}
         >
           {/* Logo */}
@@ -124,17 +127,17 @@ export default function Navbar() {
               <motion.span
                 animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
-                className="w-[22px] h-[1.5px] bg-ink block origin-center"
+                className="w-5.5 h-[1.5px] bg-ink block origin-center"
               />
               <motion.span
                 animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.2, ease: 'easeInOut' }}
-                className="w-[22px] h-[1.5px] bg-ink block origin-center mt-[5px]"
+                className="w-5.5 h-[1.5px] bg-ink block origin-center mt-1.25"
               />
               <motion.span
                 animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
-                className="w-[22px] h-[1.5px] bg-ink block origin-center mt-[5px]"
+                className="w-5.5 h-[1.5px] bg-ink block origin-center mt-1.25"
               />
             </button>
           </div>
@@ -157,10 +160,10 @@ export default function Navbar() {
               key="panel"
               variants={menuVariants}
               initial="closed" animate="open" exit="closed"
-              className="fixed top-0 left-0 right-0 z-[45] lg:hidden bg-bone min-h-screen flex flex-col px-10 max-sm:px-6 pt-28 pb-16"
+              className="fixed top-0 left-0 right-0 z-45 lg:hidden bg-bone min-h-screen flex flex-col px-10 max-sm:px-6 pt-28 pb-16"
             >
               {/* Gold accent line at top */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand/70 to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-brand/70 to-transparent" />
 
               {/* Links */}
               <nav className="flex flex-col gap-2 flex-1">

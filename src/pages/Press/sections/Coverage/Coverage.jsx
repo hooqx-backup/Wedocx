@@ -21,7 +21,7 @@ const ITEMS = [
   },
   {
     pub: 'Khaleej Times', date: 'December 2025', category: 'Business',
-    headline: "The flexible office model comes to medicine — and it's working",
+    headline: "The flexible office model comes to medicine, and it's working",
     excerpt: 'Just as WeWork changed how companies think about office space, Wedocx is applying the same logic to clinical infrastructure across Dubai and beyond.',
     href: '#', num: '04',
   },
@@ -223,7 +223,7 @@ export default function Coverage() {
             viewport={vp} transition={{ duration: 0.5, delay: 0.28, ease: soft }}
             className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/50"
           >
-            02 — Coverage
+            02 · Coverage
           </motion.span>
         </div>
 
@@ -248,7 +248,7 @@ export default function Coverage() {
             className="text-[#5a6478] text-[15px] leading-[1.75] max-w-100"
           >
             Selected coverage from regional and international media.
-            For permissions to reproduce or quote, email info@wedocx.com.
+            For permissions to reproduce or quote, email info@wedocx.co.
           </motion.p>
         </div>
 

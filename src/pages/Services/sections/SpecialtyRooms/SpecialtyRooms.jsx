@@ -66,7 +66,7 @@ export default function SpecialtyRooms() {
               className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold px-3.5 py-2 border border-gold/40 rounded-full bg-bone/50"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-              03 — Specialty Rooms
+              03 · Specialty Rooms
             </motion.div>
             <motion.h2 variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(40px,5.2vw,72px)] font-light leading-[1] tracking-[-0.02em] text-ink mt-5"
@@ -76,7 +76,7 @@ export default function SpecialtyRooms() {
             <motion.p variants={fadeUp} transition={t()}
               className="text-[15px] text-[#5b6478] leading-[1.7] mt-5 max-w-[480px]"
             >
-              Each specialty needs a different room. We don't share suites between specialties — we build, equip and stock each one to the standard of its discipline.
+              Each specialty needs a different room. We don't share suites between specialties. We build, equip and stock each one to the standard of its discipline.
             </motion.p>
           </div>
 

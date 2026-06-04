@@ -158,7 +158,7 @@ export default function Hero() {
                 className="text-[17px] leading-[1.65] max-w-[500px] text-[#3a4558] mb-10"
               >
                 Premium, fully-equipped clinic suites across Dubai, Abu Dhabi and Sharjah.
-                Step in and see your first patient within the hour — no lease, no setup, no friction.
+                Step in and see your first patient within the hour, no lease, no setup, no friction.
               </motion.p>
 
               <motion.div variants={fadeUp} transition={t()} className="flex gap-3 flex-wrap mb-12">

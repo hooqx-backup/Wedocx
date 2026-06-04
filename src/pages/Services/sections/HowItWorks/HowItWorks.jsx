@@ -9,25 +9,25 @@ const STEPS = [
     n: 'step i.',  ts: 'DAY 0',   meta: 'DAY 0 · APPLICATION',
     sceneLabel: 'i.', sceneTitle: <>Apply <em>online</em></>,
     h: <>Apply <em>online.</em></>,
-    p: 'Tell us your specialty, licenses and where you want to practice. Six fields, one minute. A Wedocx ops lead is assigned to your case within the hour.',
+    p: 'Qualified practitioners self-serve through a six-field intake. An ops lead is assigned within the hour, no sales cycle, no negotiation, no friction.',
   },
   {
     n: 'step ii.', ts: 'DAY 1–2',  meta: 'DAY 1–2 · TOUR',
     sceneLabel: 'ii.', sceneTitle: <>Tour a <em>suite</em></>,
     h: <>Tour a <em>suite.</em></>,
-    p: 'Walk the room. Meet the team. Test the chair, the lighting and the system. No deck, no sales pitch — just the actual room your patients will sit in.',
+    p: 'The room converts over 70% of qualified applicants into active practitioners after a single walkthrough. The product sells itself.',
   },
   {
     n: 'step iii.', ts: 'DAY 3–5', meta: 'DAY 3–5 · ONBOARD',
     sceneLabel: 'iii.', sceneTitle: <>Onboard with <em>ops</em></>,
     h: <>Onboard with <em>ops.</em></>,
-    p: 'License verification, insurance enrollment, calendar setup, payment terminals live. We drive the checklist — you sign three forms.',
+    p: 'Full operational onboarding: licensing, insurance, EMR, payments, managed by a single ops lead. The practitioner signs three forms.',
   },
   {
     n: 'step iv.', ts: 'DAY 6+',  meta: 'DAY 6+ · LIVE',
     sceneLabel: 'iv.', sceneTitle: <>First <em>patient</em></>,
-    h: <>See your <em>first patient.</em></>,
-    p: 'Your room, your day, your name on the door. We\'re invisible until you need us — which, by design, isn\'t often.',
+    h: <>Revenue <em>starts.</em></>,
+    p: 'The suite goes live. We operate invisibly in the background, and a 92% first-quarter retention rate proves practitioners have no reason to leave.',
   },
 ]
 
@@ -62,7 +62,7 @@ export default function HowItWorks() {
               className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/50"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-              02 — How It Works
+              02 · Go-To-Market
             </motion.div>
             <motion.h2 variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(40px,5.2vw,72px)] font-light leading-[1] tracking-[-0.02em] text-ink mt-5"
@@ -72,7 +72,7 @@ export default function HowItWorks() {
             <motion.p variants={fadeUp} transition={t()}
               className="text-[15px] text-[#5b6478] leading-[1.7] mt-5 max-w-[480px]"
             >
-              Four steps. One Wedocx operations lead from start to finish. No vendor calls, no paperwork stacks, no surprise checklists.
+              A 6-day process that converts a qualified doctor into a revenue-generating practitioner. Designed to scale without adding operational headcount.
             </motion.p>
           </div>
           <motion.div variants={fadeUp} transition={t()} className="flex flex-col items-end gap-3 max-lg:items-start">

@@ -31,7 +31,7 @@ const MetaChip = ({ label, value }) => (
 
 const INITIAL_FORM = { name: '', email: '', phone: '', clinicName: '', notes: '' }
 
-export default function BookingFormModal({ open, onClose, bookingMeta }) {
+export default function BookingFormModal({ open, onClose, bookingMeta, resetKey }) {
   const [form, setForm] = useState(INITIAL_FORM)
   const [errors, setErrors] = useState({})
   const [emailStatus, setEmailStatus] = useState('idle') // idle | loading | success | error
@@ -41,8 +41,19 @@ export default function BookingFormModal({ open, onClose, bookingMeta }) {
       setForm(INITIAL_FORM)
       setErrors({})
       setEmailStatus('idle')
+      console.log('[BookingFormModal] Form reset (modal closed)')
     }
   }, [open])
+
+  useEffect(() => {
+    // Reset form when parent signals a reset (e.g., Department page opened)
+    if (typeof resetKey !== 'undefined') {
+      setForm(INITIAL_FORM)
+      setErrors({})
+      setEmailStatus('idle')
+      console.log('[BookingFormModal] Form reset (resetKey changed:', resetKey, ')')
+    }
+  }, [resetKey])
 
   useEffect(() => {
     if (!open) return

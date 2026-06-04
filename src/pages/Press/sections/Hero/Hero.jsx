@@ -14,7 +14,7 @@ export default function PressHero() {
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'easeOut' }}
-        className="absolute top-20 right-[10%] w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-20 right-[10%] w-150 h-150 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(200,154,79,.07), transparent 65%)' }}
       />
 
@@ -26,26 +26,26 @@ export default function PressHero() {
         </motion.div>
 
         <motion.h1 variants={fadeUp} transition={t()}
-          className="font-serif text-[clamp(46px,7vw,96px)] font-light leading-[.96] tracking-[-0.025em] mb-8 max-w-[860px] text-ink">
+          className="font-serif text-[clamp(46px,7vw,96px)] font-light leading-[.96] tracking-tight mb-8 max-w-215 text-ink">
           Wedocx in<br />
           <span className="italic text-gold">the media.</span>
         </motion.h1>
 
         <motion.p variants={fadeUp} transition={t()}
-          className="text-[#3a4558] text-[17px] leading-[1.7] max-w-[520px] mb-12">
-          We're building the infrastructure layer for independent medical practice in the Gulf.
-          For press enquiries, brand assets or interview requests, reach us directly.
+          className="text-[#3a4558] text-[17px] leading-[1.7] max-w-130 mb-12">
+          Wedocx is the UAE's first multi-clinic healthcare platform, transforming how independent doctors
+          practice across the Gulf. For press enquiries, brand assets or interview requests, reach us directly.
         </motion.p>
 
         <motion.div variants={fadeUp} transition={t()} className="flex gap-3 flex-wrap mb-16">
           <motion.a
-            href="mailto:info@wedocx.com"
+            href="mailto:info@wedocx.co"
             whileHover={{ y: -1, boxShadow: '0 12px 30px -12px rgba(15,25,41,.55)' }} whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-ink text-bone transition-all">
+            className="inline-flex items-center gap-2 px-6 py-3.75 rounded-full text-sm font-medium bg-ink text-bone transition-all">
             Press enquiry <span>→</span>
           </motion.a>
           <motion.a href="#press-kit" whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium text-ink border border-ink/20 transition-all hover:bg-ink/5">
+            className="inline-flex items-center gap-2 px-6 py-3.75 rounded-full text-sm font-medium text-ink border border-ink/20 transition-all hover:bg-ink/5">
             Download press kit
           </motion.a>
         </motion.div>
@@ -54,7 +54,7 @@ export default function PressHero() {
         <motion.div variants={fadeUp} transition={t(0.6)}
           className="flex flex-wrap items-center gap-10 pt-8 border-t border-ink/8">
           {[
-            { val: '2023', label: 'Founded' },
+            { val: '2022', label: 'Founded' },
             { val: 'Dubai', label: 'Headquarters' },
             { val: '3', label: 'Emirates' },
           ].map(s => (

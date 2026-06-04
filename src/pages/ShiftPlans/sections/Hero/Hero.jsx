@@ -142,7 +142,7 @@ export default function Hero() {
               <motion.p variants={fadeUp} transition={t()}
                 className="text-[17px] leading-[1.65] max-w-[500px] text-[#3a4558] mb-10">
                 Book a single hour or anchor a full clinic floor. Our scheduling platform matches
-                you to the right suite, in the right city, at the right time — no back-and-forth,
+                you to the right suite, in the right city, at the right time. No back-and-forth,
                 no admin drag.
               </motion.p>
 

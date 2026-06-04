@@ -9,47 +9,50 @@ import {
 } from "framer-motion";
 import {
   dentalImgs1,
-  dentalImgs2,
   dermImgs,
   treatmentImgs,
   pediatricImgs,
+  luxGpImgs,
+  luxDentalImgs,
+  luxTreatmentImgs,
 } from "../../../../assets/images";
 import { stagger, t, viewport } from "../../../../animations/variants";
 import ServiceSelectionModal from "../../../../components/booking/ServiceSelectionModal";
 import ContactModal from "../../../../components/ui/ContactModal/ContactModal";
 
-const filters = ["All suites", "Dental", "Dermatology", "Pediatric", "Treatment"];
-
 const spaces = [
   {
-    badge: "Live now", live: true,  category: "Dental",
+    badge: "Live now", live: true, clinic: "Flagship",
     type: "DENTAL · 220 SQFT", rating: "4.9",
     name: "Dental Suite 01", loc: "Business Bay, Dubai · Floor 04", imgs: dentalImgs1,
   },
   {
-    badge: "2 left",  live: false, category: "Dental",
-    type: "DENTAL · 240 SQFT", rating: "4.8",
-    name: "Dental Suite 02", loc: "Business Bay, Dubai · Floor 04", imgs: dentalImgs2,
-  },
-  {
-    badge: "Live now", live: true,  category: "Dermatology",
+    badge: "2 left", live: false, clinic: "Flagship",
     type: "DERM · 180 SQFT", rating: "5.0",
     name: "Dermatology Room", loc: "DIFC, Dubai · Floor 03", imgs: dermImgs,
   },
   {
-    badge: "New",     live: false, category: "Dermatology",
-    type: "DERM · 160 SQFT", rating: "4.9",
-    name: "Dermatology Suite 02", loc: "DIFC, Dubai · Floor 03", imgs: dermImgs,
-  },
-  {
-    badge: "Live now", live: true,  category: "Treatment",
-    type: "TREATMENT · 200 SQFT", rating: "4.9",
-    name: "Treatment Room", loc: "Al Reem Island, Abu Dhabi", imgs: treatmentImgs,
-  },
-  {
-    badge: "Premium", live: false, category: "Pediatric",
+    badge: "Live now", live: true, clinic: "Flagship",
     type: "PEDIATRIC · 220 SQFT", rating: "5.0",
     name: "Pediatrician Suite", loc: "Jumeirah, Dubai · Floor 02", imgs: pediatricImgs,
+  },
+  {
+    badge: "Live now", live: true, clinic: "Premium",
+    type: "GP · 200 SQFT", rating: "5.0",
+    name: "GP Suite", loc: "DIFC, Dubai · Floor 12", imgs: luxGpImgs,
+    isPremium: true,
+  },
+  {
+    badge: "2 left", live: false, clinic: "Premium",
+    type: "DENTAL · 220 SQFT", rating: "5.0",
+    name: "Dental Suite 02", loc: "Palm Jumeirah, Dubai · Floor 06", imgs: luxDentalImgs,
+    isPremium: true,
+  },
+  {
+    badge: "Premium", live: false, clinic: "Premium",
+    type: "TREATMENT · 240 SQFT", rating: "5.0",
+    name: "Treatment Suite", loc: "DIFC, Dubai · Floor 08", imgs: luxTreatmentImgs,
+    isPremium: true,
   },
 ];
 
@@ -132,10 +135,10 @@ function SpaceCard({ s, i, onContact }) {
   const curX = useMotionValue(0.5);
   const imgX  = useSpring(useTransform(curX, [0, 1], [-16, 16]), { stiffness: 140, damping: 22 });
 
-  /* Cursor spotlight */
   const mx  = useMotionValue(-9999);
   const my  = useMotionValue(-9999);
-  const spot = useMotionTemplate`radial-gradient(260px circle at ${mx}px ${my}px, rgba(200,154,79,0.11), transparent 65%)`;
+  const spotColor = "rgba(200,154,79,0.11)";
+  const spot = useMotionTemplate`radial-gradient(260px circle at ${mx}px ${my}px, ${spotColor}, transparent 65%)`;
 
   const onMove = (e) => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -157,7 +160,8 @@ function SpaceCard({ s, i, onContact }) {
       whileHover="hover"
       variants={{
         rest:  { y: 0,  scale: 1,     boxShadow: "0 4px 24px -8px rgba(15,25,41,0.10), 0 0 0 1px rgba(15,25,41,0.06)" },
-        hover: { y: -8, scale: 1.018, boxShadow: "0 28px 64px -18px rgba(15,25,41,0.24), 0 0 0 1.5px rgba(200,154,79,0.50)",
+        hover: { y: -8, scale: 1.018,
+          boxShadow: "0 28px 64px -18px rgba(15,25,41,0.24), 0 0 0 1.5px rgba(200,154,79,0.50)",
           transition: { duration: 0.42, ease: snap } },
       }}
       className="relative bg-bone rounded-2xl overflow-hidden cursor-pointer h-full"
@@ -167,12 +171,18 @@ function SpaceCard({ s, i, onContact }) {
 
       {/* Image area */}
       <div className="relative aspect-4/3 overflow-hidden">
-        <span className={`absolute top-3.5 left-3.5 z-20 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"}`}>
+        <span className={`absolute top-3.5 left-3.5 z-20 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${
+          s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"
+        }`}>
           {s.live && (
             <motion.span className="inline-block w-1.5 h-1.5 rounded-full bg-white mr-1.5 mb-px"
               animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }} />
           )}
           {s.badge}
+        </span>
+        {/* Clinic label bottom-left */}
+        <span className="absolute bottom-3.5 left-3.5 z-20 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.12em] uppercase backdrop-blur-[10px] bg-bone/75 text-ink/70">
+          {s.clinic}
         </span>
         <button className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-bone/90 backdrop-blur-[10px] flex items-center justify-center text-sm transition-all hover:bg-white hover:scale-105">♡</button>
 
@@ -292,7 +302,9 @@ function BookStrip() {
   );
 }
 
-/* ── Magnetic filter button ────────────────────────────────────────────────── */
+const filters = ["All", "Flagship", "Premium"];
+
+/* ── Magnetic filter pill ───────────────────────────────────────────────────── */
 function FilterBtn({ label, active, onClick }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -312,7 +324,7 @@ function FilterBtn({ label, active, onClick }) {
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={{ x: sx, y: sy }}
-      className="relative px-4 py-2 rounded-full text-[13px] border border-ink/10 overflow-hidden transition-colors duration-200"
+      className="relative px-4 py-2 rounded-full text-[13px] border border-ink/10 overflow-hidden"
     >
       {active && (
         <motion.span
@@ -330,11 +342,11 @@ function FilterBtn({ label, active, onClick }) {
 
 /* ── Main section ──────────────────────────────────────────────────────────── */
 export default function Spaces() {
-  const [active, setActive] = useState("All suites");
+  const [active, setActive] = useState("All");
   const [servicesOpen, setServicesOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
 
-  const filtered = active === "All suites" ? spaces : spaces.filter((s) => s.category === active);
+  const filtered = active === "All" ? spaces : spaces.filter(s => s.clinic === active);
 
   return (
     <>
@@ -390,7 +402,7 @@ export default function Spaces() {
             </h2>
           </motion.div>
 
-          {/* ── Filters ── */}
+          {/* ── Description + Filters ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -400,9 +412,8 @@ export default function Spaces() {
           >
             <p className="max-w-120 text-[#3a4558] leading-relaxed">
               Every room is photographed, equipped, and reviewed by practitioners
-              in that specialty. Filter by what you need.
+              in that specialty.
             </p>
-
             <div className="flex gap-2 flex-wrap">
               {filters.map((f) => (
                 <FilterBtn key={f} label={f} active={active === f} onClick={() => setActive(f)} />

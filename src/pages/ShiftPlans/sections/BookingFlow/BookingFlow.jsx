@@ -26,7 +26,7 @@ const STEPS = [
   {
     tag: 'Step 03',
     title: <>Confirm <em>&amp; pay.</em></>,
-    body: 'Card authorization or invoice — your choice. No deposit held. Cancel or modify up to 24 hours before, no charge.',
+    body: 'Card authorization or invoice, your choice. No deposit held. Cancel or modify up to 24 hours before, no charge.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h4"/>
@@ -55,7 +55,7 @@ export default function BookingFlow() {
           className="text-center mb-20">
           <motion.div variants={fadeUp} transition={t(0.6)} className="inline-flex items-center gap-4 mb-5">
             <span className="w-9 h-px bg-ink block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 — Booking flow</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 · Booking flow</span>
             <span className="w-9 h-px bg-ink block" />
           </motion.div>
           <motion.h2 variants={fadeUp} transition={t()}

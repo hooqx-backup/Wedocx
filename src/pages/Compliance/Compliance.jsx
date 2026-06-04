@@ -150,7 +150,7 @@ export default function Compliance() {
             className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold mb-8 px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/60"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-            Legal · Wedocx
+            Regulatory Moat · Investor Grade
           </motion.div>
 
           <motion.h1
@@ -165,9 +165,9 @@ export default function Compliance() {
             variants={fadeUp} transition={t()}
             className="text-[#3a4558] text-[17px] leading-[1.7] max-w-[580px] mb-12"
           >
-            Wedocx operates to the highest standards of regulatory compliance across all UAE health
-            authorities. This page documents our licensing, clinical standards, safety obligations,
-            and what we require from every practitioner on our platform.
+            DHA-licensed, DOH-compliant, MOHAP-registered. Regulatory infrastructure that took
+            years to build and represents one of the highest barriers to entry in the GCC
+            healthcare-as-a-service market. Every certification documented, every standard auditable.
           </motion.p>
 
           <motion.div
@@ -175,7 +175,7 @@ export default function Compliance() {
             className="flex flex-wrap gap-8 pt-8 border-t border-ink/8"
           >
             {[
-              { label: 'Primary authority',  val: 'DHA — Dubai' },
+              { label: 'Primary authority',  val: 'DHA, Dubai' },
               { label: 'Scope',              val: 'Dubai · Abu Dhabi · Sharjah' },
               { label: 'Federal framework',  val: 'UAE Federal Health Law' },
               { label: 'Last reviewed',      val: 'May 2026' },
@@ -204,10 +204,10 @@ export default function Compliance() {
             <div className="mt-8 pt-6 border-t border-ink/8">
               <p className="font-mono text-[9px] tracking-[.12em] uppercase text-[#8a94a8] mb-3">Compliance queries</p>
               <a
-                href="mailto:info@wedocx.com"
+                href="mailto:info@wedocx.co"
                 className="inline-flex items-center gap-1.5 font-mono text-[10.5px] tracking-[.1em] uppercase text-ink hover:text-brand transition-colors"
               >
-                info@wedocx.com <span className="text-brand">→</span>
+                info@wedocx.co <span className="text-brand">→</span>
               </a>
             </div>
           </aside>
@@ -224,7 +224,7 @@ export default function Compliance() {
               <Clause>
                 Wedocx operates within a multi-layered regulatory environment governed by federal and
                 emirate-level health authorities. Our compliance programme is designed to satisfy all
-                applicable requirements simultaneously and is reviewed on an annual basis — or sooner
+                applicable requirements simultaneously and is reviewed on an annual basis, or sooner
                 when new regulations are enacted.
               </Clause>
               <Clause>
@@ -302,7 +302,7 @@ export default function Compliance() {
               </div>
               <Clause>
                 Practitioners using Wedocx spaces may request a copy of facility licences for their own
-                regulatory documentation needs by emailing info@wedocx.com. Copies are provided within
+                regulatory documentation needs by emailing info@wedocx.co. Copies are provided within
                 two business days.
               </Clause>
             </Section>
@@ -321,7 +321,7 @@ export default function Compliance() {
               <Clause title="Medical malpractice insurance">
                 Valid professional indemnity / medical malpractice insurance meeting the minimum coverage
                 levels prescribed by your licensing authority. Proof of insurance must be uploaded to your
-                Wedocx account and kept current. Wedocx does not provide malpractice cover — this is your
+                Wedocx account and kept current. Wedocx does not provide malpractice cover. This is your
                 sole responsibility.
               </Clause>
               <Clause title="DHA Prometric / HAAD / MOHAP examination">
@@ -379,7 +379,7 @@ export default function Compliance() {
               <List items={[
                 'All clinical surfaces are decontaminated between each practitioner session using DHA-approved disinfectants at the recommended contact time',
                 'Reusable instruments (where applicable) are decontaminated via validated washer-disinfector and autoclave cycles; cycle logs are retained for 5 years',
-                'Hand hygiene facilities — including alcohol-based hand rub and clinical-grade soap — are available at every point of care',
+                'Hand hygiene facilities, including alcohol-based hand rub and clinical-grade soap, are available at every point of care',
                 'Personal Protective Equipment (PPE) appropriate to the clinical setting is available for practitioners and support staff',
                 'All Wedocx facility staff complete DHA-recognised IPC training annually, with records retained and available on request',
                 'Enhanced IPC protocols are activated immediately in response to any notifiable disease alert or guidance from DHA or federal health authorities',
@@ -407,7 +407,7 @@ export default function Compliance() {
               </Clause>
               <Clause title="Practitioner obligations">
                 Practitioners must segregate waste correctly during their session. Any inappropriate
-                disposal — including placing sharps in general waste — constitutes a material breach of
+                disposal, including placing sharps in general waste, constitutes a material breach of
                 our Terms & Conditions and may result in immediate termination of access and reporting
                 to the relevant authority.
               </Clause>
@@ -440,7 +440,7 @@ export default function Compliance() {
                 'UAE Federal Personal Data Protection Law (Decree-Law No. 45 of 2021)',
                 'DIFC Data Protection Law 2020 (where DIFC jurisdiction applies)',
                 'DHA Health Information and Cyber Security Standard (HICS)',
-                'ISO/IEC 27001 — Information Security Management (aligned; formal certification in progress)',
+                'ISO/IEC 27001, Information Security Management (aligned; formal certification in progress)',
                 'PCI-DSS compliance for all payment card data processing (handled by our certified payment processor)',
                 'NIST Cybersecurity Framework for internal risk assessment and threat management',
               ]} />
@@ -458,8 +458,8 @@ export default function Compliance() {
               </Clause>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-3 mt-2 mb-4">
                 {[
-                  { title: 'Public Liability', body: 'AED 5,000,000 per occurrence — covers third-party bodily injury or property damage occurring in our premises.' },
-                  { title: 'Property & Contents', body: 'Full replacement value — covers the building, clinical equipment, and fixtures owned by Wedocx.' },
+                  { title: 'Public Liability', body: 'AED 5,000,000 per occurrence, covers third-party bodily injury or property damage occurring in our premises.' },
+                  { title: 'Property & Contents', body: 'Full replacement value, covers the building, clinical equipment, and fixtures owned by Wedocx.' },
                   { title: 'Business Interruption', body: 'Covers operating costs and revenue loss following an insured event causing facility closure.' },
                   { title: 'Employers Liability', body: 'Statutory cover for all Wedocx employees across all operating locations.' },
                 ].map(({ title, body }) => (
@@ -519,12 +519,12 @@ export default function Compliance() {
               </Clause>
               <Clause title="How to report">
                 Report immediately to the on-site Wedocx Facility Manager. A formal written report must
-                be submitted via our compliance portal or by email to info@wedocx.com within 24 hours
+                be submitted via our compliance portal or by email to info@wedocx.co within 24 hours
                 of the event. Emergency incidents should be reported to Civil Defence (997) and/or
                 ambulance services (998) first, then to Wedocx.
               </Clause>
               <Clause title="Regulatory reporting">
-                Certain incidents trigger mandatory reporting to the DHA or other authorities under UAE law —
+                Certain incidents trigger mandatory reporting to the DHA or other authorities under UAE law,
                 including serious adverse events, notifiable diseases, and death on premises. Wedocx will
                 coordinate statutory reporting obligations in conjunction with the practitioner involved.
                 It remains the practitioner&rsquo;s independent obligation to report any clinical event to
@@ -541,14 +541,14 @@ export default function Compliance() {
                 Wedocx is committed to resolving complaints fairly, promptly, and transparently.
                 We operate a two-stage complaints process.
               </Clause>
-              <Clause title="Stage 1 — Informal resolution">
-                Contact our team at info@wedocx.com or speak to the on-site Facility Manager.
+              <Clause title="Stage 1: Informal resolution">
+                Contact our team at info@wedocx.co or speak to the on-site Facility Manager.
                 We aim to acknowledge all complaints within 1 business day and to provide a substantive
                 response within 5 business days. Many issues are resolved at this stage without escalation.
               </Clause>
-              <Clause title="Stage 2 — Formal review">
+              <Clause title="Stage 2: Formal review">
                 If you are not satisfied with the Stage 1 response, submit a formal written complaint to
-                info@wedocx.com marked &ldquo;Formal Complaint.&rdquo; A senior member of the Wedocx leadership
+                info@wedocx.co marked &ldquo;Formal Complaint.&rdquo; A senior member of the Wedocx leadership
                 team will review the matter independently and respond within 10 business days with a
                 final written determination.
               </Clause>
@@ -556,9 +556,9 @@ export default function Compliance() {
                 If our process does not resolve your concern, you have the right to escalate to:
               </Clause>
               <List items={[
-                'Dubai Health Authority — Complaints & Conciliation Division (for facility or practitioner complaints in Dubai)',
-                'Department of Health Abu Dhabi — Patient Rights Section (for Abu Dhabi locations)',
-                'Ministry of Health & Prevention — Complaints Unit (for federal concerns)',
+                'Dubai Health Authority, Complaints & Conciliation Division (for facility or practitioner complaints in Dubai)',
+                'Department of Health Abu Dhabi, Patient Rights Section (for Abu Dhabi locations)',
+                'Ministry of Health & Prevention, Complaints Unit (for federal concerns)',
                 'Dubai Courts or relevant UAE judicial authority (for legal disputes)',
               ]} />
             </Section>
@@ -572,14 +572,14 @@ export default function Compliance() {
                 {[
                   {
                     label: 'General compliance',
-                    val: 'info@wedocx.com',
-                    href: 'mailto:info@wedocx.com',
+                    val: 'info@wedocx.co',
+                    href: 'mailto:info@wedocx.co',
                     note: 'Response within 2 business days',
                   },
                   {
                     label: 'Incident reporting',
-                    val: 'info@wedocx.com',
-                    href: 'mailto:info@wedocx.com',
+                    val: 'info@wedocx.co',
+                    href: 'mailto:info@wedocx.co',
                     note: 'Mark subject: INCIDENT REPORT',
                   },
                   {
@@ -629,10 +629,10 @@ export default function Compliance() {
           <div className="section-ring section-ring-480 section-ring-dark absolute -bottom-32 -right-32 pointer-events-none" />
 
           <motion.div variants={fadeUp} transition={t()} className="relative z-10">
-            <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Compliance</p>
+            <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Regulatory Audit</p>
             <h3 className="font-serif text-[clamp(24px,3vw,40px)] font-light leading-none tracking-[-0.02em]">
-              Need to verify our<br />
-              <span className="italic text-brand">licences or certifications?</span>
+              Regulatory infrastructure,<br />
+              <span className="italic text-brand">fully auditable.</span>
             </h3>
           </motion.div>
 
@@ -641,7 +641,7 @@ export default function Compliance() {
             className="flex gap-3 flex-wrap relative z-10"
           >
             <a
-              href="mailto:info@wedocx.com"
+              href="mailto:info@wedocx.co"
               className="inline-flex items-center gap-2 px-6 py-[14px] rounded-full text-[13.5px] font-medium bg-bone text-ink hover:bg-white transition-all"
             >
               Request documents <span>→</span>

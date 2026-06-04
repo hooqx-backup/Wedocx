@@ -10,10 +10,16 @@ export const SHIFT_OPTIONS = [
 ]
 
 export const DEPARTMENT_OPTIONS = [
-  { value: 'dental',       label: 'Dental Suite'       },
-  { value: 'dermatology',  label: 'Dermatology Room'   },
-  { value: 'treatment',    label: 'Treatment Room'     },
-  { value: 'pediatrician', label: 'Pediatrician Suite' },
+  { value: 'wedocx-dental',       label: 'Flagship Dental Suite',       clinicId: 'wedocx' },
+  { value: 'wedocx-dermatology',  label: 'Flagship Dermatology Room',   clinicId: 'wedocx' },
+  { value: 'wedocx-treatment',    label: 'Flagship Treatment Room',      clinicId: 'wedocx' },
+  { value: 'wedocx-pediatrician', label: 'Flagship Pediatrician Suite',  clinicId: 'wedocx' },
+  { value: 'lux-dental',          label: 'Premium Dental Room',          clinicId: 'lux'    },
+  { value: 'lux-dermatology',     label: 'Premium Dermatology Room',     clinicId: 'lux'    },
+  { value: 'lux-therapy',         label: 'Premium Therapy Room',         clinicId: 'lux'    },
+  { value: 'lux-treatment',       label: 'Premium Treatment Room',       clinicId: 'lux'    },
+  { value: 'lux-laser',           label: 'Premium Laser Room',           clinicId: 'lux'    },
+  { value: 'lux-gp',              label: 'Premium GP Room',              clinicId: 'lux'    },
 ]
 
 // Price matrix — [duration][shift] → ₹ price

@@ -38,10 +38,10 @@ export default function CareersCta() {
         <motion.div variants={fadeUp} transition={t(0.8)}
           className="flex flex-col gap-3.5 items-start relative z-10">
           <motion.a
-            href="mailto:info@wedocx.com"
+            href="mailto:info@wedocx.co"
             whileHover={{ y: -1, boxShadow: '0 12px 30px -12px rgba(0,0,0,.3)' }} whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-bone text-ink transition-all hover:bg-white">
-            info@wedocx.com <span>→</span>
+            info@wedocx.co <span>→</span>
           </motion.a>
           <motion.a href="/contact" whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium text-bone border border-bone/25 transition-all hover:border-bone/60">

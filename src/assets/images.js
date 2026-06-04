@@ -42,6 +42,7 @@ export const imgHero      = reception2
 export const imgAmenity   = reception
 export const imgConcept   = reception
 export const imgCta       = treatmentroom
+export { reception, reception1, reception2, restroom, restroom2, pathway1, pathways }
 export const imgMoodboard = treatment2
 export { notfound }
 
@@ -101,6 +102,40 @@ import physioServ       from './images/treatment4.jpg'
 import psychologyServ   from './images/treatmentroom3.jpg'
 import aestheticsServ   from './images/treatmentroom.jpg'
 export { generalServ, dentalServ, dermatologyServ, pediatricianServ, treatmentServ, doctorServ, physioServ, psychologyServ, aestheticsServ }
+
+// ── Lux Clinic images ─────────────────────────────────────────────────────────
+import luxReception    from './images/LuxPics/Lux_Reception.png'
+import luxReception2   from './images/LuxPics/Lux_Reception2.png'
+import luxGp1          from './images/LuxPics/Gp_Room1.png'
+import luxGp2          from './images/LuxPics/Gp_Room2.png'
+import luxGp3          from './images/LuxPics/Gp_Room3.png'
+import luxDental1      from './images/LuxPics/Dental_Room1.png'
+import luxDental2      from './images/LuxPics/Dental_Room2.png'
+import luxTreatment1   from './images/LuxPics/Treatment_Room.png'
+import luxTreatment2   from './images/LuxPics/Treatment_Room2.png'
+import luxTreatment3   from './images/LuxPics/Treatment_Room3.png'
+import luxDerma1       from './images/LuxPics/DermaRoom1.png'
+import luxDerma2       from './images/LuxPics/DermaRoom2.png'
+import luxLaser        from './images/LuxPics/LaserRoom.png'
+import luxTherapy      from './images/LuxPics/Therapyroom.png'
+import luxVanity       from './images/LuxPics/Female_Vanity.png'
+import luxSterilize    from './images/LuxPics/Sterilization.png'
+import luxPantry       from './images/LuxPics/Pantry.png'
+import luxHandicap     from './images/LuxPics/HandicapToilet.png'
+
+export const luxReceptionImgs = [luxReception, luxReception2]
+export const luxGpImgs        = [luxGp1, luxGp2, luxGp3]
+export const luxDentalImgs    = [luxDental1, luxDental2]
+export const luxTreatmentImgs = [luxTreatment1, luxTreatment2, luxTreatment3]
+export const luxDermaImgs     = [luxDerma1, luxDerma2]
+export {
+  luxReception, luxReception2,
+  luxGp1, luxGp2, luxGp3,
+  luxDental1, luxDental2,
+  luxTreatment1, luxTreatment2, luxTreatment3,
+  luxDerma1, luxDerma2,
+  luxLaser, luxTherapy, luxVanity, luxSterilize, luxPantry, luxHandicap,
+}
 
 // ── Video ─────────────────────────────────────────────────────────────────────
 import tourVideo from './videos/Blue Modern Thank You For Watching Health Video.mp4'

@@ -46,7 +46,7 @@ export default function SpacesCta() {
             </h2>
             <p className="text-bone/60 text-[16px] leading-relaxed max-w-[440px]">
               Book a 30-minute tour, meet the clinical coordinator on site, see the exact room
-              your patients will sit in. No obligation — no contract until you're ready.
+              your patients will sit in. No obligation, no contract until you're ready.
             </p>
           </motion.div>
 

@@ -32,7 +32,7 @@ const reasons = [
       </svg>
     ),
     title: 'Press &', titleEm: 'partnerships.',
-    body: 'Journalists, healthcare publications, brand partners — write to our communications lead and expect a same-day reply.',
+    body: 'Journalists, healthcare publications, brand partners. Write to our communications lead and expect a same-day reply.',
   },
   {
     rn: 'iv.',
@@ -44,7 +44,7 @@ const reasons = [
       </svg>
     ),
     title: 'Join the', titleEm: 'team.',
-    body: "Operations, clinical, design, engineering. We open hiring in batches — leave your details and we'll be in touch.",
+    body: "Operations, clinical, design, engineering. We open hiring in batches, leave your details and we'll be in touch.",
   },
 ]
 
@@ -236,7 +236,7 @@ export default function ReasonsGrid() {
             viewport={vp} transition={{ duration: 0.55, delay: 0.3, ease: [0.16,1,0.3,1] }}
             className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70"
           >
-            01 — How can we help?
+            01 · How can we help?
           </motion.span>
         </div>
 
@@ -260,8 +260,8 @@ export default function ReasonsGrid() {
             transition={{ duration: 0.75, delay: 0.42, ease: snap }}
             className="text-[#5a6478] max-w-110 leading-[1.7] text-[15px]"
           >
-            We route each inquiry to the right person — a founder, a clinical lead, or a member
-            of the operations team — so you get a real answer, not a queue.
+            We route each inquiry to the right person, a founder, a clinical lead, or a member
+            of the operations team, so you get a real answer, not a queue.
           </motion.p>
         </div>
 

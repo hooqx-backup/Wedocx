@@ -93,21 +93,21 @@ export default function BentoServices() {
               <motion.span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0"
                 animate={{ scale: [1, 1.5, 1], opacity: [1, 0.4, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }} />
-              01 — Core Services
+              01 · Platform Capabilities
             </motion.div>
 
             <h2 className="font-serif text-[clamp(40px,5.2vw,72px)] font-light leading-none tracking-[-0.02em] text-ink mt-5">
               <span className="block overflow-hidden">
                 <motion.span className="block" initial={{ y: '105%' }} whileInView={{ y: '0%' }}
                   viewport={VP} transition={{ duration: 0.88, delay: 0.12, ease: snap }}>
-                  Seven services.
+                  Seven pillars.
                 </motion.span>
               </span>
               <span className="block overflow-hidden">
                 <motion.span className="block italic text-gold"
                   initial={{ clipPath: 'inset(0 100% 0 0)' }} whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
                   viewport={VP} transition={{ duration: 0.88, delay: 0.3, ease: hard }}>
-                  One quiet standard.
+                  One scalable platform.
                 </motion.span>
               </span>
             </h2>
@@ -115,7 +115,7 @@ export default function BentoServices() {
             <motion.p initial={{ opacity: 0, x: 24, filter: 'blur(6px)' }} whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
               viewport={VP} transition={{ duration: 0.65, delay: 0.38, ease: snap }}
               className="text-[15px] text-[#5b6478] leading-[1.7] mt-5 max-w-120">
-              Each pillar is a complete operation — designed by clinicians, refined across 38 suites, delivered with the same care you give patients.
+              Each capability is a fully productised service line, built once, deployed across every suite, generating margin at scale without linear cost increases.
             </motion.p>
           </div>
 
@@ -152,7 +152,7 @@ export default function BentoServices() {
               </div>
               <div>
                 <h3>Turn-key <em>clinic suites.</em></h3>
-                <p>Premium consultation rooms, fully equipped and operationally staffed. Walk in, sign in, see your first patient inside an hour.</p>
+                <p>Ready-to-operate premium suites generating revenue on day one. Zero fit-out cost for the practitioner. Zero ramp time for the platform.</p>
                 <div className="svc-b1-meta">
                   {B1_META.map((m, i) => (
                     <motion.div key={i} className="m" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
@@ -175,7 +175,7 @@ export default function BentoServices() {
             <span className="svc-card-rn">ii.</span>
             <IconBox><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9 8.6 8.6 0 0 1 1 .05" strokeLinecap="round"/><path d="M20 4l-9 9-3-3" strokeLinecap="round" strokeLinejoin="round"/></svg></IconBox>
             <h3>Front-desk <em>concierge.</em></h3>
-            <p>Bilingual reception, intake and scheduling — under your name.</p>
+              <p>Shared concierge infrastructure that scales to every new suite without incremental headcount cost.</p>
             <ArrowBtn />
           </motion.article>
 
@@ -188,7 +188,7 @@ export default function BentoServices() {
             <span className="svc-card-rn">iii.</span>
             <IconBox><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h4" strokeLinecap="round"/></svg></IconBox>
             <h3>Billing & <em>insurance.</em></h3>
-            <p>Daman, Thiqa, AXA, Bupa — claims and weekly payouts.</p>
+              <p>Claims management across 9 insurers. A revenue stream that grows with practitioner volume, not with headcount.</p>
             <ArrowBtn />
           </motion.article>
 
@@ -203,7 +203,7 @@ export default function BentoServices() {
                 <span className="svc-card-rn">iv.</span>
                 <IconBox><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2" strokeLinecap="round"/></svg></IconBox>
                 <h3>Practitioner <em>console.</em></h3>
-                <p>Book a room, charge a card, write a note. One app on every device.</p>
+                <p>Proprietary SaaS layer: booking, billing, EMR, and analytics. The data moat that deepens with every session logged.</p>
               </div>
               <div className="svc-b4-vis">
                 <span className="svc-b4-lbl"><span className="pip" />PLATFORM v6.2</span>
@@ -228,7 +228,7 @@ export default function BentoServices() {
             <span className="svc-card-rn">v.</span>
             <IconBox><svg viewBox="0 0 24 24"><path d="M9 2v2M15 2v2M6 6h12l-1 14H7L6 6zM3 6h18" strokeLinecap="round"/></svg></IconBox>
             <h3>Sterilization.</h3>
-            <p>Specialty-grade cycles, audited monthly.</p>
+              <p>DHA-compliant sterilization infrastructure, a regulatory requirement competitors struggle to maintain at scale.</p>
             <ArrowBtn />
           </motion.article>
 
@@ -240,8 +240,8 @@ export default function BentoServices() {
             className="svc-card svc-b6">
             <span className="svc-card-rn">vi.</span>
             <IconBox><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 8.57 19.5a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.25 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9.57a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8.92 5.25h0A1.65 1.65 0 0 0 9.93 3.74V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.41 9v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" strokeLinejoin="round"/></svg></IconBox>
-            <h3>Patient <em>growth.</em></h3>
-            <p>SEO, listings, the Wedocx directory.</p>
+            <h3>Patient <em>acquisition.</em></h3>
+              <p>Practitioner discovery platform driving organic demand. More practitioners means more SEO surface, a network effect in content.</p>
             <ArrowBtn />
           </motion.article>
 

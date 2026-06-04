@@ -33,11 +33,11 @@ const features = [
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M16 6l3-3m0 0l-3-3m3 3h-6"/></svg>,
-    label: 'Bilingual front desk', detail: 'Arabic, English, Urdu — under your brand',
+    label: 'Bilingual front desk', detail: 'Arabic, English, Urdu, under your brand',
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 15h4"/></svg>,
-    label: 'Insurance billing', detail: 'Daman, Thiqa, AXA, Bupa — weekly payouts',
+    label: 'Insurance billing', detail: 'Daman, Thiqa, AXA, Bupa, weekly payouts',
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>,
@@ -84,7 +84,7 @@ export default function SuiteDNA() {
         >
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-6">
             <span className="w-9 h-px bg-brand/60 block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/70">01 — Suite anatomy</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/70">01 · Suite anatomy</span>
           </motion.div>
           <div className="grid lg:grid-cols-[1.1fr_1fr] grid-cols-1 gap-12 items-end">
             <motion.h2 variants={fadeUp} transition={t()}
@@ -93,7 +93,7 @@ export default function SuiteDNA() {
             </motion.h2>
             <motion.p variants={fadeUp} transition={t(0.7)} className="text-bone/55 text-[15px] leading-[1.75] max-w-[420px]">
               We don't charge extra for the room being a proper room. Every suite ships with
-              clinical-grade infrastructure from day one — equipment, staffing, compliance, tech.
+              clinical-grade infrastructure from day one: equipment, staffing, compliance, tech.
             </motion.p>
           </div>
         </motion.div>

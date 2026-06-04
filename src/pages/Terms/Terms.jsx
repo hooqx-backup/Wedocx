@@ -126,7 +126,7 @@ export default function Terms() {
             className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold mb-8 px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/60"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-            Legal · Wedocx
+            Governance · Investor Grade
           </motion.div>
 
           <motion.h1
@@ -141,8 +141,9 @@ export default function Terms() {
             variants={fadeUp} transition={t()}
             className="text-[#3a4558] text-[17px] leading-[1.7] max-w-[540px] mb-12"
           >
-            These terms govern your access to Wedocx clinic spaces, booking services,
-            and digital platforms. Please read them carefully before using our services.
+            Institutional-grade terms that protect practitioners, patients, and the platform.
+            Built to DHA compliance standards, reviewed by UAE legal counsel, and designed to scale
+            across every market we enter.
           </motion.p>
 
           <motion.div
@@ -179,10 +180,10 @@ export default function Terms() {
             <div className="mt-8 pt-6 border-t border-ink/8">
               <p className="font-mono text-[9px] tracking-[.12em] uppercase text-[#8a94a8] mb-3">Questions?</p>
               <a
-                href="mailto:info@wedocx.com"
+                href="mailto:info@wedocx.co"
                 className="inline-flex items-center gap-1.5 font-mono text-[10.5px] tracking-[.1em] uppercase text-ink hover:text-brand transition-colors"
               >
-                info@wedocx.com <span className="text-brand">→</span>
+                info@wedocx.co <span className="text-brand">→</span>
               </a>
             </div>
           </aside>
@@ -238,7 +239,7 @@ export default function Terms() {
               </Clause>
               <List items={[
                 'Hold a valid, active medical or healthcare professional licence issued by the Dubai Health Authority (DHA), Department of Health Abu Dhabi (DOH), or Ministry of Health and Prevention (MOHAP), as applicable to your practice',
-                'Be in good standing with your licensing authority — no suspension, restriction, or pending disciplinary action',
+                'Be in good standing with your licensing authority, with no suspension, restriction, or pending disciplinary action',
                 'Carry valid professional indemnity / medical malpractice insurance appropriate to your specialty and scope of practice, with coverage amounts meeting DHA minimum requirements',
                 'Be aged 18 years or older',
                 'Have the legal capacity to enter into binding contracts under UAE law',
@@ -340,8 +341,8 @@ export default function Terms() {
 
             <Section id="ip" index={8} title="Intellectual Property">
               <Clause>
-                All content on the Wedocx website and platform — including logos, brand identity, copy, imagery,
-                software, and data — is the exclusive property of Wedocx Healthcare Spaces LLC or its licensors
+                All content on the Wedocx website and platform, including logos, brand identity, copy, imagery,
+                software, and data, is the exclusive property of Wedocx Healthcare Spaces LLC or its licensors
                 and is protected by UAE and international intellectual property law.
               </Clause>
               <Clause>
@@ -455,7 +456,7 @@ export default function Terms() {
               </Clause>
               <div className="mt-4 grid sm:grid-cols-3 grid-cols-1 gap-4">
                 {[
-                  { label: 'Email',   val: 'info@wedocx.com', href: 'mailto:info@wedocx.com' },
+                  { label: 'Email',   val: 'info@wedocx.co', href: 'mailto:info@wedocx.co' },
                   { label: 'Address', val: 'Dubai Healthcare City, Dubai, UAE', href: null },
                   { label: 'Hours',   val: 'Mon–Fri, 9:00 – 18:00 GST', href: null },
                 ].map(({ label, val, href }) => (
@@ -490,10 +491,10 @@ export default function Terms() {
           <div className="section-ring section-ring-480 section-ring-dark absolute -bottom-32 -right-32 pointer-events-none" />
 
           <motion.div variants={fadeUp} transition={t()} className="relative z-10">
-            <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Legal documents</p>
+            <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Due Diligence</p>
             <h3 className="font-serif text-[clamp(24px,3vw,40px)] font-light leading-none tracking-[-0.02em]">
-              Have questions about<br />
-              <span className="italic text-brand">your obligations?</span>
+              Built for<br />
+              <span className="italic text-brand">institutional scrutiny.</span>
             </h3>
           </motion.div>
 
@@ -508,7 +509,7 @@ export default function Terms() {
               Talk to our team <span>→</span>
             </Link>
             <a
-              href="mailto:info@wedocx.com"
+              href="mailto:info@wedocx.co"
               className="inline-flex items-center gap-2 px-6 py-[14px] rounded-full text-[13.5px] font-medium text-bone border border-bone/25 hover:border-bone/60 transition-all"
             >
               Email us directly

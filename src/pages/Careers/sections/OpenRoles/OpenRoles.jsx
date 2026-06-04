@@ -8,7 +8,7 @@ const ROLES = [
     location: 'Dubai · On-site',
     type: 'Full-time',
     typeColor: 'text-emerald-700 border-emerald-600/30 bg-emerald-50',
-    desc: 'Own the end-to-end readiness of our clinic suites — from pre-shift checklists to vendor coordination and same-day incident response.',
+    desc: 'Own the end-to-end readiness of our clinic suites, from pre-shift checklists to vendor coordination and same-day incident response.',
   },
   {
     title: 'Clinical Partnerships Manager',
@@ -44,7 +44,7 @@ export default function OpenRoles() {
           className="mb-16">
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-6">
             <span className="w-9 h-px bg-ink/30 block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/50">01 — Open roles</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/50">01 · Open roles</span>
           </motion.div>
           <div className="grid lg:grid-cols-[1.1fr_1fr] grid-cols-1 gap-10 items-end">
             <motion.h2 variants={fadeUp} transition={t()}
@@ -54,7 +54,7 @@ export default function OpenRoles() {
             <motion.p variants={fadeUp} transition={t(0.7)}
               className="text-[#5a6478] text-[15px] leading-[1.75] max-w-[400px]">
               We don't hire for headcount. Every person here owns a critical slice of the product or operation.
-              No bureaucracy, no approval chains — just impact.
+              No bureaucracy, no approval chains. Just impact.
             </motion.p>
           </div>
         </motion.div>
@@ -64,7 +64,7 @@ export default function OpenRoles() {
           {ROLES.map((role, i) => (
             <motion.div key={i} variants={fadeUp} transition={t(0.7)}
               className="group border border-ink/8 rounded-2xl bg-white/60 hover:bg-white hover:shadow-card transition-all duration-350 overflow-hidden cursor-pointer"
-              onClick={() => window.location.href = 'mailto:info@wedocx.com?subject=' + encodeURIComponent(role.title)}>
+              onClick={() => window.location.href = 'mailto:info@wedocx.co?subject=' + encodeURIComponent(role.title)}>
               <div className="p-7 grid lg:grid-cols-[1fr_auto] grid-cols-1 gap-6 items-center">
                 <div>
                   <div className="flex flex-wrap items-center gap-3 mb-3">

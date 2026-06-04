@@ -46,24 +46,25 @@ export default function Hero() {
               className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold mb-7 px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/50"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-              About Wedocx
+              Series A · 2026
             </motion.div>
 
             <motion.h1
               variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(52px,7.5vw,108px)] font-light leading-[.96] tracking-[-0.025em] mb-7 text-ink"
             >
-              A new <span className="italic text-gold">kind</span> of<br />
-              healthcare <span className="italic text-gold">network.</span>
+              We built the <span className="italic text-gold">infrastructure</span><br />
+              for independent <span className="italic text-gold">medicine.</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp} transition={t()}
               className="text-[18px] leading-[1.65] max-w-130 text-[#3a4558]"
             >
-              We are building the operational backbone for independent medical practice &mdash;
-              premium, fully-equipped clinic suites that doctors can step into and start treating
-              patients the same day. No leases. No setup. No friction. Just care.
+              Every year, hundreds of qualified doctors in the UAE delay or abandon independent
+              practice; blocked by leases, fit-out costs, licensing, and operational complexity.
+              Wedocx removes every one of those barriers. A fully equipped, licensed, staffed clinical
+              suite, available by the shift. We don&rsquo;t sell real estate. We sell practice, ready.
             </motion.p>
           </div>
 
@@ -83,16 +84,17 @@ export default function Hero() {
               >
                 &ldquo;
               </span>
-              We didn&rsquo;t set out to build real estate. We set out to give doctors back their
-              time &mdash; and their patients a better room to be cared for in.
+              The healthcare real estate model was broken for doctors. We fixed it, then
+              realised we had built something with the potential to become the largest
+              independent clinic network in the GCC.
             </blockquote>
             <div className="mt-7 max-w-[440px] lg:ml-auto flex items-center gap-4 text-[13px] text-[#5a6478]">
               <div className="w-11 h-11 rounded-full bg-gradient-to-br from-brand to-sand flex items-center justify-center text-white font-semibold font-sans text-sm shrink-0">
-                DA
+                SAB
               </div>
               <div>
-                <strong className="text-ink font-semibold block">Dr. Adel Hosari</strong>
-                Co-founder &amp; Chief Medical Officer
+                <strong className="text-ink font-semibold block">Sajjad Anwar Butt</strong>
+                Founder &amp; Chairman
               </div>
             </div>
           </motion.div>

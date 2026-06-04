@@ -5,29 +5,20 @@ import { contactBanner } from '../../../../assets/images'
 
 const quickCards = [
   {
-    label: 'Email — Fastest',
-    value: 'info@wedocx.com',
-    href: 'mailto:info@wedocx.com',
+    label: 'Email, Fastest',
+    value: 'info@wedocx.co',
+    href: 'mailto:info@wedocx.co',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
         <path d="M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l2-2h14l2 2" />
       </svg>
     ),
   },
+  
   {
-    label: 'Phone — Direct line',
-    value: '+971 4 · 400 0000',
-    href: 'tel:+97144000000',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
-        <path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'WhatsApp — Quick chat',
+    label: 'WhatsApp, Quick chat',
     value: 'Message us now',
-    href: 'https://wa.me/971544000000',
+    href: 'https://wa.me/971500000000',
     isItalic: true,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
@@ -133,7 +124,7 @@ export default function Hero() {
               variants={fadeUp} transition={t()}
               className="text-[18px] leading-[1.65] max-w-[520px] text-[#3a4558] mb-8"
             >
-              A real person reads every message — usually within four hours, weekdays. Whether
+              A real person reads every message, usually within four hours, weekdays. Whether
               you're a doctor exploring a suite, a clinic considering partnership, or a journalist
               on deadline, write below and we'll come back to you fast.
             </motion.p>

@@ -57,7 +57,7 @@ export default function TheNumbers() {
         >
           <motion.div variants={fadeUp} transition={t(0.6)} className="inline-flex items-center gap-4 mb-6">
             <span className="w-9 h-px bg-brand/50 block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/60">03 — The numbers</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/60">03 · The numbers</span>
             <span className="w-9 h-px bg-brand/50 block" />
           </motion.div>
           <motion.h2 variants={fadeUp} transition={t()}

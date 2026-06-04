@@ -4,28 +4,28 @@ import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 
 const FAQS = [
   {
-    q: <>Do I keep my own <em className="text-gold not-italic">patients</em> and records?</>,
-    a: 'Always. Patients are yours, records are yours, the relationship is yours. We are a facility and an operating partner — never a clinic group that owns the patient.',
+    q: <>Who owns the <em className="text-gold not-italic">patient</em> relationships and data?</>,
+    a: 'The practitioner owns everything: patients, records, and the clinical relationship. Wedocx is the facility and operating partner, never the clinic group. This is core to our retention model and our regulatory positioning.',
   },
   {
-    q: <>What's the shortest I can <em className="text-gold not-italic">book</em> for?</>,
-    a: 'One hour, real-time, on any available suite. We see a lot of consultants who fly in for a single afternoon, and a lot of GPs who book a regular Tuesday and Thursday.',
+    q: <>What drives <em className="text-gold not-italic">practitioner</em> utilisation?</>,
+    a: 'Flexible booking from one hour to monthly anchor floors. The majority of revenue comes from practitioners who convert from single-day bookings to regular weekly schedules, typically within their first 60 days on the platform.',
   },
   {
-    q: <>Which <em className="text-gold not-italic">insurers</em> do you accept?</>,
-    a: 'Daman, Thiqa, AXA, Bupa, Cigna, MetLife, Allianz, NextCare and Almadallah — claims submitted, reconciled and chased weekly by our finance team.',
+    q: <>How does <em className="text-gold not-italic">insurance</em> revenue flow?</>,
+    a: 'Nine insurance panels: Daman, Thiqa, AXA, Bupa, Cigna, MetLife, Allianz, NextCare and Almadallah. Our finance team submits, reconciles, and chases all claims. Practitioners receive weekly payouts, net of our commission.',
   },
   {
-    q: <>Can I move <em className="text-gold not-italic">between</em> cities?</>,
-    a: 'Yes. Your account, calendar, EMR and patient list travel with you across every Wedocx suite — currently Dubai, Abu Dhabi and Sharjah, with Riyadh and Doha later in 2026.',
+    q: <>How does <em className="text-gold not-italic">multi-market</em> expansion work?</>,
+    a: 'The platform, including calendar, EMR, billing and patient records, is fully portable. A practitioner onboarded in Dubai can operate in Abu Dhabi or Sharjah the same day. Riyadh and Doha are on track for late 2026.',
   },
   {
-    q: <>What does <em className="text-gold not-italic">onboarding</em> look like?</>,
-    a: 'Six business days end-to-end. One Wedocx operations lead owns your case from application to first patient — license verification, insurance enrollment, room walkthrough and software setup, all on one continuous thread.',
+    q: <>What is the unit cost to <em className="text-gold not-italic">onboard</em> a practitioner?</>,
+    a: 'Six business days, one dedicated ops lead, one intake form. Licensing, insurance enrollment, EMR configuration, and room allocation are all managed by Wedocx. Marginal cost-to-onboard decreases with every suite added to the network.',
   },
   {
-    q: <>Is there a <em className="text-gold not-italic">long-term</em> contract?</>,
-    a: 'Never. Hourly is hourly. Monthly is rolling. Anchor floors are 6-month terms because of the fit-out — but otherwise, you can scale month-to-month.',
+    q: <>What are the <em className="text-gold not-italic">contract</em> terms and churn dynamics?</>,
+    a: 'No mandatory long-term contracts, hourly is hourly, monthly is rolling. 92% of practitioners renew past their first quarter. Average practitioner tenure is approaching 14 months and continues to extend as the network grows.',
   },
 ]
 
@@ -87,17 +87,17 @@ export default function Faq() {
               className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/50"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-              06 — Common Questions
+              06 · Investor FAQs
             </motion.div>
             <motion.h2 variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(40px,5.2vw,72px)] font-light leading-[1] tracking-[-0.02em] text-ink mt-5"
             >
-              Before you<br />book a <span className="italic text-gold">tour.</span>
+              Before you<br />write the <span className="italic text-gold">cheque.</span>
             </motion.h2>
             <motion.p variants={fadeUp} transition={t()}
               className="text-[15px] text-[#5b6478] leading-[1.7] mt-6 max-w-[340px]"
             >
-              The six things every doctor asks us in our first call.
+              The six questions every investor asks us in the first meeting.
             </motion.p>
           </motion.div>
 

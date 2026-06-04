@@ -85,7 +85,7 @@ export default function ContactForm() {
       if (!result.ok) throw new Error(result.error || 'Server error')
       setSuccess(true)
     } catch {
-      alert('Could not send right now. Please email info@wedocx.com directly.')
+      alert('Could not send right now. Please email info@wedocx.co directly.')
     } finally {
       setLoading(false)
     }
@@ -112,7 +112,7 @@ export default function ContactForm() {
       <div className="max-w-360 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-14">
           <span className="w-9 h-px bg-ink block" />
-          <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 — Write to us</span>
+          <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 · Write to us</span>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_1.2fr] grid-cols-1 gap-20 items-start">
@@ -133,16 +133,16 @@ export default function ContactForm() {
                 style={{ fontSize: '5rem', lineHeight: 0, display: 'inline-block', position: 'relative', top: '1.05rem', marginRight: '0.1rem' }}>
                 &ldquo;
               </span>
-              Every email lands on a real desk. We read each one — and we reply to all of them, even the short ones.
+              Every email lands on a real desk. We read each one, and we reply to all of them, even the short ones.
             </motion.blockquote>
 
             <motion.div variants={fadeUp} transition={t(0.7)} className="flex items-center gap-4 text-[13px] text-[#5a6478] mb-12">
               <div className="w-11 h-11 rounded-full bg-gradient-to-br from-brand to-sand flex items-center justify-center text-white font-semibold text-sm shrink-0">
-                LM
+                DIU
               </div>
               <div>
-                <strong className="text-ink font-semibold block">Lina Mansour</strong>
-                COO &amp; Co-founder
+                <strong className="text-ink font-semibold block">Dr. Irfan Ullah</strong>
+                Founder &amp; Medical Director
               </div>
             </motion.div>
 
@@ -242,13 +242,13 @@ export default function ContactForm() {
 
                     <Field label="Your message" req error={errors.message}>
                       <textarea name="message" value={fields.message} onChange={set('message')}
-                        rows={5} placeholder="Tell us a little about your practice, your specialty, your preferred city — or just say hello."
+                        rows={5} placeholder="Tell us a little about your practice, your specialty, your preferred city, or just say hello."
                         className={`${inputCls(errors.message)} resize-y min-h-[130px] leading-[1.5]`} />
                     </Field>
 
                     <div className="flex items-center justify-between gap-4 mt-4 pt-6 border-t border-ink/8 flex-wrap">
                       <p className="text-[12px] text-[#5a6478] max-w-[260px] leading-[1.5]">
-                        We respond from a real inbox. Your details are private —{' '}
+                        We respond from a real inbox. Your details are private.{' '}
                         <a href="#" className="text-ink underline decoration-brand/40 underline-offset-[3px]">see our privacy policy</a>.
                       </p>
                       <motion.button

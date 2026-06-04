@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const milestones = [
-  { year: '2022', plain: 'The ', italic: 'first room.',      body: 'Our co-founders open a single shared suite in JLT. The waiting list fills in eleven days.' },
-  { year: '2023', plain: 'A ',   italic: 'real network.',    body: 'Six suites across Dubai. Front-desk operations team launched. First specialist suites built.' },
-  { year: '2024', plain: 'Going ', italic: 'regional.',      body: 'Abu Dhabi and Sharjah open. 800+ verified doctors onboard. Hourly booking goes live.' },
-  { year: '2026', plain: 'The ', italic: 'quiet standard.',  body: 'Operating 38 suites, supporting 1,200+ doctors. Expansion to KSA & Qatar underway.' },
+  { year: '2022', plain: 'The ', italic: 'proof.',           body: 'One suite in JLT. Fully booked in eleven days. The hypothesis validated before a single investor meeting.' },
+  { year: '2023', plain: 'The ', italic: 'model.',           body: 'Six suites, a dedicated operations team, and a practitioner waiting list that wouldn\'t stop growing.' },
+  { year: '2026', plain: 'The ', italic: 'platform.',        body: '38 suites generating consistent recurring revenue. GCC expansion underway. Raising now.' },
 ]
 
 const snap = [0.22, 1, 0.36, 1]
@@ -210,7 +209,7 @@ export default function Story() {
           <motion.span initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={VP} transition={{ duration: 0.5, delay: 0.25, ease: [0.16,1,0.3,1] }}
             className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">
-            02 — Our Story
+            02 · Growth Timeline
           </motion.span>
         </div>
 
@@ -220,18 +219,18 @@ export default function Story() {
             <span className="block overflow-hidden">
               <motion.span className="block" initial={{ y: '100%' }} whileInView={{ y: '0%' }}
                 viewport={VP} transition={{ duration: 0.9, delay: 0.1, ease: snap }}>
-                From a single suite in Dubai
+                From a proof of concept
               </motion.span>
             </span>
             <span className="block overflow-hidden">
               <motion.span className="block" initial={{ y: '100%' }} whileInView={{ y: '0%' }}
                 viewport={VP} transition={{ duration: 0.9, delay: 0.26, ease: snap }}>
-                to a regional{' '}
+                to a scalable{' '}
                 <motion.span className="italic text-gold inline-block"
                   initial={{ opacity: 0, scale: 0.7, filter: 'blur(6px)' }}
                   whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                   viewport={VP} transition={{ duration: 0.65, delay: 0.62, ease: snap }}>
-                  network.
+                  platform.
                 </motion.span>
               </motion.span>
             </span>
@@ -241,14 +240,14 @@ export default function Story() {
             whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             viewport={VP} transition={{ duration: 0.65, delay: 0.35, ease: snap }}
             className="text-[#3a4558] max-w-110 leading-[1.7] text-[15px]">
-            Wedocx began with one question — why is it so hard for an excellent doctor to simply
-            open their door and start practicing? Four years later, the answer is built into every
-            detail of our suites.
+            Wedocx has grown without outside capital, every suite funded by the revenue
+            of the last. We are now raising to compress the timeline of what we have
+            already proven can work.
           </motion.p>
         </div>
 
         {/* Timeline */}
-        <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 relative">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 relative">
           <div className="absolute left-0 right-0 top-4 h-px hidden lg:block">
             <motion.div className="absolute inset-0 process-dashed"
               initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}

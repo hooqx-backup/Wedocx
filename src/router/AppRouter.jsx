@@ -14,6 +14,10 @@ import Privacy from '../pages/Privacy/Privacy'
 import Compliance from '../pages/Compliance/Compliance'
 import ComingSoonPage from '../pages/ComingSoon/ComingSoonPage'
 import NotFound from '../pages/NotFound/NotFound'
+import Clinics from '../pages/Clinics/Clinics'
+import ClinicProfile from '../pages/Clinics/ClinicProfile'
+import LuxClinicPage from '../pages/Clinics/LuxClinicPage'
+import WedocxClinicPage from '../pages/Clinics/WedocxClinicPage'
 
 export default function AppRouter() {
   return (
@@ -21,6 +25,10 @@ export default function AppRouter() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/clinics" element={<Clinics />} />
+        <Route path="/clinics/wedocx" element={<WedocxClinicPage />} />
+        <Route path="/clinics/lux" element={<LuxClinicPage />} />
+        <Route path="/clinics/:clinicSlug" element={<ClinicProfile />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/clinic-spaces" element={<ClinicSpaces />} />

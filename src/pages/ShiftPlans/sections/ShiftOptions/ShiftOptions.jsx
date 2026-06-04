@@ -46,7 +46,7 @@ const OPTIONS = [
     featured: true,
     gradient: 'from-[#0f1929] to-[#1a2538]',
     dark: true,
-    desc: 'Full morning shift — maximum patient throughput, your name at reception, fully staffed suite all morning.',
+    desc: 'Full morning shift, maximum patient throughput, your name at reception, fully staffed suite all morning.',
     details: ['6 AM – 2 PM · 8-hour dedicated room', 'Full front-desk team', 'Insurance claims live', 'Complimentary break'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -78,7 +78,7 @@ const OPTIONS = [
     tag: 'Afternoon shift',
     tagColor: 'text-gold border-gold/30 bg-gold/8',
     gradient: 'from-[#f0e8da] to-[#e5d8c6]',
-    desc: 'A full 8-hour afternoon shift. Same dedicated suite, same team — ideal for high-volume afternoon clinics.',
+    desc: 'A full 8-hour afternoon shift. Same dedicated suite, same team, ideal for high-volume afternoon clinics.',
     details: ['2 PM – 10 PM · 8-hour room', 'Full front-desk support', 'Insurance enrollment', 'Wedocx directory listing'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -239,7 +239,7 @@ export default function ShiftOptions() {
         <div className="max-w-360 mx-auto">
           <div className="flex items-center gap-4 mb-14">
             <span className="w-9 h-px bg-ink block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">01 — Shift options</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">01 · Shift options</span>
           </div>
 
           <motion.div variants={stagger(0.08)} initial="hidden" whileInView="visible" viewport={viewport}
@@ -249,7 +249,7 @@ export default function ShiftOptions() {
               Six ways to<br /><span className="italic text-gold">hold the room.</span>
             </motion.h2>
             <motion.p variants={fadeUp} transition={t(0.7)} className="text-[#5a6478] text-[15px] leading-[1.7] max-w-105">
-              From a single hour to a dedicated clinic floor — every plan shares the same infrastructure,
+              From a single hour to a dedicated clinic floor, every plan shares the same infrastructure,
               the same operations team and the same standard of room.
               <span className="block mt-3 font-mono text-[10.5px] tracking-[.12em] uppercase text-ink/50">Click any card to expand features.</span>
             </motion.p>
