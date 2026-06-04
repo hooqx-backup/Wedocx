@@ -17,15 +17,15 @@ export default function Testimonial() {
           {/* Quote */}
           <div className="relative z-10">
             <blockquote className="font-serif text-[clamp(28px,3.2vw,42px)] font-medium leading-[1.25] text-ink">
-              I came in for a single Thursday clinic and ended up moving my entire practice over within a quarter. The room feels like mine — but I never had to{' '}
-              <em className="italic text-gold">build it.</em>
+              I came in for a single Thursday clinic and moved my entire practice within a quarter. Wedocx removed every operational barrier I had been using as an{' '}
+              <em className="italic text-gold">excuse not to go independent.</em>
             </blockquote>
             <div className="flex gap-3.5 items-center mt-9">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand to-sand flex items-center justify-center text-white font-semibold text-sm shrink-0">
-                YK
+                AR
               </div>
               <div>
-                <strong className="block font-medium text-ink text-[15px]">Dr. Yusuf Karim</strong>
+                <strong className="block font-medium text-ink text-[15px]">Dr. Ahmed Rashid</strong>
                 <span className="text-[13px] text-[#5b6478]">Cardiologist · Dubai & Abu Dhabi</span>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function Testimonial() {
               4.9<em className="text-gold not-italic text-5xl">/5</em>
             </div>
             <p className="font-mono text-[10px] tracking-[.16em] text-[#5b6478] uppercase text-center leading-relaxed max-w-[220px]">
-              average doctor satisfaction across 1,247 active practitioners
+              practitioner satisfaction score, measured across 1,247 active bookings
             </p>
           </div>
         </motion.div>

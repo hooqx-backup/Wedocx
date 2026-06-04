@@ -21,7 +21,7 @@ export default function Locations() {
         >
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-12">
             <span className="w-9 h-px bg-ink block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">06 — Where We Operate</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">06 · Market Presence</span>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
@@ -30,8 +30,8 @@ export default function Locations() {
                 variants={fadeUp} transition={t()}
                 className="font-serif text-[clamp(38px,5vw,66px)] font-light leading-[1.02] tracking-[-0.015em] mb-9"
               >
-                A growing footprint,{' '}
-                <span className="italic text-gold">a single standard.</span>
+                UAE-dominant.{' '}
+                <span className="italic text-gold">GCC-ready.</span>
               </motion.h2>
 
               <div className="flex flex-col">

@@ -7,17 +7,17 @@ const items = [
   {
     rn: 'i.',
     title: 'The room is the product.',
-    body: 'Every suite is designed by clinicians and engineered for the specialty it serves — lighting, acoustics, sterilization, sightlines. The patient feels it the moment they walk in.',
+    body: 'Every suite is designed by clinicians and engineered for the specialty it serves: lighting, acoustics, sterilization, sightlines. The patient feels it the moment they walk in.',
   },
   {
     rn: 'ii.',
     title: 'Operations is invisible care.',
-    body: 'Front desk, billing, sterilization, sanitation, IT — handled by us. Doctors should think about diagnoses, not detergents.',
+    body: 'Front desk, billing, sterilization, sanitation, IT, all handled by us. Doctors should think about diagnoses, not detergents.',
   },
   {
     rn: 'iii.',
     title: 'No long-term anchors.',
-    body: 'Practice should expand and contract with the patient list, not a ten-year lease. Hourly, daily, monthly — all the same software, all the same standard.',
+    body: 'Practice should expand and contract with the patient list, not a ten-year lease. Hourly, daily, monthly, all the same software, all the same standard.',
   },
   {
     rn: 'iv.',
@@ -40,7 +40,7 @@ export default function Principles() {
         >
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-12">
             <span className="w-9 h-px bg-ink block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">03 — How We Think</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">03 · How We Think</span>
           </motion.div>
 
           <div className="grid lg:grid-cols-[.95fr_1.05fr] grid-cols-1 gap-24 max-lg:gap-14 items-start">

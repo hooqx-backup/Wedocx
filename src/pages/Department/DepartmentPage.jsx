@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 import BookingFormModal from '../../components/booking/BookingFormModal'
+import { reception2, reception } from '../../assets/images'
 import { getDepartment } from '../../data/departmentData'
 import { fadeUp, stagger, t, viewport } from '../../animations/variants'
 
@@ -122,8 +124,16 @@ export default function DepartmentPage() {
   const { state: booking } = useLocation()
   const navigate = useNavigate()
   const [bookingFormOpen, setBookingFormOpen] = useState(false)
+  const [formResetKey, setFormResetKey] = useState(0)
 
-  const dept = getDepartment(deptId)
+  useEffect(() => {
+    // When the Department page mounts or deptId changes, bump the reset key so the booking form clears
+    setFormResetKey((k) => k + 1)
+    // Also close the form modal when navigating between departments
+    setBookingFormOpen(false)
+  }, [deptId])
+
+  const dept = getDepartment(deptId, booking?.clinicId)
 
   if (!dept) {
     return (
@@ -146,14 +156,19 @@ export default function DepartmentPage() {
         shift:      booking.shift,
         shiftTime:  booking.shiftTime,
         price:      booking.price,
+        clinic:     booking.clinic ?? booking.clinicId ?? null,
+        clinicId:   booking.clinicId ?? null,
       }
     : null
+
+  const clinicHero = booking?.clinicId === 'wedocx' ? reception2 : null
+  const clinicGallery = booking?.clinicId === 'wedocx' ? [reception2, reception] : null
 
   return (
     <>
       {/* ── Hero Banner ── */}
       <div className="relative h-[72vh] min-h-[520px] overflow-hidden">
-        <img src={dept.heroImage} alt={dept.name} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={clinicHero ?? dept.heroImage} alt={dept.name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(to bottom, rgba(15,25,41,.55) 0%, rgba(15,25,41,.72) 60%, rgba(15,25,41,.92) 100%)' }} />
 
@@ -167,7 +182,7 @@ export default function DepartmentPage() {
               className="inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[.2em] uppercase text-brand mb-5 px-3.5 py-2 border border-brand/40 rounded-full bg-ink/30 backdrop-blur-sm"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block" />
-              Wedocx · Premium Suite
+              {booking?.clinicId === 'lux' ? 'Premium' : 'Wedocx'} · Premium Suite
             </motion.div>
 
             <motion.h1 variants={fadeUp} transition={t()}
@@ -279,7 +294,7 @@ export default function DepartmentPage() {
                 >
                   Gallery
                 </motion.div>
-                <GalleryGrid images={dept.gallery} name={dept.name} />
+                <GalleryGrid images={clinicGallery ?? dept.gallery} name={dept.name} />
               </motion.div>
             </div>
 
@@ -332,6 +347,7 @@ export default function DepartmentPage() {
           shift:      'Not selected',
           price:      'Configure via Explore Services',
         }}
+        resetKey={formResetKey}
       />
     </>
   )

@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { fadeUp, stagger, t } from '../../../../animations/variants'
 
 const STATS = [
-  { val: '3', suffix: '', label: 'Cities' },
-  { val: '8+', suffix: '', label: 'Team members' },
+  { val: '3',   suffix: '', label: 'Cities & growing' },
+  { val: '2',   suffix: '', label: 'Clinic networks'  },
   { val: '100', suffix: '%', label: 'Equity eligible' },
 ]
 
@@ -11,7 +11,7 @@ export default function CareersHero() {
   return (
     <section className="relative pt-44 pb-28 px-10 max-sm:pt-32 max-sm:px-5 bg-ink text-bone overflow-hidden">
       {/* Glow blobs */}
-      <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
+      <div className="absolute -top-40 left-1/4 w-125 h-125 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(200,154,79,.13), transparent 65%)', filter: 'blur(60px)' }} />
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(200,154,79,.07), transparent 65%)', filter: 'blur(48px)' }} />
@@ -30,25 +30,25 @@ export default function CareersHero() {
         </motion.div>
 
         <motion.h1 variants={fadeUp} transition={t()}
-          className="font-serif text-[clamp(46px,7vw,96px)] font-light leading-[.96] tracking-[-0.025em] mb-8 max-w-[820px]">
+          className="font-serif text-[clamp(46px,7vw,96px)] font-light leading-[.96] tracking-tight mb-8 max-w-205">
           Build the future of<br />
           <span className="italic text-brand">independent medicine.</span>
         </motion.h1>
 
         <motion.p variants={fadeUp} transition={t()}
-          className="text-bone/60 text-[17px] leading-[1.7] max-w-[520px] mb-12">
-          We're a small, focused team building the infrastructure layer for solo practitioners across the Gulf.
-          Every role here shapes how medicine gets practiced in the next decade.
+          className="text-bone/60 text-[17px] leading-[1.7] max-w-130 mb-12">
+          We're a rapidly scaling team transforming how independent doctors practice across the Gulf.
+          Join us as we build the infrastructure layer powering the region's fastest-growing healthcare ecosystem.
         </motion.p>
 
         <motion.div variants={fadeUp} transition={t()} className="flex gap-3 flex-wrap mb-16">
           <motion.a href="#careers-roles"
             whileHover={{ y: -1, boxShadow: '0 12px 30px -12px rgba(200,154,79,.4)' }} whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-brand text-ink transition-all cursor-pointer">
+            className="inline-flex items-center gap-2 px-6 py-3.75 rounded-full text-sm font-medium bg-brand text-ink transition-all cursor-pointer">
             See open roles <span>→</span>
           </motion.a>
-          <motion.a href="mailto:info@wedocx.com" whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium text-bone border border-bone/25 transition-all hover:border-bone/60">
+          <motion.a href="mailto:info@wedocx.co" whileHover={{ y: -1 }} whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-6 py-3.75 rounded-full text-sm font-medium text-bone border border-bone/25 transition-all hover:border-bone/60">
             Send your CV
           </motion.a>
         </motion.div>

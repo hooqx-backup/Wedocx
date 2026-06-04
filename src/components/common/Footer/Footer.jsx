@@ -4,12 +4,21 @@ import { logoWhite, servicesHero } from '../../../assets/images'
 import { fadeUp, stagger, t, viewport } from '../../../animations/variants'
 import { Link } from 'react-router-dom'
 
-const WHATSAPP_NUMBER = '917003634890'
+const WHATSAPP_NUMBER = '971500000000'
 
 const cols = [
   {
+    heading: 'Clinics',
+    links: [
+      { label: 'All Clinics',   to: '/clinics'        },
+      { label: 'Wedocx Clinic', to: '/clinics/wedocx' },
+      { label: 'Premium Suites', to: '/clinics/lux'    },
+    ],
+  },
+  {
     heading: 'Platform',
     links: [
+      { label: 'Services',      to: '/services'      },
       { label: 'Clinic Spaces', to: '/clinic-spaces' },
       { label: 'Shift Plans',   to: '/shift-plans'   },
     ],
@@ -17,17 +26,17 @@ const cols = [
   {
     heading: 'Company',
     links: [
-      { label: 'About',         to: '/about'        },
-      { label: 'Careers',       to: '/careers'      },
-      { label: 'Media & Press', to: '/press'        },
+      { label: 'About',         to: '/about'   },
+      { label: 'Careers',       to: '/careers' },
+      { label: 'Media & Press', to: '/press'   },
     ],
   },
   {
     heading: 'Legal',
     links: [
-      { label: 'Terms & Conditions', to: '/terms' },
-      { label: 'Privacy Policy',     to: '/privacy' },
-      { label: 'Compliance',         to: '/compliance' },
+      { label: 'Terms & Conditions', to: '/terms'       },
+      { label: 'Privacy Policy',     to: '/privacy'     },
+      { label: 'Compliance',         to: '/compliance'  },
     ],
   },
 ]
@@ -74,14 +83,14 @@ export default function Footer() {
               initial="hidden"
               whileInView="visible"
               viewport={viewport}
-              className="grid lg:grid-cols-[1.45fr_1fr_1fr_1fr] md:grid-cols-2 grid-cols-1 gap-14 max-lg:gap-10 p-12 max-lg:p-8 max-sm:p-6"
+              className="grid lg:grid-cols-[1.45fr_1fr_1fr_1fr_1fr] md:grid-cols-2 grid-cols-1 gap-10 max-lg:gap-8 p-12 max-lg:p-8 max-sm:p-6"
             >
               <motion.div variants={fadeUp} transition={t(0.7)}>
                 <div className="footer-logo-wrap mb-5">
                   <img src={logoWhite} alt="wedocx" className="h-15 w-auto object-contain" />
                 </div>
                 <p className="text-bone/76 text-[13px] leading-relaxed max-w-78 mb-7">
-                  A premium network of fully-equipped clinic spaces for modern healthcare professionals in Dubai. Practice independently with flexible shifts, operational support, and world-class clinical infrastructure - without the burden of setup costs or long-term leases.
+                  The UAE's first multi-clinic healthcare platform. We partner with premium clinic brands, equip them with world-class infrastructure, and connect them with independent practitioners across Dubai, Abu Dhabi and Sharjah.
                 </p>
 
                 <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Practitioner brief</p>
@@ -131,7 +140,7 @@ export default function Footer() {
 
             <div className="px-12 max-lg:px-8 max-sm:px-6 py-5 flex flex-wrap justify-between items-center gap-4">
               <span className="font-mono text-[11px] tracking-wider text-bone/55">
-                &copy; 2026 Wedocx Healthcare Spaces LLC - Dubai, UAE
+                &copy; 2026 Wedocx Platform LLC · Dubai, UAE · Shared Clinic Networks
               </span>
               <div className="flex items-center gap-6">
                 {['Instagram', 'LinkedIn', 'Twitter'].map(s => (

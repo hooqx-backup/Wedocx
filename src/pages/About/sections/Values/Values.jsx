@@ -5,38 +5,38 @@ const values = [
   {
     rn: 'i.', arabic: '01',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" className="w-5.5 h-5.5"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>,
-    title: 'Standards before scale.',
-    body: 'We turn down twice as many sites as we accept. A suite gets the Wedocx name only when it earns it.',
+    title: 'Quality as a barrier to entry.',
+    body: 'We accept fewer than half the sites we evaluate. Every suite carrying the Wedocx name is a proof of standard that a competitor cannot fast-follow.',
   },
   {
     rn: 'ii.', arabic: '02',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5.5 h-5.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" strokeLinecap="round"/></svg>,
-    title: "Doctor's time is sacred.",
-    body: 'Every feature we build is judged against one question: does this give a doctor back ten minutes of their day?',
+    title: 'Recurring revenue by design.',
+    body: 'Practitioners who find a suite they trust book it again and again. 92% retention turns a marketplace into a subscription business.',
   },
   {
     rn: 'iii.', arabic: '03',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" className="w-5.5 h-5.5"><path d="M4 12c0-4 4-7 8-7s8 3 8 7-4 7-8 7c-1.5 0-3-.4-4.2-1L4 20l1.2-3.8C4.4 15.2 4 13.6 4 12z"/></svg>,
-    title: 'Care travels with the patient.',
-    body: 'A patient who follows their doctor across our network should feel they never left — same chair, same standard.',
+    title: 'Network effects, compounding.',
+    body: 'A doctor practicing across three Wedocx locations brings their entire patient panel. The platform becomes more valuable with every suite added.',
   },
   {
     rn: 'iv.', arabic: '04',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" className="w-5.5 h-5.5"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>,
-    title: 'Transparency by default.',
-    body: 'Pricing, occupancy, ratings, audit reports — visible to every practitioner on the platform.',
+    title: 'Regulatory moat.',
+    body: 'DHA licensing, insurance billing, EMR compliance: infrastructure that takes years to build and is already embedded in every suite we operate.',
   },
   {
     rn: 'v.', arabic: '05',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" className="w-5.5 h-5.5"><path d="M12 2v20M5 9l7-7 7 7M5 15l7 7 7-7"/></svg>,
-    title: 'Built for specialty.',
-    body: 'GP, dental, derm, physio, psych — each suite type is engineered, not adapted, for the practice it holds.',
+    title: 'Two-tier brand, one engine.',
+    body: 'Wedocx for volume. Premium Suites for premium. A single operational infrastructure serving two distinct markets at different price points.',
   },
   {
     rn: 'vi.', arabic: '06',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5.5 h-5.5"><path d="M4 7h16M4 12h16M4 17h10"/></svg>,
-    title: 'Independent, never alone.',
-    body: 'You keep your practice, your patients, your data. We hand you everything else.',
+    title: 'Asset-light, pricing power.',
+    body: 'We do not own the buildings. We control the fit-out, the brand, and the operations, and charge accordingly. Margins expand as the network scales.',
   },
 ]
 
@@ -200,7 +200,7 @@ export default function Values() {
               viewport={VP} transition={{ duration: 0.5, delay: 0.2, ease: [0.16,1,0.3,1] }}
               className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70"
             >
-              04 — What We Stand For
+              03 · Investment Thesis
             </motion.span>
             <motion.span
               initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
@@ -216,7 +216,7 @@ export default function Values() {
                 initial={{ y: '100%' }} whileInView={{ y: '0%' }}
                 viewport={VP} transition={{ duration: 0.85, delay: 0.1, ease: snap }}
               >
-                Quiet luxury,{' '}
+                Six reasons this{' '}
                 <motion.span
                   className="italic text-gold inline-block"
                   initial={{ opacity: 0, scale: 0.75, filter: 'blur(6px)' }}
@@ -224,7 +224,7 @@ export default function Values() {
                   viewport={VP}
                   transition={{ duration: 0.6, delay: 0.52, ease: snap }}
                 >
-                  serious medicine.
+                  compounds.
                 </motion.span>
               </motion.span>
             </span>
@@ -235,8 +235,8 @@ export default function Values() {
             viewport={VP} transition={{ duration: 0.6, delay: 0.38, ease: snap }}
             className="text-[#5a6478] text-[16px] leading-[1.7] mt-5 max-w-155 mx-auto"
           >
-            Four ideas guide every decision we make — from the cabinetry on the wall to the engineer
-            on the support line.
+            The structural advantages that make Wedocx hard to replicate and straightforward
+            to scale across every major GCC healthcare market.
           </motion.p>
         </div>
 

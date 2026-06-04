@@ -43,7 +43,7 @@ export default function ShiftsCta() {
             </h2>
             <p className="text-bone/60 text-[16px] leading-relaxed max-w-110">
               No contract to sign. No deposit to hold. Pick a time, confirm the room, walk in.
-              Cancel free up to 24 hours before — we trust you to show up.
+              Cancel free up to 24 hours before. We trust you to show up.
             </p>
           </motion.div>
 

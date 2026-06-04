@@ -69,20 +69,20 @@ export default function Hero() {
                 className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold mb-8 px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/50"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-                Services · 2026
+                The Platform · 2026
               </motion.div>
 
               <motion.h1 variants={fadeUp} transition={t()}
                 className="font-serif text-[clamp(48px,6vw,96px)] font-light leading-[.97] tracking-[-0.025em] mb-7 text-ink"
               >
-                Everything a doctor needs,<br />
-                <span className="italic text-gold">nothing</span> they don't.
+                The operating system<br />
+                for <span className="italic text-gold">independent</span> practice.
               </motion.h1>
 
               <motion.p variants={fadeUp} transition={t()}
                 className="text-[17px] leading-[1.65] max-w-[520px] text-ink-soft opacity-85 mb-10"
               >
-                From a single hourly suite to a fully staffed clinic floor — we build, run and operate the room behind your practice. You bring the patients. We bring everything else.
+                Seven fully productised service lines, built once, deployed across every suite in the network. Practitioners generate revenue on day one. The platform compounds with every new room added.
               </motion.p>
 
               <motion.div variants={fadeUp} transition={t()} className="flex gap-3 flex-wrap">
@@ -90,14 +90,9 @@ export default function Hero() {
                   onClick={() => setBookOpen(true)}
                   className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-ink text-bone border border-ink transition-all hover:-translate-y-px hover:shadow-[0_12px_30px_-12px_rgba(15,25,41,.55)]"
                 >
-                  Book a tour <span className="transition-transform group-hover:translate-x-1">→</span>
+                  Request a Demo <span className="transition-transform group-hover:translate-x-1">→</span>
                 </button>
-                <button
-                  onClick={() => document.getElementById('svc-pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-transparent text-ink border border-ink/20 transition-all hover:bg-ink/4"
-                >
-                  See pricing
-                </button>
+                
               </motion.div>
             </div>
 
@@ -133,7 +128,7 @@ export default function Hero() {
                   {/* Main */}
                   <main className="svc-mock-main">
                     <div className="svc-mock-hdr">
-                      <h4>Good morning, <em>Dr. Adel.</em></h4>
+                      <h4>Good morning, <em>Mr.Sajjad.</em></h4>
                       <span className="svc-mock-day">SAT · 16 MAY</span>
                     </div>
 
@@ -190,7 +185,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-12 py-8 border-t border-b border-ink/10 max-lg:flex-col max-lg:items-start max-lg:gap-6">
               <p className="font-mono text-[11px] tracking-[.16em] text-[#5b6478] uppercase leading-relaxed flex-shrink-0 max-w-[200px]">
-                Trusted by 1,247 doctors across the network
+                Validated across 1,247 active practitioners on the network
               </p>
               <div className="grid grid-cols-6 max-sm:grid-cols-3 gap-8 flex-1 w-full">
                 {TRUST_LOGOS.map((l, i) => (

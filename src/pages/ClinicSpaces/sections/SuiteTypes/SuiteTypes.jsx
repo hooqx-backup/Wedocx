@@ -68,7 +68,7 @@ export default function SuiteTypes() {
           <div>
             <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-5">
               <span className="w-9 h-px bg-ink block" />
-              <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 — Suite types</span>
+              <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">02 · Suite types</span>
             </motion.div>
             <motion.h2 variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(38px,5vw,68px)] font-light leading-[1.02] tracking-[-0.02em] text-ink">
@@ -77,7 +77,7 @@ export default function SuiteTypes() {
             </motion.h2>
             <motion.p variants={fadeUp} transition={t(0.7)} className="text-[#5a6478] text-[15px] leading-[1.7] mt-4 max-w-[460px]">
               Every specialty gets a room built for its discipline. We don't share suites between
-              specialties — we stock, equip and configure each one from scratch.
+              specialties. We stock, equip and configure each one from scratch.
             </motion.p>
           </div>
 

@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { imgConcept } from '../../../../assets/images'
 
 const points = [
-  { num: 'i.',   title: 'Practice Without the Pressure',       body: 'Focus on treating patients while we handle the infrastructure. Wedocx provides fully licensed, fully equipped clinic spaces with premium interiors, front-desk support, medical utilities, and operational assistance, ready whenever you need them.' },
-  { num: 'ii.',  title: 'Flexible Spaces for Every Specialty', body: 'From general physicians and dentists to physiotherapists, dermatologists, and specialists. Our clinic suites are designed to support multiple medical practices. Book spaces for 2 to 8 hours or operate on flexible schedules that fit your practice.' },
-  { num: 'iii.', title: 'Premium Care Beyond Consultation',     body: "We believe patient experience matters. That's why Wedocx offers a modern, welcoming clinic environment along with additional conveniences like pick-up & drop services, comfortable waiting areas, and 24/7 accessibility for both doctors and patients." },
+  { num: 'i.',   title: 'A Platform, Not a Single Clinic',     body: 'Wedocx is the infrastructure layer powering multiple premium clinic brands across the UAE. Each clinic runs independently under its own identity, all sharing the same world-class operational backbone, compliance framework and technology stack.' },
+  { num: 'ii.',  title: 'Flexible Across Every Specialty',     body: 'From GPs and dentists to dermatologists, aesthetics specialists and physiotherapists, our clinic networks are built for multi-specialty practice. Doctors book 2-hour shifts or full-day suites across any brand, any city, any time.' },
+  { num: 'iii.', title: 'Built for Scale from Day One',        body: 'Every system, every process, every hire is designed for 10× the current size. Two clinic brands today. Five cities and 150+ suites by 2027. A pan-GCC healthcare workspace platform, the infrastructure that powers the next generation of independent practice.' },
 ]
 
 const vp   = { once: true, amount: 0.1 }

@@ -13,7 +13,7 @@ const ITEMS = [
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M9 2v2M15 2v2M6 6h12l-1 14H7L6 6zM3 6h18"/></svg>,
-    label: 'Consumables stocked', detail: 'Gloves, paper roll, sharps, sanitiser — all at full capacity',
+    label: 'Consumables stocked', detail: 'Gloves, paper roll, sharps, sanitiser, all at full capacity',
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
@@ -76,7 +76,7 @@ export default function ShiftIncludes() {
         <motion.div variants={stagger(0.08)} initial="hidden" whileInView="visible" viewport={viewport} className="mb-16">
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-6">
             <span className="w-9 h-px bg-brand/55 block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/65">03 — In every shift</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/65">03 · In every shift</span>
           </motion.div>
           <div className="grid lg:grid-cols-[1.1fr_1fr] grid-cols-1 gap-12 items-end">
             <motion.h2 variants={fadeUp} transition={t()}
@@ -84,7 +84,7 @@ export default function ShiftIncludes() {
               We're ready<br />before you <span className="italic text-brand">arrive.</span>
             </motion.h2>
             <motion.p variants={fadeUp} transition={t(0.7)} className="text-bone/50 text-[15px] leading-[1.75] max-w-[420px]">
-              Every item on this list is checked before each and every shift — not once a week,
+              Every item on this list is checked before each and every shift, not once a week,
               not once a day. Before yours. Ticked off, timestamped and available on request.
             </motion.p>
           </div>

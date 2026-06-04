@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 import ServiceSelectionModal from '../../../../components/booking/ServiceSelectionModal'
 import bringYourBg from '../../../../assets/images/bringyoursection.jpg'
@@ -29,13 +30,13 @@ export default function Cta() {
               <div>
                 <div className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-brand px-3.5 py-2 border border-brand/30 rounded-full bg-white/4 mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-                  Now onboarding · Q2 2026
+                  Raising · Series A · 2026
                 </div>
                 <h2 className="font-serif text-[clamp(40px,5vw,68px)] font-light leading-[1.02] tracking-[-0.015em]">
-                  Walk into a <em className="italic text-brand">suite.</em><br />See what we mean.
+                  The deck tells<br />part of the <em className="italic text-brand">story.</em>
                 </h2>
                 <p className="mt-5 text-bone/65 max-w-[460px] leading-[1.7] text-[15px]">
-                  Tour any Wedocx room in Dubai, Abu Dhabi or Sharjah this week. We'll show you the chair, the kit and the team — and answer every question in one sitting.
+                  Walk through a live suite. See the operations. Meet the team that onboards 1,200+ practitioners without breaking stride. Then let's talk about what comes next.
                 </p>
               </div>
 
@@ -44,11 +45,11 @@ export default function Cta() {
                   onClick={() => setBookOpen(true)}
                   className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-bone text-ink transition-all hover:bg-white hover:-translate-y-px"
                 >
-                  Book a tour <span>→</span>
+                  Request Investor Deck <span>→</span>
                 </button>
-                <button className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-transparent text-bone border border-bone/25 transition-all hover:border-bone hover:-translate-y-px">
-                  Speak to a founder <span>→</span>
-                </button>
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium bg-transparent text-bone border border-bone/25 transition-all hover:border-bone hover:-translate-y-px">
+                  Schedule a Site Visit <span>→</span>
+                </Link>
               </div>
             </div>
           </motion.div>

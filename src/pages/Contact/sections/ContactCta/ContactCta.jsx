@@ -51,7 +51,7 @@ export default function ContactCta() {
             </h2>
             <p className="text-bone/65 text-[17px] leading-relaxed max-w-[460px]">
               Tour a suite, meet the operations team, see the rooms your patients will sit in.
-              The first conversation costs nothing — and tells you everything.
+              The first conversation costs nothing, and tells you everything.
             </p>
           </motion.div>
 
@@ -68,7 +68,7 @@ export default function ContactCta() {
               Book a tour <span>→</span>
             </motion.button>
             <motion.a
-              href="mailto:info@wedocx.com"
+              href="mailto:info@wedocx.co"
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 px-6 py-[15px] rounded-full text-sm font-medium text-bone border border-bone/25 transition-all hover:border-bone/60"

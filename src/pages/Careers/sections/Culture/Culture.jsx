@@ -9,7 +9,7 @@ const VALUES = [
       </svg>
     ),
     title: 'Mission-first',
-    body: 'We exist to make independent practice viable. Every decision — product, ops, hiring — runs through that filter.',
+    body: 'We exist to make independent practice viable. Every decision, product, ops, hiring, runs through that filter.',
   },
   {
     icon: (
@@ -60,7 +60,7 @@ export default function Culture() {
           className="mb-16">
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-6">
             <span className="w-9 h-px bg-brand/55 block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/65">02 — How we work</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-brand/65">02 · How we work</span>
           </motion.div>
           <div className="grid lg:grid-cols-[1.1fr_1fr] grid-cols-1 gap-12 items-end">
             <motion.h2 variants={fadeUp} transition={t()}
@@ -69,7 +69,7 @@ export default function Culture() {
             </motion.h2>
             <motion.p variants={fadeUp} transition={t(0.7)} className="text-bone/50 text-[15px] leading-[1.75] max-w-[400px]">
               Small team. Clear mission. Ownership from day one.
-              We build the kind of workplace we'd want to work in — because we're already in it.
+              We build the kind of workplace we'd want to work in, because we're already in it.
             </motion.p>
           </div>
         </motion.div>

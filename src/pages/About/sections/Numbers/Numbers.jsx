@@ -26,19 +26,19 @@ function CountUp({ to }) {
 const stats = [
   {
     render: () => <><sup className="font-serif italic text-gold text-[0.42em] align-super mr-0.5">+</sup><CountUp to={38} /></>,
-    label: 'Clinic suites operating across the UAE',
+    label: 'Revenue-generating clinic suites live across the UAE',
   },
   {
-    render: () => <CountUp to={1247} />,
-    label: 'Verified doctors practicing on the network',
+    render: () => <><sup className="font-serif italic text-gold text-[0.42em] align-super mr-0.5">+</sup><CountUp to={1200} /></>,
+    label: 'Verified practitioners generating bookings on the platform',
   },
   {
     render: () => <>24<span className="italic text-gold">/</span>7</>,
-    label: 'Front-desk & operations support, every day',
+    label: 'Operational coverage, no downtime, no dark hours',
   },
   {
     render: () => <><CountUp to={92} /><sup className="font-serif italic text-gold text-[0.42em] align-super ml-0.5">%</sup></>,
-    label: 'Of practitioners renew within their first quarter',
+    label: 'First-quarter practitioner retention, our strongest signal',
   },
 ]
 
@@ -54,7 +54,7 @@ export default function Numbers() {
         >
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-12">
             <span className="w-9 h-px bg-ink block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">01 — At a Glance</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">01 · Traction</span>
           </motion.div>
 
           <div className="grid lg:grid-cols-[1.1fr_1fr] grid-cols-1 gap-24 max-lg:gap-12 items-start">
@@ -62,8 +62,8 @@ export default function Numbers() {
               variants={fadeUp} transition={t()}
               className="font-serif text-[clamp(38px,5vw,66px)] font-light leading-[1.02] tracking-[-0.015em]"
             >
-              Built quietly, growing{' '}
-              <span className="italic text-gold">deliberately.</span>
+              Proven model,{' '}
+              <span className="italic text-gold">measurable traction.</span>
             </motion.h2>
 
             <div className="grid grid-cols-2 gap-12 max-sm:gap-8">

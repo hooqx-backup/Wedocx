@@ -56,7 +56,7 @@ export default function Offices() {
       <div className="max-w-360 mx-auto">
         <div className="flex items-center gap-4 mb-14">
           <span className="w-9 h-px bg-ink block" />
-          <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">03 — Visit a suite</span>
+          <span className="font-mono text-[11px] tracking-[.22em] uppercase text-ink/70">03 · Visit a suite</span>
         </div>
 
         <motion.div
@@ -72,7 +72,7 @@ export default function Offices() {
             <span className="italic text-gold">three offices.</span>
           </motion.h2>
           <motion.p variants={fadeUp} transition={t(0.7)} className="text-[#5a6478] max-w-[440px] leading-[1.7] text-[15px]">
-            We keep our doors open six days a week. Drop by — but a five-minute heads-up means
+            We keep our doors open six days a week. Drop by, but a five-minute heads-up means
             we'll have coffee ready and a quiet room waiting.
           </motion.p>
         </motion.div>
@@ -150,11 +150,11 @@ export default function Offices() {
           <div className="flex items-center gap-4">
             <span className="w-2 h-2 rounded-full bg-brand/60 block" />
             <span className="font-serif text-[22px] font-light italic text-ink">
-              Riyadh &amp; Doha — <em className="text-gold">opening 2026</em>
+              Riyadh &amp; Doha, <em className="text-gold">opening 2026</em>
             </span>
           </div>
           <span className="font-mono text-[11px] tracking-[.16em] uppercase text-[#5a6478]">
-            Join the waitlist → write to expansion@wedocx.co
+            Join the waitlist → write to info@wedocx.co
           </span>
         </motion.div>
       </div>

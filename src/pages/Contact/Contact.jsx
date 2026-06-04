@@ -11,7 +11,7 @@ export default function Contact() {
       <Hero />
       <ReasonsGrid />
       <ContactForm />
-      <Offices />
+  
       <Faq />
       <ContactCta />
     </>

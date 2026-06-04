@@ -4,14 +4,14 @@ import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 const members = [
   {
     index: '01 / FOUNDER',
-    name: 'Dr. Adel Hosari',
-    role: 'CEO & Co-founder',
+    name: 'Sajjad Anwar Butt',
+    role: 'Founder & Chairman',
     gradient: 'linear-gradient(160deg, #2a3550 0%, #5b4a32 50%, #a98a5c 100%)',
   },
   {
     index: '02 / FOUNDER',
-    name: 'Lina Mansour',
-    role: 'COO & Co-founder',
+    name: 'Dr. Irfan Ullah',
+    role: 'Founder & Medical Director',
     gradient: 'linear-gradient(160deg, #3a2820 0%, #7a5638 50%, #c9a672 100%)',
   },
   {
@@ -48,7 +48,7 @@ export default function Team() {
         >
           <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-12">
             <span className="w-9 h-px bg-bone/50 block" />
-            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-bone/60">05 — The People</span>
+            <span className="font-mono text-[11px] tracking-[.22em] uppercase text-bone/60">05 · The People</span>
           </motion.div>
 
           <div className="grid lg:grid-cols-[1.2fr_1fr] grid-cols-1 gap-20 items-end mb-18 max-lg:mb-12">
@@ -64,7 +64,7 @@ export default function Team() {
               className="text-bone/60 max-w-[420px] leading-[1.7] text-[15px]"
             >
               Half of our leadership has practiced medicine. The other half has scaled the operations
-              that let great medicine happen. We meet in the middle — every Monday morning.
+              that let great medicine happen. We meet in the middle, every Monday morning.
             </motion.p>
           </div>
 
