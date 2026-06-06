@@ -14,7 +14,9 @@ export default function MainLayout() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <main className="relative z-0">
+        <Outlet />
+      </main>
       <Footer />
       <ScrollToTop />
     </>

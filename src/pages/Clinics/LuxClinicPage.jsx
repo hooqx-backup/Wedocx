@@ -151,7 +151,7 @@ export default function LuxClinicPage() {
   const handleRegister = (e) => {
     e.preventDefault()
     if (!email.trim()) return
-    const msg = encodeURIComponent(`Hi, I'd like to register my interest in Premium Suites. Email: ${email}`)
+    const msg = encodeURIComponent(`Hi, I'd like to register my interest in Lux Aeterna Clinic. Email: ${email}`)
     window.open(`https://wa.me/917003634890?text=${msg}`, '_blank', 'noopener,noreferrer')
     setSubmitted(true)
     setEmail('')
@@ -208,24 +208,24 @@ export default function LuxClinicPage() {
             <motion.div variants={fadeUp} transition={t()}>
               <h1 className="font-serif font-light leading-[.88] tracking-[-0.03em] text-white mb-3"
                 style={{ fontSize: 'clamp(64px,10vw,120px)' }}>
-                Premium
+                Lux Aeterna
               </h1>
               <h2 className="font-serif font-light leading-[.88] tracking-[-0.02em] mb-8"
                 style={{ fontSize: 'clamp(28px,4.5vw,52px)', color: ACCENT }}>
-                <em>Suites.</em>
+                <em>Clinic.</em>
               </h2>
             </motion.div>
 
             <motion.p variants={fadeUp} transition={t(0.7)}
               className="text-white/55 text-[17px] leading-[1.7] max-w-[480px] mb-10">
-              Where clinical precision meets five-star hospitality. Premium Suites is a curated
+              Where clinical precision meets five-star hospitality. Lux Aeterna Clinic is a curated
               medical-aesthetic destination designed for discerning patients who expect more
               than excellent care. They expect an <em className="text-white/75 not-italic font-light">extraordinary experience.</em>
             </motion.p>
 
             {/* Location tags */}
             <motion.div variants={fadeUp} transition={t(0.7)} className="flex flex-wrap gap-2.5 mb-10">
-              {['DIFC, Dubai', 'Palm Jumeirah', 'Opening 2025'].map((l, i) => (
+              {['JLT, Dubai'].map((l, i) => (
                 <span key={i} className="font-mono text-[10px] tracking-[.12em] uppercase px-3.5 py-2 rounded-full border border-white/12 text-white/45">
                   {l}
                 </span>
@@ -302,7 +302,7 @@ export default function LuxClinicPage() {
               </motion.h2>
               <motion.p variants={fadeUp} transition={t(0.7)}
                 className="text-[15px] text-[#6b7280] leading-[1.75]">
-                Each suite at Premium Suites is individually designed, photographed and built to a clinical standard
+                Each suite at Lux Aeterna Clinic is individually designed, photographed and built to a clinical standard
                 that rivals the world's finest medical facilities, while feeling nothing like one.
               </motion.p>
             </div>
@@ -392,7 +392,7 @@ export default function LuxClinicPage() {
             <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-5">
               <span className="w-9 h-px block" style={{ background: ACCENT }} />
               <span className="font-mono text-[11px] tracking-[.22em] uppercase" style={{ color: ACCENT }}>
-                The Premium Environment
+                The Lux Aeterna Environment
               </span>
             </motion.div>
             <motion.h2 variants={fadeUp} transition={t()}
@@ -540,14 +540,14 @@ export default function LuxClinicPage() {
               viewport={viewport}
               transition={{ duration: 0.8, ease: snap }}>
               <p className="font-mono text-[11px] tracking-[.2em] uppercase mb-5" style={{ color: ACCENT }}>
-                The Premium Difference
+                The Lux Aeterna Difference
               </p>
               <h2 className="font-serif font-light text-white leading-[1.0] tracking-[-0.025em] mb-6"
                 style={{ fontSize: 'clamp(34px,5vw,58px)' }}>
                 Not just a clinic.<br /><em style={{ color: ACCENT }}>An experience.</em>
               </h2>
               <p className="text-white/55 text-[15px] leading-[1.75]">
-                From the moment patients arrive at Premium Suites, every touchpoint, the lighting, the scent,
+                From the moment patients arrive at Lux Aeterna Clinic, every touchpoint, the lighting, the scent,
                 the sound, is engineered to make them feel safe, valued and cared for at the highest level.
               </p>
             </motion.div>
@@ -605,7 +605,7 @@ export default function LuxClinicPage() {
                   Be first through<br /><em style={{ color: ACCENT }}>the door.</em>
                 </h2>
                 <p className="text-white/50 text-[15px] leading-[1.7] max-w-[420px]">
-                  Premium Suites opens in 2025 across DIFC and Palm Jumeirah. Register now for priority
+                  Lux Aeterna Clinic is opening in JLT, Dubai. Register now for priority
                   membership, suite previews and pre-launch rates.
                 </p>
               </div>

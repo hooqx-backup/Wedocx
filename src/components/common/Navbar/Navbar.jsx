@@ -209,7 +209,7 @@ export default function Navbar() {
                   Book Now <span>→</span>
                 </button>
                 <p className="text-center font-mono text-[10px] tracking-[.18em] uppercase text-[#5a6478] mt-6">
-                  WDX · Dubai · Abu Dhabi · Sharjah
+                  WDX · JLT, Dubai
                 </p>
               </motion.div>
             </motion.div>

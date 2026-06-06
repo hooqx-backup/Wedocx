@@ -2,11 +2,9 @@ import { motion } from 'framer-motion'
 import { fadeUp, stagger, t, viewport } from '../../../../animations/variants'
 
 const locations = [
-  { idx: 'i.',   city: 'Dubai',     detail: '16 suites', country: 'UAE', status: 'Live' },
-  { idx: 'ii.',  city: 'Abu Dhabi', detail: '9 suites',  country: 'UAE', status: 'Live' },
-  { idx: 'iii.', city: 'Sharjah',   detail: '7 suites',  country: 'UAE', status: 'Live' },
-  { idx: 'iv.',  city: 'Riyadh',    detail: 'opening Q3',country: 'KSA', status: 'Soon' },
-  { idx: 'v.',   city: 'Doha',      detail: 'opening Q4',country: 'QAT', status: 'Soon' },
+  { idx: 'i.',   city: 'JLT, Dubai', detail: '38+ suites', country: 'UAE', status: 'Live' },
+  { idx: 'ii.',  city: 'Riyadh',     detail: 'opening Q3', country: 'KSA', status: 'Soon' },
+  { idx: 'iii.', city: 'Doha',       detail: 'opening Q4', country: 'QAT', status: 'Soon' },
 ]
 
 export default function Locations() {

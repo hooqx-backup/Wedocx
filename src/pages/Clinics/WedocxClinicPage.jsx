@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { fadeUp, stagger, t, viewport } from '../../animations/variants'
-import ServiceSelectionModal from '../../components/booking/ServiceSelectionModal'
 import {
   reception, reception1, reception2,
   restroom, restroom2, pathway1, pathways,
@@ -109,8 +108,6 @@ function FacilityCard({ img, label, desc, delay = 0 }) {
 
 /* ── Main page ──────────────────────────────────────────────────────────────── */
 export default function WedocxClinicPage() {
-  const [bookOpen, setBookOpen] = useState(false)
-
   return (
     <>
       <main className="min-h-screen overflow-hidden" style={{ background: '#faf9f7' }}>
@@ -150,39 +147,38 @@ export default function WedocxClinicPage() {
               <motion.div variants={fadeUp} transition={t(0.7)} className="flex items-center gap-3 mb-10">
                 <span className="w-8 h-px" style={{ background: ACCENT }} />
                 <span className="font-mono text-[11px] tracking-[.22em] uppercase" style={{ color: `${ACCENT}cc` }}>
-                  Wedocx Network · Flagship
+                  Wedocx Network · Coming Soon
                 </span>
               </motion.div>
 
               <motion.div variants={fadeUp} transition={t()}>
                 <h1 className="font-serif font-light leading-[.88] tracking-[-0.03em] text-white mb-3"
                   style={{ fontSize: 'clamp(64px,10vw,120px)' }}>
-                  WeDocx
-                </h1>1
+                  Life
+                </h1>
                 <h2 className="font-serif font-light leading-[.88] tracking-[-0.02em] mb-8"
                   style={{ fontSize: 'clamp(28px,4.5vw,52px)', color: ACCENT }}>
-                  <em>The Original.</em>
+                  <em>Clinic.</em>
                 </h2>
               </motion.div>
 
               <motion.p variants={fadeUp} transition={t(0.7)}
                 className="text-white/55 text-[17px] leading-[1.7] max-w-[480px] mb-10">
-                Dubai's flagship premium clinic network, 38+ fully-equipped suites across
-                Business Bay, JLT and Downtown. Staffed, licensed and ready from minute one.
-                The benchmark every clinic is measured against.
+                A longevity and diagnostic wellness destination built for the health-conscious generation.
+                Opening soon in JLT, Dubai, within the Wedocx network.
               </motion.p>
 
               <motion.div variants={fadeUp} transition={t(0.7)} className="flex flex-wrap gap-2.5 mb-10">
-                {['Business Bay', 'JLT, Dubai', 'Al Reem, Abu Dhabi', 'Al Majaz, Sharjah'].map((l, i) => (
+                {['JLT, Dubai', 'Opening 2026'].map((l, i) => (
                   <span key={i} className="font-mono text-[10px] tracking-[.12em] uppercase px-3.5 py-2 rounded-full border border-white/12 text-white/45">{l}</span>
                 ))}
               </motion.div>
 
               <motion.div variants={fadeUp} transition={t(0.7)} className="flex flex-wrap gap-3">
-                <button onClick={() => setBookOpen(true)}
+                <Link to="/contact"
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-[13px] font-medium bg-bone text-ink hover:bg-white hover:-translate-y-px transition-all">
-                  Book a Suite <span>→</span>
-                </button>
+                  Register Interest <span>→</span>
+                </Link>
                 <Link to="/clinics"
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-[13px] font-medium text-white/70 border border-white/15 hover:border-white/30 transition-all">
                   All Clinics
@@ -204,10 +200,10 @@ export default function WedocxClinicPage() {
           <div className="max-w-360 mx-auto px-10 max-sm:px-6 py-9">
             <div className="grid grid-cols-4 max-sm:grid-cols-2 gap-8">
               {[
-                { val: '38+',   label: 'Active Suites'    },
-                { val: '3',     label: 'Cities'           },
-                { val: '1,200+',label: 'Doctors Onboarded'},
-                { val: '24/7',  label: 'Ops Support'      },
+                { val: '2026',  label: 'Opening Year'     },
+                { val: '10+',   label: 'Planned Suites'   },
+                { val: 'Full',  label: 'Diagnostics'      },
+                { val: '24/7',  label: 'Wellness Support' },
               ].map((s, i) => (
                 <motion.div key={i}
                   initial={{ opacity: 0, y: 12 }}
@@ -232,7 +228,7 @@ export default function WedocxClinicPage() {
             <motion.div variants={stagger(0.08)} initial="hidden" whileInView="visible" viewport={viewport} className="mb-16">
               <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-5">
                 <span className="w-9 h-px block" style={{ background: ACCENT }} />
-                <span className="font-mono text-[11px] tracking-[.22em] uppercase" style={{ color: ACCENT }}>Signature Suites</span>
+                <span className="font-mono text-[11px] tracking-[.22em] uppercase" style={{ color: ACCENT }}>Planned Suites</span>
               </motion.div>
               <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-end">
                 <motion.h2 variants={fadeUp} transition={t()}
@@ -241,8 +237,7 @@ export default function WedocxClinicPage() {
                   Built for your<br /><span className="italic" style={{ color: ACCENT }}>specialty.</span>
                 </motion.h2>
                 <motion.p variants={fadeUp} transition={t(0.7)} className="text-[15px] text-[#6b7280] leading-[1.75]">
-                  Every suite at Wedocx is engineered for its discipline, not adapted from a generic room.
-                  We stock, configure and maintain each space to the clinical standard of its specialty.
+                  Every Life Clinic suite is being purpose-built for its discipline. Longevity diagnostics, preventive care, and holistic wellness, all under one roof.
                 </motion.p>
               </div>
             </motion.div>
@@ -338,7 +333,7 @@ export default function WedocxClinicPage() {
             <motion.div variants={stagger(0.08)} initial="hidden" whileInView="visible" viewport={viewport} className="mb-14">
               <motion.div variants={fadeUp} transition={t(0.6)} className="flex items-center gap-4 mb-5">
                 <span className="w-9 h-px block" style={{ background: ACCENT }} />
-                <span className="font-mono text-[11px] tracking-[.22em] uppercase" style={{ color: ACCENT }}>The Wedocx Environment</span>
+                <span className="font-mono text-[11px] tracking-[.22em] uppercase" style={{ color: ACCENT }}>The Life Clinic Vision</span>
               </motion.div>
               <motion.h2 variants={fadeUp} transition={t()}
                 className="font-serif font-light tracking-[-0.025em] text-ink"
@@ -451,25 +446,24 @@ export default function WedocxClinicPage() {
               <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={viewport} transition={{ duration: 0.8, ease: snap }}>
                 <p className="font-mono text-[11px] tracking-[.2em] uppercase mb-5" style={{ color: ACCENT }}>
-                  The Wedocx Standard
+                  The Life Clinic Promise
                 </p>
-                <h2 className="font-serif font-light text-white leading-[1.0] tracking-[-0.025em] mb-6"
+                <h2 className="font-serif font-light text-white leading-none tracking-tight mb-6"
                   style={{ fontSize: 'clamp(34px,5vw,58px)' }}>
-                  Walk in.<br /><em style={{ color: ACCENT }}>See your first patient.</em>
+                  Live longer.<br /><em style={{ color: ACCENT }}>Live better.</em>
                 </h2>
                 <p className="text-white/55 text-[15px] leading-[1.75]">
-                  Every suite is pre-loaded, staffed, compliant and ready before you arrive.
-                  No setup. No overhead. No compromise on quality.
+                  Life Clinic is being built around one idea: healthcare that focuses on optimising your health, not just treating illness. Prevention, diagnostics, and longevity, all in one place.
                 </p>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={viewport} transition={{ duration: 0.8, delay: 0.1, ease: snap }}
                 className="space-y-4">
                 {[
-                  ['Front-desk under your name', 'Reception briefed before every shift.'],
-                  ['EMR pre-loaded & ready', 'Templates set, patient notes accessible.'],
-                  ['Insurance pre-authorised', 'Daman, Thiqa, AXA & Bupa queued.'],
-                  ['Sterilization confirmed', 'Class-B cycle timestamped per shift.'],
+                  ['Full diagnostic lab on-site', 'Advanced health screening and biomarker panels.'],
+                  ['Longevity specialists', 'Functional medicine and anti-ageing consultants.'],
+                  ['Personalised health plans', 'Nutrition, movement, and preventive care tailored to you.'],
+                  ['Holistic wellness approach', 'Mind, body, and metabolic health under one roof.'],
                 ].map(([title, sub], i) => (
                   <div key={i} className="flex items-start gap-4 p-5 rounded-2xl border border-white/8 hover:border-white/15 transition-colors duration-300"
                     style={{ background: 'rgba(255,255,255,0.04)' }}>
@@ -501,25 +495,24 @@ export default function WedocxClinicPage() {
               <div className="relative z-10 grid lg:grid-cols-[1.3fr_1fr] gap-14 items-center">
                 <div>
                   <p className="font-mono text-[11px] tracking-[.2em] uppercase mb-4" style={{ color: ACCENT }}>
-                    Book Your Suite
+                    Register Your Interest
                   </p>
-                  <h2 className="font-serif font-light text-white leading-[1.0] tracking-[-0.025em] mb-5"
+                  <h2 className="font-serif font-light text-white leading-none tracking-tight mb-5"
                     style={{ fontSize: 'clamp(34px,4.5vw,58px)' }}>
-                    Your suite is<br /><em style={{ color: ACCENT }}>ready now.</em>
+                    Be first<br /><em style={{ color: ACCENT }}>through the door.</em>
                   </h2>
-                  <p className="text-white/50 text-[15px] leading-[1.7] max-w-[420px]">
-                    Book a 30-minute tour, meet the operations coordinator on site, and walk
-                    into your first shift within 48 hours. No contract until you're ready.
+                  <p className="text-white/50 text-[15px] leading-[1.7] max-w-105">
+                    Life Clinic opens in 2026. Register your interest now for priority access, early membership rates, and a personal tour before we open.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 items-start">
-                  <button onClick={() => setBookOpen(true)}
-                    className="inline-flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium bg-bone text-ink hover:bg-white hover:-translate-y-px transition-all">
-                    Book a Suite <span>→</span>
-                  </button>
                   <Link to="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium bg-bone text-ink hover:bg-white hover:-translate-y-px transition-all">
+                    Register Interest <span>→</span>
+                  </Link>
+                  <Link to="/clinics"
                     className="inline-flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium text-bone border border-bone/25 hover:border-bone/55 transition-all">
-                    Talk to the Team <span>→</span>
+                    View All Clinics <span>→</span>
                   </Link>
                 </div>
               </div>
@@ -529,7 +522,6 @@ export default function WedocxClinicPage() {
 
       </main>
 
-      <ServiceSelectionModal open={bookOpen} onClose={() => setBookOpen(false)} />
     </>
   )
 }

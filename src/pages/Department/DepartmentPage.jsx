@@ -161,8 +161,10 @@ export default function DepartmentPage() {
       }
     : null
 
-  const clinicHero = booking?.clinicId === 'wedocx' ? reception2 : null
-  const clinicGallery = booking?.clinicId === 'wedocx' ? [reception2, reception] : null
+  const isUpcoming = booking?.clinicId === 'wedocx'
+  const clinicLabel = booking?.clinicId === 'lux' ? 'Premium' : booking?.clinicId === 'fiore' ? 'Flagship' : booking?.clinicId === 'wedocx' ? 'Upcoming' : 'Wedocx'
+  const clinicHero = null
+  const clinicGallery = null
 
   return (
     <>
@@ -182,7 +184,7 @@ export default function DepartmentPage() {
               className="inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[.2em] uppercase text-brand mb-5 px-3.5 py-2 border border-brand/40 rounded-full bg-ink/30 backdrop-blur-sm"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand block" />
-              {booking?.clinicId === 'lux' ? 'Premium' : 'Wedocx'} · Premium Suite
+              {clinicLabel} · {isUpcoming ? 'Coming 2026' : 'Clinical Suite'}
             </motion.div>
 
             <motion.h1 variants={fadeUp} transition={t()}
@@ -298,9 +300,27 @@ export default function DepartmentPage() {
               </motion.div>
             </div>
 
-            {/* Right — Sticky booking card */}
+            {/* Right — Sticky booking / coming-soon card */}
             <div className="lg:sticky lg:top-28">
-              <BookingCard booking={bookingMeta} onBook={() => setBookingFormOpen(true)} />
+              {isUpcoming ? (
+                <div className="bg-ink text-bone rounded-2xl p-7 relative overflow-hidden">
+                  <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full opacity-10"
+                    style={{ background: 'radial-gradient(circle, #5ba88a, transparent 70%)' }} />
+                  <div className="font-mono text-[10px] tracking-[.18em] uppercase text-emerald-400 mb-5 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 block" />
+                    Coming 2026
+                  </div>
+                  <p className="text-bone/60 text-[13px] leading-relaxed mb-6">
+                    This suite is part of Life Clinic, opening in JLT, Dubai in 2026. Register your interest now to get priority access and early membership rates.
+                  </p>
+                  <a href="/contact"
+                    className="w-full py-3.5 rounded-full bg-emerald-500 text-white text-[13px] font-medium flex items-center justify-center gap-2 hover:bg-emerald-600 transition-colors">
+                    Register Interest <span>→</span>
+                  </a>
+                </div>
+              ) : (
+                <BookingCard booking={bookingMeta} onBook={() => setBookingFormOpen(true)} />
+              )}
             </div>
           </div>
         </div>
@@ -312,43 +332,66 @@ export default function DepartmentPage() {
           className="mx-10 max-sm:mx-5 mb-16 bg-ink text-bone rounded-3xl px-14 py-16 max-sm:px-7 max-sm:py-12 relative overflow-hidden"
         >
           <div className="absolute -top-32 -left-16 w-96 h-96 rounded-full opacity-[0.12] pointer-events-none"
-            style={{ background: 'radial-gradient(circle, #c89a4f, transparent 65%)' }} />
+            style={{ background: `radial-gradient(circle, ${isUpcoming ? '#5ba88a' : '#c89a4f'}, transparent 65%)` }} />
           <div className="section-ring section-ring-480 section-ring-dark absolute -bottom-40 -right-40" />
 
           <div className="relative z-10 max-w-lg">
-            <div className="font-mono text-[10px] tracking-[.2em] uppercase text-brand mb-5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand block" />
-              Ready to Book?
-            </div>
-            <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-light leading-none tracking-[-0.03em] mb-5">
-              Reserve Your <span className="italic text-brand">{dept.name}</span> Today
-            </h2>
-            <p className="text-bone/60 text-[15px] leading-relaxed mb-8 max-w-120">
-              Fully equipped. Professionally maintained. Operational support included. Start practicing in your premium clinic space with zero setup delays.
-            </p>
-            <motion.button
-              onClick={() => setBookingFormOpen(true)}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-brand text-ink text-[14px] font-medium hover:bg-[#d4a85f] transition-colors"
-            >
-              Book This Space <span>→</span>
-            </motion.button>
+            {isUpcoming ? (
+              <>
+                <div className="font-mono text-[10px] tracking-[.2em] uppercase text-emerald-400 mb-5 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 block" />
+                  Opening 2026
+                </div>
+                <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-light leading-none tracking-[-0.03em] mb-5">
+                  Be first through the <span className="italic text-emerald-400">door.</span>
+                </h2>
+                <p className="text-bone/60 text-[15px] leading-relaxed mb-8 max-w-120">
+                  Life Clinic is opening in 2026 in JLT, Dubai. Register your interest now for priority practitioner access, early suite rates, and a personal tour before we open.
+                </p>
+                <a href="/contact"
+                  className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-emerald-500 text-white text-[14px] font-medium hover:bg-emerald-600 transition-colors">
+                  Register Interest <span>→</span>
+                </a>
+              </>
+            ) : (
+              <>
+                <div className="font-mono text-[10px] tracking-[.2em] uppercase text-brand mb-5 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand block" />
+                  Ready to Book?
+                </div>
+                <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-light leading-none tracking-[-0.03em] mb-5">
+                  Reserve Your <span className="italic text-brand">{dept.name}</span> Today
+                </h2>
+                <p className="text-bone/60 text-[15px] leading-relaxed mb-8 max-w-120">
+                  Fully equipped. Professionally maintained. Operational support included. Start practicing in your clinical suite with zero setup delays.
+                </p>
+                <motion.button
+                  onClick={() => setBookingFormOpen(true)}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-brand text-ink text-[14px] font-medium hover:bg-[#d4a85f] transition-colors"
+                >
+                  Book This Space <span>→</span>
+                </motion.button>
+              </>
+            )}
           </div>
         </motion.div>
       </div>
 
-      <BookingFormModal
-        open={bookingFormOpen}
-        onClose={() => setBookingFormOpen(false)}
-        bookingMeta={bookingMeta ?? {
-          department: dept.name,
-          duration:   'Not selected',
-          shift:      'Not selected',
-          price:      'Configure via Explore Services',
-        }}
-        resetKey={formResetKey}
-      />
+      {!isUpcoming && (
+        <BookingFormModal
+          open={bookingFormOpen}
+          onClose={() => setBookingFormOpen(false)}
+          bookingMeta={bookingMeta ?? {
+            department: dept.name,
+            duration:   'Not selected',
+            shift:      'Not selected',
+            price:      'Configure via Explore Services',
+          }}
+          resetKey={formResetKey}
+        />
+      )}
     </>
   )
 }

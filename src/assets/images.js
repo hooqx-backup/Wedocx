@@ -137,6 +137,44 @@ export {
   luxLaser, luxTherapy, luxVanity, luxSterilize, luxPantry, luxHandicap,
 }
 
+// ── Fiore Clinic images ───────────────────────────────────────────────────────
+import fioreImg1  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.49 PM.jpeg'
+import fioreImg2  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.49 PM (1).jpeg'
+import fioreImg3  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.50 PM.jpeg'
+import fioreImg4  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.50 PM (1).jpeg'
+import fioreImg5  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.50 PM (2).jpeg'
+import fioreImg6  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.51 PM.jpeg'
+import fioreImg7  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.51 PM (1).jpeg'
+import fioreImg8  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.51 PM (2).jpeg'
+import fioreImg9  from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.52 PM.jpeg'
+import fioreImg10 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.52 PM (1).jpeg'
+import fioreImg11 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.52 PM (2).jpeg'
+import fioreImg12 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.52 PM (3).jpeg'
+import fioreImg13 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.53 PM.jpeg'
+import fioreImg14 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.53 PM (1).jpeg'
+import fioreImg15 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.53 PM (2).jpeg'
+import fioreImg16 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.54 PM.jpeg'
+import fioreImg17 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.54 PM (1).jpeg'
+import fioreImg18 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.54 PM (2).jpeg'
+import fioreImg19 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.54 PM (3).jpeg'
+import fioreImg20 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.55 PM.jpeg'
+import fioreImg21 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.55 PM (1).jpeg'
+import fioreImg22 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.55 PM (2).jpeg'
+import fioreImg23 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.55 PM (3).jpeg'
+import fioreImg24 from './images/FiorePics/WhatsApp Image 2026-06-04 at 4.43.56 PM.jpeg'
+
+export const fioreReceptionImgs = [fioreImg1, fioreImg2]
+export const fioreSuite1Imgs    = [fioreImg3, fioreImg4, fioreImg5]
+export const fioreSuite2Imgs    = [fioreImg6, fioreImg7, fioreImg8]
+export const fioreSuite3Imgs    = [fioreImg9, fioreImg10, fioreImg11, fioreImg12]
+export const fioreSuite4Imgs    = [fioreImg13, fioreImg14, fioreImg15]
+export const fioreSuite5Imgs    = [fioreImg16, fioreImg17, fioreImg18, fioreImg19]
+export const fioreSuite6Imgs    = [fioreImg20, fioreImg21, fioreImg22, fioreImg23]
+export { fioreImg1, fioreImg2, fioreImg3, fioreImg4, fioreImg5, fioreImg6,
+         fioreImg7, fioreImg8, fioreImg9, fioreImg10, fioreImg11, fioreImg12,
+         fioreImg13, fioreImg14, fioreImg15, fioreImg16, fioreImg17, fioreImg18,
+         fioreImg19, fioreImg20, fioreImg21, fioreImg22, fioreImg23, fioreImg24 }
+
 // ── Video ─────────────────────────────────────────────────────────────────────
 import tourVideo from './videos/Blue Modern Thank You For Watching Health Video.mp4'
 export const videoTour = tourVideo

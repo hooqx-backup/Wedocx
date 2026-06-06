@@ -7,13 +7,16 @@ import ServiceSelectionModal from '../../../../components/booking/ServiceSelecti
 import { Link } from 'react-router-dom'
 import { CLINICS } from '../../../../data/clinics'
 
+const activeCount = CLINICS.filter(c => c.badge !== 'Upcoming').length
+const upcomingCount = CLINICS.filter(c => c.badge === 'Upcoming').length
+
 export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
 
   return (
     <>
-      <section className="relative min-h-screen pt-35 pb-20 px-10 max-sm:pt-28 max-sm:pb-16 max-sm:px-5 overflow-hidden">
+      <section className="relative min-h-screen pt-35 pb-20 px-10 max-sm:pt-28 max-sm:pb-16 max-sm:px-5 overflow-x-hidden">
         <div className="hero-curve" />
         <span className="absolute top-1/2 right-60 -translate-y-1/2 font-mono text-[10px] tracking-[.2em] text-gold opacity-70 [writing-mode:vertical-rl] max-lg:hidden">
           WDX · PLATFORM · UAE
@@ -31,7 +34,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[.18em] uppercase text-gold mb-8 px-3.5 py-2 border border-gold/40 rounded-full bg-parchment/50"
             >
               <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-brand block shrink-0" />
-              {CLINICS.length} Clinic Networks · Dubai, Abu Dhabi, Sharjah
+              {activeCount} Clinic Networks · JLT, Dubai
             </motion.div>
 
             <motion.h1 variants={fadeUp} transition={t()}
@@ -71,7 +74,24 @@ export default function Hero() {
 
             <motion.div variants={fadeUp} transition={t()} className="flex gap-12 max-sm:gap-6 max-sm:flex-wrap pt-10 border-t border-ink/10">
               {[
-                { num: `${CLINICS.length}`, label: 'Clinic Networks' },
+                {
+                  num: (
+                    <span className="flex items-baseline gap-1.5">
+                      {activeCount}
+                      <span className="font-sans text-sm font-normal text-[#5a6478]"></span>
+                    </span>
+                  ),
+                  label: 'Clinic Networks',
+                },
+                {
+                  num: (
+                    <span className="flex items-baseline gap-1.5">
+                      1
+                      <span className="font-sans text-sm font-normal text-[#5a6478]"></span>
+                    </span>
+                  ),
+                  label: 'Upcoming',
+                },
                
                 { num: <>4.9<small className="text-[18px] text-gold">★</small></>, label: 'Platform Rating' },
               ].map((s, i) => (
@@ -95,7 +115,7 @@ export default function Hero() {
                   <span className="live-dot w-2 h-2 rounded-full bg-[#27c46b] shadow-[0_0_0_4px_rgba(39,196,107,.2)] shrink-0" />
                   <div className="flex flex-col text-[13px]">
                     <strong className="font-semibold">Suites Available Now</strong>
-                    <span className="text-[#5a6478] text-[11px]">Across {CLINICS.length} clinic networks · All cities</span>
+                    <span className="text-[#5a6478] text-[11px]">Across {activeCount} clinics · {upcomingCount} upcoming · All cities</span>
                   </div>
                 </div>
                 <div className="font-serif text-[22px] font-medium tracking-tight">
@@ -108,7 +128,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-7 -right-7 max-lg:right-0 w-48 bg-white rounded-2xl p-4 shadow-card border border-ink/5 z-10"
+              className="absolute top-7 -right-7 max-sm:right-0 max-lg:right-0 w-48 bg-white rounded-2xl p-4 shadow-card border border-ink/5 z-10"
             >
               <div className="font-mono text-[11px] text-[#5a6478] uppercase tracking-wider mb-2">Platform bookings</div>
               <div className="font-serif text-[28px] font-medium tracking-tight">+ 38%</div>
@@ -123,7 +143,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute bottom-28 max-sm:bottom-20 -left-10 max-lg:left-0 w-44 bg-white rounded-2xl p-4 shadow-card border border-ink/5 z-10"
+              className="absolute bottom-28 max-sm:bottom-20 -left-10 max-sm:left-2 max-lg:left-0 w-44 bg-white rounded-2xl p-4 shadow-card border border-ink/5 z-10"
             >
               <div className="flex items-center gap-2 mb-2">
                 

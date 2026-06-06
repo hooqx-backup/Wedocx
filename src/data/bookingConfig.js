@@ -10,16 +10,23 @@ export const SHIFT_OPTIONS = [
 ]
 
 export const DEPARTMENT_OPTIONS = [
-  { value: 'wedocx-dental',       label: 'Flagship Dental Suite',       clinicId: 'wedocx' },
-  { value: 'wedocx-dermatology',  label: 'Flagship Dermatology Room',   clinicId: 'wedocx' },
-  { value: 'wedocx-treatment',    label: 'Flagship Treatment Room',      clinicId: 'wedocx' },
-  { value: 'wedocx-pediatrician', label: 'Flagship Pediatrician Suite',  clinicId: 'wedocx' },
-  { value: 'lux-dental',          label: 'Premium Dental Room',          clinicId: 'lux'    },
-  { value: 'lux-dermatology',     label: 'Premium Dermatology Room',     clinicId: 'lux'    },
-  { value: 'lux-therapy',         label: 'Premium Therapy Room',         clinicId: 'lux'    },
-  { value: 'lux-treatment',       label: 'Premium Treatment Room',       clinicId: 'lux'    },
-  { value: 'lux-laser',           label: 'Premium Laser Room',           clinicId: 'lux'    },
-  { value: 'lux-gp',              label: 'Premium GP Room',              clinicId: 'lux'    },
+  // Flagship — Fiore Medical Centre
+  { value: 'fiore-gp',           label: 'Flagship GP Suite',           clinicId: 'fiore'  },
+  { value: 'fiore-aesthetics',   label: 'Flagship Aesthetics Suite',   clinicId: 'fiore'  },
+  { value: 'fiore-dermatology',  label: 'Flagship Dermatology Room',   clinicId: 'fiore'  },
+  { value: 'fiore-treatment',    label: 'Flagship Treatment Room',     clinicId: 'fiore'  },
+  // Premium — Lux Clinic
+  { value: 'lux-dental',         label: 'Premium Dental Room',         clinicId: 'lux'    },
+  { value: 'lux-dermatology',    label: 'Premium Dermatology Room',    clinicId: 'lux'    },
+  { value: 'lux-therapy',        label: 'Premium Therapy Room',        clinicId: 'lux'    },
+  { value: 'lux-treatment',      label: 'Premium Treatment Room',      clinicId: 'lux'    },
+  { value: 'lux-laser',          label: 'Premium Laser Room',          clinicId: 'lux'    },
+  { value: 'lux-gp',             label: 'Premium GP Room',             clinicId: 'lux'    },
+  // Upcoming — Life Clinic
+  { value: 'wedocx-dental',      label: 'Upcoming Dental Suite',       clinicId: 'wedocx' },
+  { value: 'wedocx-dermatology', label: 'Upcoming Dermatology Room',   clinicId: 'wedocx' },
+  { value: 'wedocx-treatment',   label: 'Upcoming Treatment Room',     clinicId: 'wedocx' },
+  { value: 'wedocx-pediatrician',label: 'Upcoming Pediatrician Suite', clinicId: 'wedocx' },
 ]
 
 // Price matrix — [duration][shift] → ₹ price

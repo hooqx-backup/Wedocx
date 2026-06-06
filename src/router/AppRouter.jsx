@@ -18,6 +18,7 @@ import Clinics from '../pages/Clinics/Clinics'
 import ClinicProfile from '../pages/Clinics/ClinicProfile'
 import LuxClinicPage from '../pages/Clinics/LuxClinicPage'
 import WedocxClinicPage from '../pages/Clinics/WedocxClinicPage'
+import FioreClinicPage from '../pages/Clinics/FioreClinicPage'
 
 export default function AppRouter() {
   return (
@@ -28,6 +29,7 @@ export default function AppRouter() {
         <Route path="/clinics" element={<Clinics />} />
         <Route path="/clinics/wedocx" element={<WedocxClinicPage />} />
         <Route path="/clinics/lux" element={<LuxClinicPage />} />
+        <Route path="/clinics/fiore" element={<FioreClinicPage />} />
         <Route path="/clinics/:clinicSlug" element={<ClinicProfile />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
