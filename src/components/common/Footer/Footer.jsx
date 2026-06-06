@@ -10,9 +10,10 @@ const cols = [
   {
     heading: 'Clinics',
     links: [
-      { label: 'All Clinics',   to: '/clinics'        },
-      { label: 'Wedocx Clinic', to: '/clinics/wedocx' },
-      { label: 'Premium Suites', to: '/clinics/lux'    },
+      { label: 'All Clinics',   to: '/clinics'         },
+      { label: 'Lux Aeterna Clinic', to: '/clinics/lux' },
+      { label: 'Fiore Clinic',  to: '/clinics/fiore'   },
+      { label: 'Life Clinic',   to: '/clinics/wedocx'  },
     ],
   },
   {
@@ -90,7 +91,7 @@ export default function Footer() {
                   <img src={logoWhite} alt="wedocx" className="h-15 w-auto object-contain" />
                 </div>
                 <p className="text-bone/76 text-[13px] leading-relaxed max-w-78 mb-7">
-                  The UAE's first multi-clinic healthcare platform. We partner with premium clinic brands, equip them with world-class infrastructure, and connect them with independent practitioners across Dubai, Abu Dhabi and Sharjah.
+                  The UAE's first multi-clinic healthcare platform. We partner with premium clinic brands, equip them with world-class infrastructure, and connect them with independent practitioners across JLT, Dubai.
                 </p>
 
                 <p className="font-mono text-[10px] tracking-[.18em] uppercase text-brand mb-3">Practitioner brief</p>
@@ -162,7 +163,7 @@ export default function Footer() {
       <div className="relative z-10 px-6 max-sm:px-4 pb-8 pt-4">
         <div className="max-w-360 mx-auto flex justify-center">
           <span className="footer-location-pill font-mono text-[10px] tracking-[.2em] uppercase text-bone/45">
-            Dubai - Abu Dhabi - Sharjah
+            JLT, Dubai
           </span>
         </div>
       </div>

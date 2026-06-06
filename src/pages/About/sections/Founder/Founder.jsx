@@ -80,9 +80,9 @@ function FounderImageCard({ img, name, role, label, accent, stats, initials }) {
       transition={{ duration: 0.85, ease: snap }}
       className="sticky top-28 max-lg:static"
     >
-      <div className="relative rounded-3xl overflow-hidden aspect-[3/4] max-sm:aspect-[4/3]">
+      <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
         {img ? (
-          <img src={img} alt={name} className="w-full h-full object-cover object-center" />
+          <img src={img} alt={name} className="w-full h-full object-cover object-top" />
         ) : (
           <div className="w-full h-full"
             style={{ background: 'linear-gradient(165deg,#1a2538 0%,#2a3a52 40%,#3d4f6a 70%,#1a2538 100%)' }}>
@@ -154,8 +154,8 @@ export default function Founder({ founderImg, founder2Img }) {
             img={founderImg}
             name="Sajjad Anwar Butt"
             role="MBA · 28+ Years · GCC & Global"
-            label="Founder"
-            accent="#c89a4f"
+         
+           
             stats={SAJJAD_STATS}
             initials="SAB"
           />
@@ -356,7 +356,7 @@ export default function Founder({ founderImg, founder2Img }) {
             transition={{ duration: 0.85, ease: snap }}
             className="sticky top-28 max-lg:static lg:order-2 order-1"
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] max-sm:aspect-[4/3]">
+            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] max-sm:aspect-auto max-sm:h-96">
               {founder2Img ? (
                 <img src={founder2Img} alt="Dr. Irfan Ullah"
                   className="w-full h-full object-cover object-top" />
@@ -371,7 +371,7 @@ export default function Founder({ founderImg, founder2Img }) {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#a78bfa' }} />
                   <span className="font-mono text-[10px] tracking-[.18em] uppercase" style={{ color: 'rgba(167,139,250,0.8)' }}>
-                    Medical Director · Founder
+                    Medical Director
                   </span>
                 </div>
                 <h3 className="font-serif text-[28px] font-light text-bone leading-[1.1] mb-1">Dr. Irfan Ullah</h3>

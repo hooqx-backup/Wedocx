@@ -13,7 +13,7 @@ const ROLES = [
   {
     title: 'Clinical Partnerships Manager',
     dept: 'Growth',
-    location: 'Dubai / Abu Dhabi',
+    location: 'JLT, Dubai',
     type: 'Full-time',
     typeColor: 'text-blue-700 border-blue-600/30 bg-blue-50',
     desc: 'Build and manage relationships with independent practitioners, medical groups and DHA-licensed professionals across the UAE.',

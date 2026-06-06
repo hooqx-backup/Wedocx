@@ -8,51 +8,100 @@ import {
   useTransform,
 } from "framer-motion";
 import {
-  dentalImgs1,
-  dermImgs,
-  treatmentImgs,
-  pediatricImgs,
   luxGpImgs,
   luxDentalImgs,
   luxTreatmentImgs,
+  fioreSuite1Imgs,
+  fioreSuite3Imgs,
+  fioreSuite5Imgs,
+  dentalImgs1,
+  dermImgs,
+  treatmentImgs,
 } from "../../../../assets/images";
 import { stagger, t, viewport } from "../../../../animations/variants";
 import ServiceSelectionModal from "../../../../components/booking/ServiceSelectionModal";
 import ContactModal from "../../../../components/ui/ContactModal/ContactModal";
 
-const spaces = [
+const filters = ["All", "Lux Aeterna", "Fiore", "Life"];
+
+const clinicRows = [
   {
-    badge: "Live now", live: true, clinic: "Flagship",
-    type: "DENTAL · 220 SQFT", rating: "4.9",
-    name: "Dental Suite 01", loc: "Business Bay, Dubai · Floor 04", imgs: dentalImgs1,
+    clinic: "Lux Aeterna Clinic",
+    filterKey: "Lux Aeterna",
+    badge: "Premium",
+    badgeClass: "border-purple-400/40 text-purple-400 bg-purple-500/8",
+    spaces: [
+      {
+        badge: "Live now", live: true,
+        type: "GP · 200 SQFT", rating: "5.0",
+        name: "GP Suite", loc: "JLT, Dubai · Floor 12",
+        imgs: luxGpImgs,
+      },
+      {
+        badge: "Live now", live: true,
+        type: "DENTAL · 220 SQFT", rating: "5.0",
+        name: "Dental Suite", loc: "JLT, Dubai · Floor 06",
+        imgs: luxDentalImgs,
+      },
+      {
+        badge: "Live now", live: true,
+        type: "TREATMENT · 240 SQFT", rating: "5.0",
+        name: "Treatment Suite", loc: "JLT, Dubai · Floor 08",
+        imgs: luxTreatmentImgs,
+      },
+    ],
   },
   {
-    badge: "2 left", live: false, clinic: "Flagship",
-    type: "DERM · 180 SQFT", rating: "5.0",
-    name: "Dermatology Room", loc: "DIFC, Dubai · Floor 03", imgs: dermImgs,
+    clinic: "Fiore Medical Centre",
+    filterKey: "Fiore",
+    badge: "Flagship",
+    badgeClass: "border-rose-400/40 text-rose-400 bg-rose-500/8",
+    spaces: [
+      {
+        badge: "Live now", live: true,
+        type: "GP · 200 SQFT", rating: "4.9",
+        name: "General Practice Suite", loc: "JLT, Dubai · Floor 04",
+        imgs: fioreSuite1Imgs,
+      },
+      {
+        badge: "Live now", live: true,
+        type: "DERM · 180 SQFT", rating: "5.0",
+        name: "Dermatology Room", loc: "JLT, Dubai · Floor 03",
+        imgs: fioreSuite3Imgs,
+      },
+      {
+        badge: "2 left", live: false,
+        type: "TREATMENT · 240 SQFT", rating: "5.0",
+        name: "Treatment Room", loc: "JLT, Dubai · Floor 02",
+        imgs: fioreSuite5Imgs,
+      },
+    ],
   },
   {
-    badge: "Live now", live: true, clinic: "Flagship",
-    type: "PEDIATRIC · 220 SQFT", rating: "5.0",
-    name: "Pediatrician Suite", loc: "Jumeirah, Dubai · Floor 02", imgs: pediatricImgs,
-  },
-  {
-    badge: "Live now", live: true, clinic: "Premium",
-    type: "GP · 200 SQFT", rating: "5.0",
-    name: "GP Suite", loc: "DIFC, Dubai · Floor 12", imgs: luxGpImgs,
-    isPremium: true,
-  },
-  {
-    badge: "2 left", live: false, clinic: "Premium",
-    type: "DENTAL · 220 SQFT", rating: "5.0",
-    name: "Dental Suite 02", loc: "Palm Jumeirah, Dubai · Floor 06", imgs: luxDentalImgs,
-    isPremium: true,
-  },
-  {
-    badge: "Premium", live: false, clinic: "Premium",
-    type: "TREATMENT · 240 SQFT", rating: "5.0",
-    name: "Treatment Suite", loc: "DIFC, Dubai · Floor 08", imgs: luxTreatmentImgs,
-    isPremium: true,
+    clinic: "Life Clinic",
+    filterKey: "Life",
+    badge: "Upcoming",
+    badgeClass: "border-emerald-400/40 text-emerald-400 bg-emerald-500/8",
+    spaces: [
+      {
+        badge: "Upcoming", live: false,
+        type: "TREATMENT · 240 SQFT", rating: "—",
+        name: "Treatment Suite", loc: "JLT, Dubai · Opening 2026",
+        imgs: treatmentImgs,
+      },
+      {
+        badge: "Upcoming", live: false,
+        type: "DENTAL · 220 SQFT", rating: "—",
+        name: "Dental Suite", loc: "JLT, Dubai · Opening 2026",
+        imgs: dentalImgs1,
+      },
+      {
+        badge: "Upcoming", live: false,
+        type: "DERM · 180 SQFT", rating: "—",
+        name: "Dermatology Room", loc: "JLT, Dubai · Opening 2026",
+        imgs: dermImgs,
+      },
+    ],
   },
 ];
 
@@ -127,11 +176,10 @@ function CardCarousel({ imgs, name }) {
   );
 }
 
-/* ── Space card — horizontal image parallax + spotlight, no tilt ───────────── */
+/* ── Space card ─────────────────────────────────────────────────────────────── */
 function SpaceCard({ s, i, onContact }) {
   const snap = [0.22, 1, 0.36, 1];
 
-  /* Cursor X → image shifts left/right (window-peek effect) */
   const curX = useMotionValue(0.5);
   const imgX  = useSpring(useTransform(curX, [0, 1], [-16, 16]), { stiffness: 140, damping: 22 });
 
@@ -166,10 +214,8 @@ function SpaceCard({ s, i, onContact }) {
       }}
       className="relative bg-bone rounded-2xl overflow-hidden cursor-pointer h-full"
     >
-      {/* Cursor spotlight */}
       <motion.div className="absolute inset-0 pointer-events-none z-10" style={{ background: spot }} />
 
-      {/* Image area */}
       <div className="relative aspect-4/3 overflow-hidden">
         <span className={`absolute top-3.5 left-3.5 z-20 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.15em] uppercase backdrop-blur-[10px] ${
           s.live ? "bg-[#27c46b] text-white" : "bg-bone/90"
@@ -180,13 +226,8 @@ function SpaceCard({ s, i, onContact }) {
           )}
           {s.badge}
         </span>
-        {/* Clinic label bottom-left */}
-        <span className="absolute bottom-3.5 left-3.5 z-20 px-2.5 py-1 rounded-full font-mono text-[9px] tracking-[.12em] uppercase backdrop-blur-[10px] bg-bone/75 text-ink/70">
-          {s.clinic}
-        </span>
         <button className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-bone/90 backdrop-blur-[10px] flex items-center justify-center text-sm transition-all hover:bg-white hover:scale-105">♡</button>
 
-        {/* Image — zoomed slightly + shifts horizontally with cursor */}
         <motion.div
           className="absolute pointer-events-none"
           style={{ inset: "-18px", x: imgX }}
@@ -195,7 +236,6 @@ function SpaceCard({ s, i, onContact }) {
           <CardCarousel imgs={s.imgs} name={s.name} />
         </motion.div>
 
-        {/* Gradient overlay that deepens on hover */}
         <motion.div
           className="absolute inset-0 pointer-events-none z-10"
           variants={{
@@ -206,11 +246,9 @@ function SpaceCard({ s, i, onContact }) {
         />
       </div>
 
-      {/* Card body */}
       <div className="p-6 relative z-10">
         <div className="flex justify-between items-center font-mono text-[10px] tracking-[.12em] uppercase text-[#5a6478] mb-2.5">
           <span>{s.type}</span>
-          {/* Rating star pulses gold on hover */}
           <motion.span
             variants={{
               rest:  { color: "rgb(26,34,50)" },
@@ -224,7 +262,6 @@ function SpaceCard({ s, i, onContact }) {
           </motion.span>
         </div>
 
-        {/* Title — letter-spacing expands on hover */}
         <motion.h3
           className="font-serif text-[22px] font-normal mb-1.5"
           variants={{
@@ -245,7 +282,6 @@ function SpaceCard({ s, i, onContact }) {
           {s.loc}
         </motion.p>
 
-        {/* Bottom divider — turns gold on hover */}
         <motion.div
           className="h-px origin-left"
           variants={{
@@ -255,32 +291,12 @@ function SpaceCard({ s, i, onContact }) {
         />
       </div>
 
-      {/* Book strip */}
       <BookStrip />
     </motion.div>
   );
 }
 
-/* ── Shimmer sweep (responds to parent rest/hover variant) ──────────────────── */
-function Shimmer() {
-  return (
-    <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden rounded-2xl">
-      <motion.div
-        variants={{
-          rest: { x: "-120%", skewX: "-20deg" },
-          hover: {
-            x: "220%", skewX: "-20deg",
-            transition: { duration: 0.78, ease: [0.4, 0, 0.2, 1] },
-          },
-        }}
-        className="absolute inset-y-0 w-[45%]"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent)" }}
-      />
-    </div>
-  );
-}
-
-/* ── Book strip — slides up from bottom on hover ───────────────────────────── */
+/* ── Book strip ─────────────────────────────────────────────────────────────── */
 function BookStrip() {
   return (
     <motion.div
@@ -301,8 +317,6 @@ function BookStrip() {
     </motion.div>
   );
 }
-
-const filters = ["All", "Flagship", "Premium"];
 
 /* ── Magnetic filter pill ───────────────────────────────────────────────────── */
 function FilterBtn({ label, active, onClick }) {
@@ -340,13 +354,29 @@ function FilterBtn({ label, active, onClick }) {
   );
 }
 
+/* ── Clinic row header ──────────────────────────────────────────────────────── */
+function RowHeader({ clinic, badge, badgeClass }) {
+  return (
+    <div className="flex items-center gap-3 mb-6">
+      <span className="w-7 h-px bg-ink/25 block shrink-0" />
+      <span className="font-mono text-[11px] tracking-[.18em] uppercase text-ink/55">{clinic}</span>
+      <span className={`font-mono text-[9px] tracking-[.14em] uppercase px-2.5 py-1 rounded-full border ${badgeClass}`}>
+        {badge}
+      </span>
+      <span className="flex-1 h-px bg-ink/8 block" />
+    </div>
+  );
+}
+
 /* ── Main section ──────────────────────────────────────────────────────────── */
 export default function Spaces() {
   const [active, setActive] = useState("All");
   const [servicesOpen, setServicesOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
 
-  const filtered = active === "All" ? spaces : spaces.filter(s => s.clinic === active);
+  const visibleRows = active === "All"
+    ? clinicRows
+    : clinicRows.filter(r => r.filterKey === active);
 
   return (
     <>
@@ -355,7 +385,6 @@ export default function Spaces() {
         className="py-30 px-10 max-lg:py-20 max-sm:py-16 max-sm:px-5 relative overflow-hidden"
         style={{ background: "linear-gradient(180deg, var(--color-bone) 0%, var(--color-cream) 100%)" }}
       >
-        {/* Ambient floating orbs */}
         <Orb
           style={{
             width: 500, height: 500, top: -140, right: -120,
@@ -381,7 +410,7 @@ export default function Spaces() {
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            className="grid lg:grid-cols-[200px_1fr] grid-cols-1 gap-15 max-lg:gap-6 mb-15 items-start"
+            className="grid lg:grid-cols-[200px_1fr] grid-cols-1 gap-15 max-lg:gap-6 mb-10 items-start"
           >
             <motion.div
               variants={{
@@ -421,23 +450,35 @@ export default function Spaces() {
             </div>
           </motion.div>
 
-          {/* ── Cards grid ── */}
-          <motion.div layout className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-            <AnimatePresence mode="popLayout">
-              {filtered.map((s, i) => (
-                <motion.div
-                  key={s.name}
-                  layout
-                  initial={{ opacity: 0, y: 60, scale: 0.93, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, y: 24, scale: 0.93, filter: "blur(4px)" }}
-                  transition={{ duration: 0.52, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <SpaceCard s={s} i={i} onContact={() => setServicesOpen(true)} />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+          {/* ── Clinic rows ── */}
+          <AnimatePresence mode="wait">
+          <div className="flex flex-col gap-16">
+            {visibleRows.map((row, rowIdx) => (
+              <motion.div
+                key={row.clinic}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={viewport}
+                transition={{ duration: 0.6, delay: rowIdx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <RowHeader clinic={row.clinic} badge={row.badge} badgeClass={row.badgeClass} />
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+                  {row.spaces.map((s, i) => (
+                    <motion.div
+                      key={s.name + row.clinic}
+                      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={viewport}
+                      transition={{ duration: 0.52, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <SpaceCard s={s} i={i} onContact={() => setServicesOpen(true)} />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          </AnimatePresence>
 
           {/* ── CTA ── */}
           <motion.div
@@ -448,7 +489,6 @@ export default function Spaces() {
             className="flex justify-center mt-15"
           >
             <div className="relative">
-              {/* Pulse ring */}
               <motion.div
                 className="absolute inset-0 rounded-full bg-ink/15"
                 animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0, 0.5] }}

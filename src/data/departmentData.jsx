@@ -1,4 +1,4 @@
-import { dentalImgs1, dentalImgs2, dermImgs, treatmentImgs, pediatricImgs, luxDentalImgs, luxDermaImgs, luxGpImgs, luxTreatmentImgs, luxLaser, luxTherapy, luxVanity, luxSterilize } from '../assets/images'
+import { dentalImgs1, dentalImgs2, dermImgs, treatmentImgs, pediatricImgs, luxDentalImgs, luxDermaImgs, luxGpImgs, luxTreatmentImgs, luxLaser, luxTherapy, luxVanity, luxSterilize, fioreSuite1Imgs, fioreSuite2Imgs, fioreSuite3Imgs, fioreSuite4Imgs, fioreImg1, fioreImg9, fioreImg13, fioreImg16 } from '../assets/images'
 
 const Icon = ({ d, d2 }) => (
   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -580,7 +580,135 @@ export const LUX_DEPARTMENTS = {
   },
 }
 
+export const FIORE_DEPARTMENTS = {
+  gp: {
+    id: 'gp', name: 'GP Suite',
+    tagline: 'Full-Service General Practice, Flagship Standard',
+    description: 'The Fiore GP Suite is a fully equipped general practice consultation room built for independent practitioners at Fiore Medical Centre. Hi-lo exam table, full diagnostic kit, DHA-licensed, and EMR pre-loaded from the first appointment.',
+    heroImage: fioreSuite1Imgs[0],
+    gallery: fioreSuite1Imgs,
+    features: [
+      { title: 'Hi-Lo Examination Table', desc: 'Motorised examination table with full height adjustment for patient accessibility and clinical comfort.', icon: <Icon d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /> },
+      { title: 'Full Diagnostic Kit', desc: 'Complete diagnostic instruments including sphygmomanometer, stethoscope, ophthalmoscope, and otoscope.', icon: <Icon d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /> },
+      { title: 'DHA Licensed', desc: 'Fully licensed by the Dubai Health Authority. All compliance documentation maintained and up to date.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+      { title: 'EMR Pre-Loaded', desc: 'Electronic medical records system pre-installed and configured. Templates set before your first shift.', icon: <Icon d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /> },
+    ],
+    amenities: ['Hi-lo examination table', 'Full diagnostic instrument kit', 'DHA-licensed & compliant', 'EMR pre-loaded & ready', 'ECG machine', 'Hand-wash station', 'Clinical waste management', 'Front-desk patient coordination'],
+    highlights: [{ num: '200', label: 'Sq. ft. suite area' }, { num: 'DHA', label: 'Licensed' }, { num: '24/7', label: 'Ops support' }],
+  },
+  aesthetics: {
+    id: 'aesthetics', name: 'Aesthetics Suite',
+    tagline: 'Clinical Aesthetics, Flagship Finish',
+    description: 'The Fiore Aesthetics Suite is a premium clinical room purpose-built for aesthetic physicians at Fiore Medical Centre. Surgical-grade procedure bed, precise LED lighting, and a sterile prep zone, all configured for injectables, skin treatments, and minor procedures.',
+    heroImage: fioreSuite2Imgs[0],
+    gallery: fioreSuite2Imgs,
+    features: [
+      { title: 'Surgical-Grade Procedure Bed', desc: 'Fully articulated procedure bed with adjustable headrest, armrests, and precise positioning for all aesthetic treatments.', icon: <Icon d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /> },
+      { title: 'Precision LED Lighting', desc: 'CRI 95+ colour-accurate lighting for skin assessment, injection accuracy, and post-treatment review.', icon: <Icon d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l.707-.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10A5 5 0 0012 7z" /> },
+      { title: 'Sterile Prep Zone', desc: 'Dedicated sterile preparation area with proper surface separation and clinical waste management protocols.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+      { title: 'Patient Privacy', desc: 'Private consultation and treatment zone with full sound isolation and a discreet patient entrance and exit.', icon: <Icon d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /> },
+    ],
+    amenities: ['Articulated procedure bed', 'CRI 95+ surgical lighting', 'Sterile prep zone', 'IV therapy infrastructure', 'Product refrigeration', 'Clinical waste management', 'DHA-licensed & compliant', 'Front-desk coordination'],
+    highlights: [{ num: '220', label: 'Sq. ft. suite area' }, { num: 'CRI 95+', label: 'Lighting grade' }, { num: '100%', label: 'Sterile per shift' }],
+  },
+  dermatology: {
+    id: 'dermatology', name: 'Dermatology Room',
+    tagline: 'Skin-First Clinical Environment, Flagship Grade',
+    description: 'The Fiore Dermatology Room is a high-end clinical environment built for consultant dermatologists at Fiore Medical Centre. 5500K full-spectrum lighting, dermatoscope-ready, CRI 95+ precision, and a private patient consultation zone.',
+    heroImage: fioreSuite3Imgs[0],
+    gallery: fioreSuite3Imgs,
+    features: [
+      { title: '5500K Full-Spectrum Lighting', desc: 'Daylight-accurate 5500K overhead lighting for precise skin tone assessment, lesion examination, and treatment planning.', icon: <Icon d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l.707-.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10A5 5 0 0012 7z" /> },
+      { title: 'Dermatoscope Ready', desc: 'Infrastructure pre-wired for dermatoscope connectivity, Wood lamp integration, and digital skin imaging.', icon: <Icon d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /> },
+      { title: 'Reclining Procedure Chair', desc: 'Fully adjustable dermatology chair supporting comfortable positioning for both short consultations and extended procedures.', icon: <Icon d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /> },
+      { title: 'Procedure Ready', desc: 'Sterile surface zones, blackout blinds for laser-adjacent procedures, and full clinical waste management.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+    ],
+    amenities: ['5500K full-spectrum lighting', 'CRI 95+ colour accuracy', 'Dermatoscope infrastructure', "Wood's lamp point", 'Blackout blinds', 'Reclining procedure chair', 'Sterile prep zone', 'DHA-licensed & compliant'],
+    highlights: [{ num: '180', label: 'Sq. ft. suite area' }, { num: '5500K', label: 'Lighting grade' }, { num: 'CRI 95+', label: 'Colour accuracy' }],
+  },
+  treatment: {
+    id: 'treatment', name: 'Treatment Room',
+    tagline: 'Multi-Specialty Clinical Space, Flagship Grade',
+    description: 'The Fiore Treatment Room is a multi-specialty clinical suite at Fiore Medical Centre, designed for procedural specialists, GPs, and minor surgery. Articulated procedure bed, IV therapy infrastructure, surgical lighting, and a dedicated sterile zone.',
+    heroImage: fioreSuite4Imgs[0],
+    gallery: fioreSuite4Imgs,
+    features: [
+      { title: 'Articulated Procedure Bed', desc: 'Fully motorised procedure bed with independent head, leg, and height control for precise patient positioning across specialties.', icon: <Icon d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /> },
+      { title: 'IV Therapy Infrastructure', desc: 'Ceiling-mounted IV pole, infusion recliner, and saline storage. Ready for IV vitamins, hydration, and medication administration.', icon: <Icon d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /> },
+      { title: 'Surgical Lighting', desc: 'Overhead surgical-grade LED light with adjustable intensity, shadow-free coverage, and 100,000 lux output for minor procedures.', icon: <Icon d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l.707-.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10A5 5 0 0012 7z" /> },
+      { title: 'Sterile Zone', desc: 'Dedicated sterile prep area with proper surface zoning, Class-B autoclave access, and clinical waste protocols.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+    ],
+    amenities: ['Articulated procedure bed', 'IV therapy setup', 'Surgical LED overhead light', 'Sterile prep zone', 'Class-B autoclave access', 'Emergency trolley access', 'DHA-licensed & compliant', 'Front-desk coordination'],
+    highlights: [{ num: '240', label: 'Sq. ft. suite area' }, { num: 'DHA', label: 'Licensed' }, { num: '100%', label: 'Sterile per shift' }],
+  },
+}
+
+export const UPCOMING_DEPARTMENTS = {
+  dental: {
+    id: 'dental', name: 'Dental Suite',
+    tagline: 'Precision Dentistry, Coming to Life Clinic 2026',
+    description: 'The Life Clinic Dental Suite is planned as a fully-equipped, premium dental operatory for independent practitioners. Designed for modern dental practice with zero setup friction, full DHA compliance, and operational support from day one. Opening 2026.',
+    heroImage: dentalImgs1[2],
+    gallery: [...dentalImgs1],
+    features: [
+      { title: 'Full Dental Chair Unit', desc: 'State-of-the-art adjustable dental chair with integrated delivery system, positioning light, and instrument tray, planned for opening day.', icon: <Icon d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /> },
+      { title: 'Digital Imaging Ready', desc: 'Full digital X-ray, CBCT connectivity, and intraoral camera infrastructure planned from the ground up.', icon: <Icon d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /> },
+      { title: 'DHA Licensed', desc: 'Life Clinic is being designed to full DHA clinical standards. All licensing documentation will be in place before opening.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+      { title: 'Class-B Sterilization', desc: 'Dedicated sterilization zone with Class-B autoclave and cassette system, compliant and operational from day one.', icon: <Icon d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /> },
+    ],
+    amenities: ['Full dental chair unit', 'Digital imaging infrastructure', 'Class-B autoclave planned', 'DHA-licensed on opening', 'EMR pre-loaded', 'Clinical waste management', 'Front-desk coordination', 'Ops support from day one'],
+    highlights: [{ num: '2026', label: 'Opening year' }, { num: 'DHA', label: 'Planned licensing' }, { num: '100%', label: 'Sterile per shift' }],
+  },
+  dermatology: {
+    id: 'dermatology', name: 'Dermatology Room',
+    tagline: 'Skin-First Clinical Environment, Opening 2026',
+    description: 'The Life Clinic Dermatology Room is planned as a high-end clinical and diagnostic environment for consultant dermatologists. 5500K full-spectrum lighting, dermatoscope infrastructure, and a private patient zone, all opening in 2026.',
+    heroImage: dermImgs[0],
+    gallery: dermImgs,
+    features: [
+      { title: '5500K Full-Spectrum Lighting', desc: 'Daylight-accurate lighting planned for precise skin assessment and lesion examination from the first patient.', icon: <Icon d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l.707-.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10A5 5 0 0012 7z" /> },
+      { title: 'Dermatoscope Infrastructure', desc: 'Planned dermatoscope connectivity, Wood lamp, and digital skin imaging capability on opening day.', icon: <Icon d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /> },
+      { title: 'DHA Licensed', desc: 'Life Clinic dermatology rooms will be fully DHA-licensed and compliant before accepting the first patient.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+      { title: 'Procedure Ready', desc: 'Blackout blinds, sterile surface zones, and clinical waste management all planned for opening day.', icon: <Icon d="M9 12l2 2 4-4M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /> },
+    ],
+    amenities: ['5500K full-spectrum lighting planned', 'Dermatoscope infrastructure', 'Reclining procedure chair', 'Blackout blinds', 'DHA-licensed on opening', 'EMR pre-loaded', 'Sterile prep zone', 'Front-desk coordination'],
+    highlights: [{ num: '2026', label: 'Opening year' }, { num: '5500K', label: 'Planned lighting' }, { num: 'DHA', label: 'Licensed on opening' }],
+  },
+  treatment: {
+    id: 'treatment', name: 'Treatment Room',
+    tagline: 'Multi-Specialty Clinical Space, Opening 2026',
+    description: 'The Life Clinic Treatment Room is planned as a multi-specialty clinical suite for procedural specialists and longevity-focused practitioners. IV therapy, surgical lighting, and a full sterile zone, all opening in 2026.',
+    heroImage: treatmentImgs[0],
+    gallery: treatmentImgs,
+    features: [
+      { title: 'IV Therapy Infrastructure', desc: 'Planned ceiling-mounted IV pole, infusion recliner, and full IV setup for longevity and wellness protocols.', icon: <Icon d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /> },
+      { title: 'Surgical LED Lighting', desc: 'Shadow-free surgical lighting planned for procedures requiring precision illumination on opening day.', icon: <Icon d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l.707-.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10A5 5 0 0012 7z" /> },
+      { title: 'DHA Licensed', desc: 'Life Clinic treatment rooms will be fully DHA-licensed and operationally ready from the first appointment.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+      { title: 'Sterile Zone', desc: 'Dedicated sterile prep area with Class-B autoclave access and clinical waste protocols, designed in from day one.', icon: <Icon d="M9 12l2 2 4-4M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /> },
+    ],
+    amenities: ['Articulated procedure bed', 'IV therapy infrastructure', 'Surgical LED planned', 'Sterile prep zone', 'Class-B autoclave access', 'DHA-licensed on opening', 'EMR pre-loaded', 'Ops support from day one'],
+    highlights: [{ num: '2026', label: 'Opening year' }, { num: 'DHA', label: 'Licensed on opening' }, { num: '24/7', label: 'Planned ops support' }],
+  },
+  pediatrician: {
+    id: 'pediatrician', name: 'Pediatrician Suite',
+    tagline: 'Child-Safe Clinical Environment, Opening 2026',
+    description: 'The Life Clinic Pediatrician Suite is planned as a fully child-safe, family-friendly clinical environment. Growth-chart station, vaccine cold storage, paediatric diagnostic kit, and a dedicated family waiting nook, all opening in 2026.',
+    heroImage: pediatricImgs[0],
+    gallery: pediatricImgs,
+    features: [
+      { title: 'Child-Safe Exam Table', desc: 'Purpose-built paediatric examination table with safety rails and a child-friendly design, planned for opening day.', icon: <Icon d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" /> },
+      { title: 'Growth & Vaccination Station', desc: 'Integrated growth-chart wall, vaccine cold storage, and a full paediatric diagnostic kit planned from opening.', icon: <Icon d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /> },
+      { title: 'DHA Licensed', desc: 'Life Clinic paediatric rooms will be fully DHA-licensed and compliant before the first child patient is seen.', icon: <Icon d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /> },
+      { title: 'Family Waiting Nook', desc: 'Dedicated private family waiting area adjacent to the suite, designed for comfort and separation from adult waiting areas.', icon: <Icon d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /> },
+    ],
+    amenities: ['Child-safe exam table', 'Growth-chart station', 'Vaccine cold storage', 'Paediatric diagnostic kit', 'Family waiting nook', 'DHA-licensed on opening', 'EMR pre-loaded', 'Front-desk coordination'],
+    highlights: [{ num: '2026', label: 'Opening year' }, { num: 'DHA', label: 'Licensed on opening' }, { num: '100%', label: 'Child-safe design' }],
+  },
+}
+
 export const getDepartment = (id, clinicId = 'wedocx') => {
-  if (clinicId === 'lux') return LUX_DEPARTMENTS[id] ?? null
+  if (clinicId === 'lux')    return LUX_DEPARTMENTS[id]      ?? null
+  if (clinicId === 'fiore')  return FIORE_DEPARTMENTS[id]    ?? null
+  if (clinicId === 'wedocx') return UPCOMING_DEPARTMENTS[id] ?? null
   return DEPARTMENTS[id] ?? null
 }

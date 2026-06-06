@@ -44,7 +44,7 @@ const FOUNDERS = [
 const JOURNEY = [
   { year: '2022', title: 'The Problem', body: 'Three friends working across UAE healthcare noticed the same frustration: brilliant doctors spending hours on clinic logistics instead of patient care. The idea of a "clinic-as-a-service" was born.' },
   { year: '2023', title: 'First Suite', body: 'Wedocx opened its first 3 suites in Business Bay. Within 60 days they were fully booked. Demand from practitioners waiting-listed confirmed the model worked.' },
-  { year: '2024', title: 'Network Expansion', body: 'Scaled to 38+ suites across Dubai, Abu Dhabi and Sharjah. Onboarded 200+ practitioners. Launched the digital practitioner console and insurance integrations with Daman and Thiqa.' },
+  { year: '2024', title: 'Network Expansion', body: 'Scaled to 38+ suites in JLT, Dubai. Onboarded 200+ practitioners. Launched the digital practitioner console and insurance integrations with Daman and Thiqa.' },
   { year: '2025', title: 'Platform Era', body: 'Launched the Wedocx multi-clinic platform. Added Premium Suites as the first branded partner clinic. Opening the network to third-party clinic brands with shared infrastructure.' },
   { year: '2026+', title: 'Regional Scale', body: 'Targeting 150+ suites, 5 cities, 3 clinic brands. Building towards the first pan-GCC healthcare workspace platform, the infrastructure layer that powers the next generation of independent practice.' },
 ]

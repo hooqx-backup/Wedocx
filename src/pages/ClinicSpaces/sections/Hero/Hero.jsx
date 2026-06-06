@@ -157,7 +157,7 @@ export default function Hero() {
                 variants={fadeUp} transition={t()}
                 className="text-[17px] leading-[1.65] max-w-[500px] text-[#3a4558] mb-10"
               >
-                Premium, fully-equipped clinic suites across Dubai, Abu Dhabi and Sharjah.
+                Premium, fully-equipped clinic suites in JLT, Dubai.
                 Step in and see your first patient within the hour, no lease, no setup, no friction.
               </motion.p>
 

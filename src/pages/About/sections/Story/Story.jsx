@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const milestones = [
-  { year: '2022', plain: 'The ', italic: 'proof.',           body: 'One suite in JLT. Fully booked in eleven days. The hypothesis validated before a single investor meeting.' },
-  { year: '2023', plain: 'The ', italic: 'model.',           body: 'Six suites, a dedicated operations team, and a practitioner waiting list that wouldn\'t stop growing.' },
-  { year: '2026', plain: 'The ', italic: 'platform.',        body: '38 suites generating consistent recurring revenue. GCC expansion underway. Raising now.' },
+  { year: '2025', plain: 'The ', italic: 'Lux Aeterna Clinic.',    body: 'Premium Suites launched in early 2025,a curated medical-aesthetic destination redefining what a private clinic feels like. Fully operational within the Wedocx network within 18 months.' },
+  { year: '2026', plain: 'The ', italic: 'Fiore Clinic.',  body: 'Fiore Clinic joined the network in early 2026, bringing a boutique wellness experience designed around beauty, balance, and bespoke patient care.' },
+  { year: 'Upcoming', plain: 'The ', italic: 'Life Clinic.',   body: 'Life Clinic, coming soon. A longevity and diagnostic wellness destination built for the health-conscious generation. Joining the Wedocx network later in 2026.' },
+  { year: '2026', plain: 'The ', italic: 'expansion.', body: 'By end of 2026, three branded clinic partners operating across Dubai and the wider UAE ,one shared infrastructure, multiple distinct brands, one standard of care.' },
 ]
 
 const snap = [0.22, 1, 0.36, 1]
@@ -119,7 +120,7 @@ function MilestoneCard({ m, i, hovIdx, setHovIdx }) {
                 />
               ))}
             </span>
-            {num}
+            {isNaN(parseInt(m.year)) ? m.year : num}
           </motion.span>
         </div>
 
@@ -247,7 +248,7 @@ export default function Story() {
         </div>
 
         {/* Timeline */}
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 relative">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 relative">
           <div className="absolute left-0 right-0 top-4 h-px hidden lg:block">
             <motion.div className="absolute inset-0 process-dashed"
               initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}

@@ -5,7 +5,7 @@ import Values from './sections/Values/Values'
 import Founder from './sections/Founder/Founder'
 import Locations from './sections/Locations/Locations'
 import AboutCta from './sections/AboutCta/AboutCta'
-import founderImg  from '../../assets/images/FounderImage.jpeg'
+import founderImg  from '../../assets/images/FounderImage.jpg'
 import founder2Img from '../../assets/images/Founder2.jpeg'
 
 export default function About() {

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import { fadeUp, stagger, t, viewport } from '../../animations/variants'
 import { CLINICS } from '../../data/clinics'
 import ServiceSelectionModal from '../../components/booking/ServiceSelectionModal'
-import { reception2 } from '../../assets/images'
-import { luxReception } from '../../assets/images'
+import { reception2, luxReception, fioreImg1 } from '../../assets/images'
 
 const CLINIC_BANNERS = {
   wedocx: reception2,
   lux:    luxReception,
+  fiore:  fioreImg1,
 }
 
 const snap = [0.22, 1, 0.36, 1]
@@ -71,6 +71,9 @@ function ClinicCard({ clinic, i }) {
 
       {/* Body */}
       <div className="p-7">
+        <h3 className="font-serif text-[22px] font-light tracking-[-0.02em] text-ink mb-1">
+          {clinic.name}
+        </h3>
         <p className="text-[13.5px] text-[#5a6478] leading-[1.65] mb-5 line-clamp-2">
           {clinic.tagline}
         </p>
@@ -170,9 +173,19 @@ export default function Clinics() {
               viewport={viewport}
               className="grid lg:grid-cols-2 grid-cols-1 gap-8"
             >
-              {CLINICS.map((clinic, i) => (
-                <ClinicCard key={clinic.id} clinic={clinic} i={i} />
-              ))}
+              {CLINICS.map((clinic, i) => {
+                const isLastOdd = CLINICS.length % 2 !== 0 && i === CLINICS.length - 1
+                if (isLastOdd) {
+                  return (
+                    <div key={clinic.id} className="lg:col-span-2 flex justify-center">
+                      <div className="w-full lg:max-w-[calc(50%-16px)]">
+                        <ClinicCard clinic={clinic} i={i} />
+                      </div>
+                    </div>
+                  )
+                }
+                return <ClinicCard key={clinic.id} clinic={clinic} i={i} />
+              })}
             </motion.div>
 
             {/* Platform note */}
@@ -186,7 +199,7 @@ export default function Clinics() {
               <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl border border-ink/8 bg-white/60 backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-brand animate-pulse shrink-0" />
                 <p className="text-[13px] text-[#5a6478]">
-                  Expanding to KSA & Qatar in 2026–27. New clinic brands joining the network. &nbsp;
+                  Expanding to KSA & Qatar in Soon. New clinic brands joining the network. &nbsp;
                   <Link to="/contact" className="text-brand underline underline-offset-2 font-medium hover:text-gold transition-colors">
                     Partner with us
                   </Link>
