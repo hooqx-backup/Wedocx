@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ease } from '../../lib/animations'
+import { ease } from '../../animations/variants'
 import { sendBookingEmail } from '../../services/emailService'
 import { openWhatsApp } from '../../services/whatsappService'
 
@@ -31,7 +31,7 @@ const MetaChip = ({ label, value }) => (
 
 const INITIAL_FORM = { name: '', email: '', phone: '', clinicName: '', notes: '' }
 
-export default function BookingFormModal({ open, onClose, bookingMeta }) {
+export default function BookingFormModal({ open, onClose, bookingMeta, resetKey }) {
   const [form, setForm] = useState(INITIAL_FORM)
   const [errors, setErrors] = useState({})
   const [emailStatus, setEmailStatus] = useState('idle') // idle | loading | success | error
@@ -41,8 +41,19 @@ export default function BookingFormModal({ open, onClose, bookingMeta }) {
       setForm(INITIAL_FORM)
       setErrors({})
       setEmailStatus('idle')
+      console.log('[BookingFormModal] Form reset (modal closed)')
     }
   }, [open])
+
+  useEffect(() => {
+    // Reset form when parent signals a reset (e.g., Department page opened)
+    if (typeof resetKey !== 'undefined') {
+      setForm(INITIAL_FORM)
+      setErrors({})
+      setEmailStatus('idle')
+      console.log('[BookingFormModal] Form reset (resetKey changed:', resetKey, ')')
+    }
+  }, [resetKey])
 
   useEffect(() => {
     if (!open) return
@@ -131,10 +142,10 @@ export default function BookingFormModal({ open, onClose, bookingMeta }) {
 
             {/* Booking meta chips */}
             <div className="px-10 pt-5 pb-4 grid grid-cols-2 gap-2.5 border-b border-ink/8">
-              <MetaChip label="Department" value={bookingMeta?.department ?? '—'} />
-              <MetaChip label="Duration"   value={bookingMeta?.duration   ?? '—'} />
-              <MetaChip label="Shift"      value={bookingMeta?.shift      ?? '—'} />
-              <MetaChip label="Price"      value={bookingMeta?.price      ?? '—'} />
+              <MetaChip label="Department" value={bookingMeta?.department ?? '-'} />
+              <MetaChip label="Duration"   value={bookingMeta?.duration   ?? '-'} />
+              <MetaChip label="Shift"      value={bookingMeta?.shift      ?? '-'} />
+              <MetaChip label="Price"      value={bookingMeta?.price      ?? '-'} />
             </div>
 
             {/* Success state */}

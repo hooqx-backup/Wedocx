@@ -1,0 +1,88 @@
+/* ── Specialty Rooms ── */
+.svc-spec-scroller {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0 -40px;
+  padding: 8px 40px;
+}
+.svc-spec-scroller::-webkit-scrollbar { display: none; }
+
+.svc-spec-track {
+  display: flex; gap: 18px; width: max-content;
+}
+
+/* Individual specialty card */
+.svc-sc {
+  position: relative; width: 380px; flex: 0 0 auto;
+  border-radius: 22px; overflow: hidden;
+  aspect-ratio: 4/5; background: #222;
+  scroll-snap-align: start; cursor: pointer;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+}
+.svc-sc:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 60px -28px rgba(15,25,41,.4);
+}
+
+/* Gradient background per specialty */
+.svc-sc-bg {
+  position: absolute; inset: 0;
+}
+/* Gradient scrim — transparent at top so image shows, dark at bottom for text */
+.svc-sc-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(15,25,41,.08) 0%,
+    rgba(15,25,41,.18) 35%,
+    rgba(15,25,41,.72) 65%,
+    rgba(15,25,41,.93) 100%
+  );
+}
+.svc-sc-bg::before { content: none; }
+/* Dark fallback when photo hasn't loaded yet */
+.svc-sc .svc-sc-bg { background: #1a1a1a; }
+
+/* Meta label */
+.svc-sc-meta {
+  position: absolute; top: 18px; left: 18px;
+  font-family: var(--font-mono); font-size: 10px;
+  color: rgba(255,255,255,.7); letter-spacing: .16em; z-index: 2;
+}
+
+/* Corner arrow */
+.svc-sc-corner {
+  position: absolute; top: 18px; right: 18px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,.12); backdrop-filter: blur(8px);
+  display: grid; place-items: center;
+  transition: background .3s, transform .3s;
+}
+.svc-sc:hover .svc-sc-corner { background: var(--color-gold); transform: rotate(45deg); }
+.svc-sc-corner svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2; }
+
+/* Bottom text block */
+.svc-sc-text {
+  position: absolute; left: 22px; right: 22px; bottom: 22px; z-index: 2; color: #fff;
+}
+.svc-sc-text h4 {
+  font-family: var(--font-serif); font-size: 30px; font-weight: 500;
+  line-height: 1.05; margin-bottom: 8px;
+}
+.svc-sc-text h4 em { color: var(--color-brand); }
+.svc-sc-text p {
+  font-size: 13px; color: rgba(255,255,255,.7);
+  line-height: 1.55; max-width: 280px; margin-bottom: 14px;
+}
+.svc-sc-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.svc-sc-chip {
+  font-family: var(--font-mono); font-size: 9px;
+  color: rgba(255,255,255,.85); letter-spacing: .12em;
+  padding: 4px 8px; border: 1px solid rgba(255,255,255,.2);
+  border-radius: 99px; text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .svc-sc { width: 300px; }
+  .svc-spec-scroller { margin: 0 -20px; padding: 8px 20px; }
+}
