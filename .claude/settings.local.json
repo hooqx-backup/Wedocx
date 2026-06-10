@@ -17,7 +17,8 @@
       "Bash(cat src/animations/variants.js)",
       "Bash(cat src/animations/variants.jsx)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\ritin\\\\Downloads\\\\Projects\\\\wedocx\\\\wedocx\\\\src\" -Directory)",
-      "Bash(Select-Object Name)"
+      "Bash(Select-Object Name)",
+      "Bash(Test-Path \"c:\\\\Users\\\\ritin\\\\Downloads\\\\Projects\\\\wedocx\\\\wedocx\\\\README.md\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\ritin\\Downloads\\Projects\\wedocx\\wedocx\\src"
