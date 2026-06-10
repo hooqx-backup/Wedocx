@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { ease } from '../../lib/animations'
+import { ease } from '../../animations/variants'
 import {
   DURATION_OPTIONS,
   SHIFT_OPTIONS,
@@ -45,6 +45,13 @@ export default function ServiceSelectionModal({ open, onClose }) {
 
   useEffect(() => {
     if (!open) return
+    setDuration('')
+    setDepartment('')
+    setShift('')
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
     const onKey = (e) => e.key === 'Escape' && onClose()
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -57,9 +64,13 @@ export default function ServiceSelectionModal({ open, onClose }) {
 
   const handleViewDetails = () => {
     if (!canProceed) return
+    const hyphen = department.indexOf('-')
+    const clinicId = department.slice(0, hyphen)
+    const deptId = department.slice(hyphen + 1)
     onClose()
-    navigate(`/department/${department}`, {
+    navigate(`/department/${deptId}`, {
       state: {
+        clinicId,
         duration:      durationOption.label,
         durationValue: duration,
         department:    deptOption.label,
@@ -110,13 +121,13 @@ export default function ServiceSelectionModal({ open, onClose }) {
             <div className="px-10 pt-10 pb-7 border-b border-ink/8">
               <div className="font-mono text-[10px] tracking-[.2em] uppercase text-brand mb-3 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand block" />
-                Explore Services
+                Book a Suite
               </div>
               <h2 className="font-serif text-[30px] font-light leading-tight tracking-[-0.03em] text-ink">
                 Configure Your <span className="italic text-gold">Booking</span>
               </h2>
               <p className="text-[#5a6478] text-[13px] mt-2 leading-relaxed">
-                Select your preferences below to explore the space and see pricing.
+                Choose a department and configure your session preferences.
               </p>
             </div>
 

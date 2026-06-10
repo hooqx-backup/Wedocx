@@ -1,0 +1,154 @@
+/* ── Horizontal scroller ── */
+.cs-st-scroller {
+  overflow-x: auto;
+  overflow-y: visible;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+.cs-st-scroller::-webkit-scrollbar { display: none; }
+.cs-st-scroller:active { cursor: grabbing; }
+
+.cs-st-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* ── Suite card ── */
+.cs-st-card {
+  position: relative;
+  width: 320px;
+  min-height: 480px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(15,25,41,.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: default;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s cubic-bezier(.2,.8,.2,1);
+  flex-shrink: 0;
+}
+
+.cs-st-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 40px 80px -30px rgba(15,25,41,.38), 0 0 0 1px rgba(200,154,79,.25);
+}
+
+/* Background gradient layer */
+.cs-st-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.cs-st-card:hover .cs-st-bg { transform: scale(1.03); }
+
+/* Overlay */
+.cs-st-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15,25,41,.1)  0%,
+    rgba(15,25,41,.2) 35%,
+    rgba(15,25,41,.72) 65%,
+    rgba(15,25,41,.96) 100%
+  );
+}
+
+/* Blueprint grid on each card */
+.cs-st-blueprint {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image:
+    linear-gradient(rgba(200,154,79,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,154,79,.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+  transition: opacity .45s ease;
+}
+.cs-st-card:hover .cs-st-blueprint { opacity: 1; }
+
+/* Top badge */
+.cs-st-num {
+  position: absolute;
+  top: 22px; left: 22px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(200,154,79,.8);
+  z-index: 5;
+}
+
+/* Arrow corner */
+.cs-st-arrow {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,154,79,.25);
+  display: grid; place-items: center;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .3s ease, transform .3s ease, background .3s ease;
+  z-index: 5;
+}
+.cs-st-arrow svg {
+  width: 14px; height: 14px;
+  stroke: rgba(200,154,79,.9);
+  stroke-width: 2;
+  fill: none;
+}
+.cs-st-card:hover .cs-st-arrow {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(200,154,79,.12);
+}
+
+/* Text area */
+.cs-st-body {
+  position: relative;
+  z-index: 5;
+  padding: 24px;
+}
+
+.cs-st-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.cs-st-title em { color: var(--color-brand); font-style: italic; }
+
+.cs-st-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(245,236,220,.65);
+  margin-bottom: 16px;
+}
+
+.cs-st-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 6px; margin-top: 14px;
+}
+.cs-st-chip {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(200,154,79,.85);
+  padding: 5px 11px;
+  border: 1px solid rgba(200,154,79,.25);
+  border-radius: 999px;
+  background: rgba(200,154,79,.06);
+  transition: background .25s ease, border-color .25s ease;
+}
+.cs-st-card:hover .cs-st-chip {
+  background: rgba(200,154,79,.12);
+  border-color: rgba(200,154,79,.4);
+}

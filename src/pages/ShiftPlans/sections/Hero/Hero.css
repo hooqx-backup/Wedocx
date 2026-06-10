@@ -1,0 +1,239 @@
+/* ── Scheduler HUD shell ── */
+.sp-hud {
+  position: relative;
+  background: var(--color-ink);
+  border-radius: 22px;
+  border: 1px solid rgba(200,154,79,.16);
+  overflow: hidden;
+  padding: 24px 22px 20px;
+  user-select: none;
+}
+
+/* Blueprint grid background */
+.sp-hud-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,154,79,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,154,79,.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Dark vignette */
+.sp-hud-vig {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 75% at 50% 50%, transparent 25%, rgba(15,25,41,.5) 100%);
+  pointer-events: none;
+}
+
+/* ── Days header ── */
+.sp-days {
+  display: grid;
+  grid-template-columns: 40px repeat(5, 1fr);
+  gap: 5px;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 5;
+}
+.sp-day {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(200,154,79,.55);
+  text-align: center;
+  padding: 5px 0 8px;
+  border-bottom: 1px solid rgba(200,154,79,.1);
+}
+.sp-day.today {
+  color: rgba(200,154,79,.95);
+}
+
+/* ── Slot rows ── */
+.sp-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 5;
+}
+.sp-row {
+  display: grid;
+  grid-template-columns: 40px repeat(5, 1fr);
+  gap: 5px;
+  align-items: center;
+}
+.sp-time {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: .06em;
+  color: rgba(245,236,220,.22);
+  text-align: right;
+  padding-right: 6px;
+}
+
+/* Slot cells */
+.sp-cell {
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: all .2s ease;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.sp-cell.empty {
+  background: rgba(245,236,220,.025);
+  border: 1px solid rgba(245,236,220,.05);
+}
+.sp-cell.mine {
+  background: rgba(200,154,79,.14);
+  border: 1px solid rgba(200,154,79,.28);
+  color: rgba(200,154,79,.88);
+  box-shadow: inset 0 1px 0 rgba(200,154,79,.1);
+}
+.sp-cell.other {
+  background: rgba(52,180,120,.08);
+  border: 1px solid rgba(52,180,120,.18);
+  color: rgba(52,180,120,.7);
+}
+.sp-cell.avail {
+  background: rgba(200,154,79,.07);
+  border: 1px dashed rgba(200,154,79,.4);
+  color: rgba(200,154,79,.75);
+  animation: sp-pulse 2.4s ease-in-out infinite;
+}
+@keyframes sp-pulse {
+  0%,100% { box-shadow: none; }
+  50%      { box-shadow: 0 0 12px rgba(200,154,79,.2); }
+}
+
+/* ── Floating pill ── */
+.sp-float {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(6,9,15,.9);
+  border: 1px solid rgba(200,154,79,.24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 999px;
+  padding: 9px 15px;
+  z-index: 20;
+  box-shadow: 0 16px 36px -12px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.04);
+  white-space: nowrap;
+}
+.sp-float .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.sp-float .top {
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(245,236,220,.9);
+}
+.sp-float .sub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(245,236,220,.38);
+  margin-top: 1px;
+}
+
+/* ── Booking flow (section 3) ── */
+.sp-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .sp-flow { grid-template-columns: 1fr 1fr; gap: 0; }
+}
+@media (max-width: 480px) {
+  .sp-flow { grid-template-columns: 1fr; }
+}
+
+.sp-flow-connector {
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 28px);
+  right: calc(12.5% + 28px);
+  height: 1px;
+  z-index: 0;
+}
+.sp-flow-connector-inner {
+  height: 100%;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(200,154,79,.25) 0, rgba(200,154,79,.25) 8px,
+    transparent 8px, transparent 16px
+  );
+}
+
+.sp-flow-step {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px 0;
+}
+
+.sp-flow-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,154,79,.3);
+  background: var(--color-bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all .35s ease;
+  color: var(--color-gold);
+}
+.sp-flow-step:hover .sp-flow-num {
+  background: var(--color-ink);
+  border-color: rgba(200,154,79,.6);
+  color: var(--color-brand);
+  box-shadow: 0 0 20px rgba(200,154,79,.2);
+}
+.sp-flow-num svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+.sp-flow-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+}
+.sp-flow-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+.sp-flow-title em { color: var(--color-gold); font-style: italic; }
+.sp-flow-body {
+  font-size: 13px;
+  color: #5a6478;
+  line-height: 1.6;
+}
